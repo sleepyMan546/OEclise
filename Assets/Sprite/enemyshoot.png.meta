@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 910f6f064d23fa5419255bb814e30c36
+guid: 5ee8104e554112141a3842080d224cc0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PLAYERAIR_0
+      name: enemyshoot_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fa654bce0be68e4f980b5d637d83bb7
-      internalID: -293019650
+      spriteID: 69b8a92f090a1f4439003e87345ee004
+      internalID: -1316529118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PLAYERAIR_1
+      name: enemyshoot_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 478b3c8c146f3604384ecb1b273715c9
-      internalID: 1692553352
+      spriteID: 8bdda5b9b0da0e247b8ab6405ccb3499
+      internalID: 1291753413
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PLAYERAIR_0: -293019650
-      PLAYERAIR_1: 1692553352
+      enemyshoot_0: -1316529118
+      enemyshoot_1: 1291753413
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

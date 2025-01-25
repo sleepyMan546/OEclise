@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10f; // ?????????????????
+    public float speed = 10f; 
     public float lifetime = 0.5f; 
+    public int damage = 10;
 
     void Start()
     {
@@ -14,13 +15,19 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime); // ????????????????
+        transform.Translate(Vector2.right * speed * Time.deltaTime); 
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Player") // ?????????????????????????
+        if (collision.gameObject.tag != "Player") 
         {
+            Hp targetHealth = collision.GetComponent<Hp>();
+            if (targetHealth != null)
+            {
+                targetHealth.TakeDamage(damage); 
+            }
+
             Destroy(gameObject); 
         }
     }

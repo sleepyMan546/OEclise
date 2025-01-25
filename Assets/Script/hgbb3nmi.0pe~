@@ -1,0 +1,60 @@
+﻿using UnityEngine;
+
+public class EnemyShooting : MonoBehaviour
+{
+    public GameObject enemyBulletPrefab; 
+    public Transform firePoint; 
+    public float bulletSpeed = 5f; 
+    public float fireRate = 1f; 
+    public float detectionRange = 10f; 
+
+    private Transform player;
+    private float nextFireTime = 0f;
+    private bool playerInArea = false;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform; 
+    }
+
+    void Update()
+    {
+        if (player == null) return;
+
+
+        if (playerInArea && Time.time >= nextFireTime) // ตรวจสอบ playerInArea
+        {
+            Shoot();
+            nextFireTime = Time.time + fireRate;
+        }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInArea = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInArea = false;
+        }
+    }
+
+    void Shoot()
+    {
+        GameObject bullet = Instantiate(enemyBulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
+        // คำนวณทิศทางจาก firePoint ไปยัง player
+        Vector2 direction = (player.position - firePoint.position).normalized;
+
+        rb.velocity = direction * bulletSpeed;
+    }
+
+}
