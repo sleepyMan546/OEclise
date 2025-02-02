@@ -13,7 +13,7 @@ public class EnemyFollow : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform; // หาตำแหน่งของผู้เล่น
+        player = GameObject.FindGameObjectWithTag("Player").transform; 
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -21,15 +21,14 @@ public class EnemyFollow : MonoBehaviour
     {
         if (player != null)
         {
-            Vector2 direction = (player.position - transform.position).normalized; // คำนวณทิศทางไปยังผู้เล่น
-            rb.velocity = direction * moveSpeed; // เคลื่อนที่ไปยังผู้เล่น
-
-            // ตรวจสอบทิศทางและ Flip ศัตรู
-            if (direction.x > 0 && faceleft) // ถ้าศัตรูเคลื่อนที่ไปทางขวาและหันไปทางซ้าย
+            Vector2 direction = (player.position - transform.position).normalized; 
+            rb.velocity = direction * moveSpeed; 
+           
+            if (direction.x > 0 && faceleft) 
             {
                 Flip();
             }
-            else if (direction.x < 0 && !faceleft) // ถ้าศัตรูเคลื่อนที่ไปทางซ้ายและหันไปทางขวา
+            else if (direction.x < 0 && !faceleft) 
             {
                 Flip();
             }
@@ -45,7 +44,7 @@ public class EnemyFollow : MonoBehaviour
         //transform.localScale = theScale;
 
 
-        //// หมุน Firepoint 180 องศารอบแกน Z
+        
         //firePoint.localRotation = Quaternion.Euler(0f, 0f, faceleft ? 0f : 180f);
     }
 }

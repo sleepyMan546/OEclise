@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
    
     public float jumpForce = 10f;
     private bool isGrounded;
+    public bool facingRight = true;  
+    public SpriteRenderer bodyRenderer; 
 
     private bool faceRight = true;
     void Start()
@@ -16,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
       float move = Input.GetAxis("Horizontal");
@@ -26,13 +28,13 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce); 
         }
-      if (faceRight == false && move > 0)
+        if (facingRight)
         {
-            Flip();
-        } 
-        else if (faceRight == true && move < 0) 
-        { 
-           Flip();
+            bodyRenderer.flipX = false;
+        }
+        else
+        {
+            bodyRenderer.flipX = true;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
