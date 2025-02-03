@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5f15395db6314e94f944d70697b871d4
+guid: 1eacd2468720f3d48b3fcb80ba535309
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PLAYERGROUND (1)_0
+      name: PLAYERJUMP (2)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5e8f4e684584894390f7373e205bdb6
-      internalID: -190720477
+      spriteID: 520ccaae9fc8d9349a3f76e6b25772c4
+      internalID: -1593636746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PLAYERGROUND (1)_1
+      name: PLAYERJUMP (2)_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 233c83438a547154081f6fe55356b7f1
-      internalID: -491832121
+      spriteID: 8892957a4b5fbab4491da57832475213
+      internalID: -363028485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PLAYERGROUND (1)_2
+      name: PLAYERJUMP (2)_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1dab28c46a26f40812cb46cb6249b8
-      internalID: 2003656719
+      spriteID: bdbc4a52d2350864c8d26055858c2a27
+      internalID: -2010262634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PLAYERGROUND (1)_3
+      name: PLAYERJUMP (2)_3
       rect:
         serializedVersion: 2
         x: 192
@@ -200,29 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 763477deba4fbed45bb434ae3f96fa69
-      internalID: 798677074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERGROUND (1)_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1708cf8d1b612c41b3b6a96ffa948bb
-      internalID: 436267792
+      spriteID: 78a3728d32992674db0935a80638817a
+      internalID: -1953322879
       vertices: []
       indices: 
       edges: []
@@ -238,11 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PLAYERGROUND (1)_0: -190720477
-      PLAYERGROUND (1)_1: -491832121
-      PLAYERGROUND (1)_2: 2003656719
-      PLAYERGROUND (1)_3: 798677074
-      PLAYERGROUND (1)_4: 436267792
+      PLAYERJUMP (2)_0: -1593636746
+      PLAYERJUMP (2)_1: -363028485
+      PLAYERJUMP (2)_2: -2010262634
+      PLAYERJUMP (2)_3: -1953322879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
