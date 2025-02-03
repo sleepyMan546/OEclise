@@ -6,16 +6,21 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
+    private Animator anim;
    
     public float jumpForce = 10f;
     private bool isGrounded;
     public bool facingRight = true;  
     public SpriteRenderer bodyRenderer; 
-
+    private BoxCollider2D boxCollider2D;
+    [SerializeField] private LayerMask grounlayer;
+    [SerializeField] private LayerMask walllayer;
     private bool faceRight = true;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     
@@ -24,10 +29,7 @@ public class PlayerMovement : MonoBehaviour
       float move = Input.GetAxis("Horizontal");
       rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
 
-      if (Input.GetButtonDown("Jump") && isGrounded) 
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce); 
-        }
+      
         if (facingRight)
         {
             bodyRenderer.flipX = false;
@@ -36,20 +38,30 @@ public class PlayerMovement : MonoBehaviour
         {
             bodyRenderer.flipX = true;
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGrounded = true;
+        
+        if (Input.GetKey(KeyCode.Space) && IsGrounded()) {
+            Jump();
+        
         }
+        //set animation
+        anim.SetBool("Walk", move != 0);
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    
+    public void Jump()
     {
-        if (collision.gameObject.tag == "Ground") 
-        {
-            isGrounded = false;
-        }
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+       anim.SetTrigger("Jump");
+    }
+    private bool IsGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
+        return raycastHit.collider != null;
+    }
+    
+    private bool OnWall()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.right, 0.1f, LayerMask.GetMask("Ground"));
+        return raycastHit.collider != null;
     }
 
     void Flip()
