@@ -13,18 +13,16 @@ public class ArmRotation : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
-       
+
         if (mousePosition.x < transform.position.x)
         {
-            armRenderer.flipY = true;
-
-
-            playerMovement.facingRight = false; 
+            armRenderer.flipY = true;  
+            playerMovement.facingRight = false;
 
         }
         else
         {
-            armRenderer.flipY = false;
+            armRenderer.flipY = false; 
             playerMovement.facingRight = true;
 
         }

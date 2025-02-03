@@ -15,7 +15,7 @@ public class Hp : MonoBehaviour
    
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage; // ?? HP ??????????????
+        currentHealth -= damage;
         Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
 
         if (currentHealth <= 0)
@@ -27,6 +27,6 @@ public class Hp : MonoBehaviour
     void Die()
     {
         Debug.Log(gameObject.name + " ???????!");
-        Destroy(gameObject); // ????? GameObject
+        Destroy(gameObject); 
     }
 }

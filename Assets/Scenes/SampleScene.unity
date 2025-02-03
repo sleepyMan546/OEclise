@@ -1216,7 +1216,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 94eb24b04339e8d478462f7332710ca0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1840,6 +1840,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 7
+  facingRight: 1
+  bodyRenderer: {fileID: 1868917021}
 --- !u!50 &618215517
 Rigidbody2D:
   serializedVersion: 4
@@ -6558,6 +6560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c17456ad581964bbd1719a4d0cdc5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 618215516}
+  armRenderer: {fileID: 442778876}
 --- !u!1001 &2146629599
 PrefabInstance:
   m_ObjectHideFlags: 0
