@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
  
     void Dash()
     {
-        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(transform.localScale.x * 5f, rb.velocity.y);
     }
     void Flip()
     {
