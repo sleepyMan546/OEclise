@@ -10,10 +10,12 @@ public class EnemyShooting : MonoBehaviour
 
     private Transform player;
     private float nextFireTime = 0f;
+    public Animator anim;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -62,6 +64,7 @@ public class EnemyShooting : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         Vector2 direction = (player.position - firePoint.position).normalized;
         rb.velocity = direction * bulletSpeed;
+        anim.SetTrigger("Shoot");
     }
 
 }

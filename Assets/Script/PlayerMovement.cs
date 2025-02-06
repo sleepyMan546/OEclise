@@ -16,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask grounlayer;
     [SerializeField] private LayerMask walllayer;
     private bool faceRight = true;
+    public float dashSpeed ;
+    public float dashTime ;
+    public float startDashTime;
+    private float direction  ;
+    public float moveDirection;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,8 +51,20 @@ public class PlayerMovement : MonoBehaviour
         }
         //set animation
         anim.SetBool("Walk", move != 0);
+
+        if(Input.GetKey(KeyCode.LeftShift) && HasPistrol())
+        {
+            
+            Dash();
+        }
+       
+       
     }
-    
+    bool HasPistrol()
+    {
+        return GetComponent<Hold_Pistol>() != null;
+        
+    }
     public void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -58,12 +76,11 @@ public class PlayerMovement : MonoBehaviour
         return raycastHit.collider != null;
     }
     
-    private bool OnWall()
+ 
+    void Dash()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.right, 0.1f, LayerMask.GetMask("Ground"));
-        return raycastHit.collider != null;
+        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, rb.velocity.y);
     }
-
     void Flip()
     {
         faceRight = !faceRight;

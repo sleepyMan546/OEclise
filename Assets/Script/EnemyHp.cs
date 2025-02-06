@@ -3,35 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Hp : MonoBehaviour
+public class EnemyHp : MonoBehaviour
 {
-    public int maxHealth = 100; 
-    public int currentHealth; 
-    public Image healthBar;
+    public int maxHealth = 100;
+    public int currentHealth;
+    public Image enemyHp;
 
     void Start()
     {
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
     }
 
     void Update()
     {
-        healthBar.fillAmount = Mathf.Clamp((float)currentHealth / maxHealth, 0, 1);
+        enemyHp.fillAmount = Mathf.Clamp((float)currentHealth / maxHealth, 0, 1);
     }
-    public void TakeDamage(int damage)
+    public void TakeDamageEnemy(int damage)
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
 
         if (currentHealth <= 0)
         {
-            Die(); 
+            Die();
         }
     }
 
     void Die()
     {
         Debug.Log(gameObject.name + " ???????!");
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 }

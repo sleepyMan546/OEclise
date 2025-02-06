@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public float moveSpeed = 3f; // ความเร็วการเคลื่อนที่ของศัตรู
-    private Transform player; // ตำแหน่งของผู้เล่น
+    public float moveSpeed = 3f; 
+    private Transform player; 
     private Rigidbody2D rb;
 
     private bool faceleft = true;
     public Transform firePoint;
+    public Animator anim;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform; 
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -32,6 +34,7 @@ public class EnemyFollow : MonoBehaviour
             {
                 Flip();
             }
+            anim.SetBool("Run", true);
         }
     }
 

@@ -18,14 +18,14 @@ public class Bullet : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime); 
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void  OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag != "Player") 
         {
-            Hp targetHealth = collision.GetComponent<Hp>();
+            EnemyHp targetHealth = collision.GetComponent<EnemyHp>();
             if (targetHealth != null)
             {
-                targetHealth.TakeDamage(damage); 
+                targetHealth.TakeDamageEnemy(damage);
             }
 
             Destroy(gameObject); 
