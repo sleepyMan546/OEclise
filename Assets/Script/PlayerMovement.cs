@@ -16,11 +16,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask grounlayer;
     [SerializeField] private LayerMask walllayer;
     private bool faceRight = true;
-    public float dashSpeed ;
-    public float dashTime ;
-    public float startDashTime;
+    public float dashSpeed = 0.5f;
+    public float dashDuration = 0.2f;
+    public bool isDashing = false;
     private float direction  ;
     public float moveDirection;
+    public Transform shootPoint;
 
     void Start()
     {
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.LeftShift) && HasPistrol())
         {
-            
+            Debug.Log("Dash");
             Dash();
         }
        
@@ -75,13 +76,17 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
         return raycastHit.collider != null;
     }
-    
- 
-    void Dash()
+
+
+  void Dash()
     {
-        rb.velocity = new Vector2(transform.localScale.x * 5f, rb.velocity.y);
+        Vector2 dashDirection = shootPoint.right.normalized;
+        //float dashDirection = faceRight ? 1f : -1f; 
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        //rb.AddForce(new Vector2(dashDirection * dashSpeed, 0f), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
     }
-    void Flip()
+ public void Flip()
     {
         faceRight = !faceRight;
         Vector3 scale = transform.localScale;

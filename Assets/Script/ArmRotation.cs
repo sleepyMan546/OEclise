@@ -18,12 +18,14 @@ public class ArmRotation : MonoBehaviour
         {
             armRenderer.flipY = true;  
             playerMovement.facingRight = false;
+            
 
         }
         else
         {
             armRenderer.flipY = false; 
             playerMovement.facingRight = true;
+           
 
         }
     }
