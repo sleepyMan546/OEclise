@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask grounlayer;
     [SerializeField] private LayerMask walllayer;
     private bool faceRight = true;
-    public float dashSpeed = 0.5f;
+    public float dashSpeed = 1f;
     public float dashDuration = 0.2f;
     public bool isDashing = false;
     private float direction  ;
