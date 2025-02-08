@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1d7b719178c0b4c80f4a8407c579a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 121826419}
   wantedColor: {r: 1, g: 0, b: 0, a: 0}
   originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &121826419
@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1d7b719178c0b4c80f4a8407c579a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 480464096}
   wantedColor: {r: 1, g: 0, b: 0, a: 0}
   originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &480464096
@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1d7b719178c0b4c80f4a8407c579a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1396195608}
   wantedColor: {r: 1, g: 0, b: 0, a: 0}
   originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2004724285
