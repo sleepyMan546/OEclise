@@ -1910,9 +1910,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   dashSpeed: 20
-  dashTime: 0
-  startDashTime: 0
+  dashDuration: 0.2
+  isDashing: 0
   moveDirection: 0
+  shootPoint: {fileID: 2027114179}
 --- !u!50 &618215517
 Rigidbody2D:
   serializedVersion: 4
