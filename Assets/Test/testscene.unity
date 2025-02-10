@@ -262,8 +262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -299, y: 147}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -299, y: 186.90463}
+  m_SizeDelta: {x: 100, y: 20.1907}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &16506593
 MonoBehaviour:
@@ -563,6 +563,8 @@ MonoBehaviour:
   isDashing: 0
   moveDirection: 0
   shootPoint: {fileID: 2083653514}
+  weaponSwitchDop: {fileID: 298885172}
+  airJumpsAllowed: 1
 --- !u!50 &298885168
 Rigidbody2D:
   serializedVersion: 4
@@ -1643,6 +1645,22 @@ PrefabInstance:
     - target: {fileID: 5916859913028799135, guid: ebc8332462c13124faca210613528be2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003132125741380940, guid: ebc8332462c13124faca210613528be2, type: 3}
+      propertyPath: fireRate
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003132125741380940, guid: ebc8332462c13124faca210613528be2, type: 3}
+      propertyPath: bulletCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003132125741380940, guid: ebc8332462c13124faca210613528be2, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003132125741380940, guid: ebc8332462c13124faca210613528be2, type: 3}
+      propertyPath: spreadAngle
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7397032746203152696, guid: ebc8332462c13124faca210613528be2, type: 3}
       propertyPath: m_LocalPosition.x
