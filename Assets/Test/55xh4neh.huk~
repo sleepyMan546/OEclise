@@ -1,0 +1,51 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public Gun gunPrefab; // ลาก Gun Prefab มาใส่ในช่องนี้ใน Inspector
+    public Bow bowPrefab;
+    public Dictionary<KeyCode, Weapon> weapons = new Dictionary<KeyCode, Weapon>();
+    private Weapon currentWeapon;
+
+    public void SetWeapon(Weapon weapon)
+    {
+        currentWeapon = weapon;
+        Debug.Log("เปลี่ยนอาวุธเป็น: " + currentWeapon.GetType().Name);
+    }
+
+     void Start()
+    {
+        // เพิ่มอาวุธเข้า Dictionary ตอนเริ่มเกม
+        weapons.Add(KeyCode.Alpha1, new Gun());
+        weapons.Add(KeyCode.Alpha2, new Bow());
+
+
+        // เริ่มต้นด้วยปืน
+        if (weapons.Count > 0)
+        {
+            SetWeapon(weapons[KeyCode.Alpha1]);
+        }
+
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && weapons.ContainsKey(KeyCode.Alpha1))
+        {
+            SetWeapon(weapons[KeyCode.Alpha1]);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && weapons.ContainsKey(KeyCode.Alpha2))
+        {
+            SetWeapon(weapons[KeyCode.Alpha2]);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("กำลังถือ" + currentWeapon.GetType().Name);
+        }
+       
+        
+    }
+}
+

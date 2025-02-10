@@ -1,0 +1,78 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public GameObject gunPrefab; // ลาก Gun Prefab มาใส่ในช่องนี้ใน Inspector
+    public GameObject bowPrefab;
+    public Dictionary<KeyCode, GameObject> weapons = new Dictionary<KeyCode, GameObject>();
+    public Transform point;
+    private Weapon currentWeapon;
+    private GameObject currentWeaponObject;
+
+    public void SetWeapon(Weapon weapon)
+    {
+        currentWeapon = weapon;
+        Debug.Log("เปลี่ยนอาวุธเป็น: " + currentWeapon.GetType().Name);
+    }
+
+    void Start()
+    {
+
+
+        SwitchWeapon(KeyCode.Alpha1, gunPrefab);
+
+
+
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SwitchWeapon(KeyCode.Alpha1, gunPrefab);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SwitchWeapon(KeyCode.Alpha2, bowPrefab);
+        }
+
+    }
+    void SetWeapon(GameObject weaponObject)
+    {
+        currentWeaponObject = weaponObject;
+    }
+    void SwitchWeapon(KeyCode key, GameObject prefab)
+    {
+        if (weapons.ContainsKey(key))
+        {
+            if (weapons[key] != currentWeaponObject)  //  เช็คว่าอาวุธที่จะเปลี่ยนเป็น ใช่อาวุธปัจจุบันอยู่แล้วหรือไม่
+            {
+                GameObject newWeapon = weapons[key]; // อาวุธที่จะเปลี่ยนเป็น
+                newWeapon.SetActive(true); // แสดงอาวุธใหม่ก่อน
+                SetWeapon(newWeapon); // ตั้งค่า currentWeaponObject
+
+                if (currentWeaponObject != null)
+                {
+                    currentWeaponObject.SetActive(false);  // ซ่อนอาวุธเก่า (ไม่ต้อง destroy)  <-- แก้ไขตรงนี้
+                }
+                currentWeaponObject = newWeapon;
+            }
+        }
+        else
+        {
+            GameObject newWeapon = Instantiate(prefab, point.position, point.rotation);
+            weapons.Add(key, newWeapon);
+
+            if (currentWeaponObject != null)
+            {
+                currentWeaponObject.SetActive(false);  // ซ่อนอาวุธเก่า (ไม่ต้อง destroy)  <-- แก้ไขตรงนี้
+            }
+            currentWeaponObject = newWeapon;
+
+            SetWeapon(newWeapon);
+        }
+    }
+    }
+
