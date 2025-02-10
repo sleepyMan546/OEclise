@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6991396838497906886}
   m_Layer: 9
   m_Name: Shotgun
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   lifetime: 0.1
-  damage: 20
+  damage: 10

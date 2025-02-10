@@ -53,17 +53,17 @@ public class PlayerMovement : MonoBehaviour
         //set animation
         anim.SetBool("Walk", move != 0);
 
-        if(Input.GetKey(KeyCode.LeftShift) && HasPistrol())
+        if (Input.GetKey(KeyCode.LeftShift) && HasPistrol())
         {
             Debug.Log("Dash");
             Dash();
         }
-       
-       
+
+
     }
     bool HasPistrol()
     {
-        return GetComponent<Hold_Pistol>() != null;
+        return gameObject.GetComponent<Pistol>() != null;
         
     }
     public void Jump()
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-  void Dash()
+    void Dash()
     {
         Vector2 dashDirection = shootPoint.right.normalized;
         //float dashDirection = faceRight ? 1f : -1f; 
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         //rb.AddForce(new Vector2(dashDirection * dashSpeed, 0f), ForceMode2D.Impulse);
         rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
     }
- public void Flip()
+    public void Flip()
     {
         faceRight = !faceRight;
         Vector3 scale = transform.localScale;

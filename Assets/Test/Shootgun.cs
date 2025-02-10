@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shootgun : MonoBehaviour , Void
+public class Shotgun : MonoBehaviour 
 {
     public PlayerMovement playerMovement;
     public SpriteRenderer armRenderer;
 
-
+    private void Start()
+    {
+        if (transform.parent != null && transform.parent.name == "Player")
+        {
+            playerMovement = transform.parent.GetComponent<PlayerMovement>();
+        }
+        else
+        {
+            Debug.LogWarning("Pistol is not child of Player");
+        }
+    }
     void Update()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
