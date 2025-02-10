@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public Transform point;
     private Weapon currentWeapon;
     private GameObject currentWeaponObject;
+    private float skibidu;
 
     public void SetWeapon(Weapon weapon)
     {
@@ -28,9 +29,9 @@ public class Player : MonoBehaviour
         // Instantiate ธนู และเก็บไว้ใน Dictionary แต่ *ไม่ activate*
         GameObject bow = Instantiate(bowPrefab, point.position, point.rotation);
         weapons.Add(KeyCode.Alpha2, bow);
-        bow.SetActive(false); // ซ่อนธนูไว้ก่อน
+        bow.SetActive(false); // ซ่อนธนูไว้ก่อนwwwwq
 
-
+        
 
     }
 
