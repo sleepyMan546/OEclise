@@ -2,7 +2,7 @@
 
 public class ArmRotation : MonoBehaviour
 {
-    public PlayerMovement playerMovement; 
+    public PlayerMovement playerMovement;
     public SpriteRenderer armRenderer;
 
 
@@ -16,17 +16,20 @@ public class ArmRotation : MonoBehaviour
 
         if (mousePosition.x < transform.position.x)
         {
-            armRenderer.flipY = true;  
+            armRenderer.flipY = true;
             playerMovement.facingRight = false;
-            
+
 
         }
         else
         {
-            armRenderer.flipY = false; 
+            armRenderer.flipY = false;
             playerMovement.facingRight = true;
-           
+
 
         }
     }
 }
+
+
+

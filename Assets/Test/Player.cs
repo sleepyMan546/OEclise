@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public Transform point;
     private Weapon currentWeapon;
     private GameObject currentWeaponObject;
-    private float skibidu;
+    
 
     public void SetWeapon(Weapon weapon)
     {

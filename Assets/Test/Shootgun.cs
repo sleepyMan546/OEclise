@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol : MonoBehaviour , Void
+public class Shootgun : MonoBehaviour , Void
 {
-
     public PlayerMovement playerMovement;
     public SpriteRenderer armRenderer;
 
@@ -33,4 +32,3 @@ public class Pistol : MonoBehaviour , Void
         }
     }
 }
-
