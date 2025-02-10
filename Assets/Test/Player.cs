@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject gunPrefab; // ลาก Gun Prefab มาใส่ในช่องนี้ใน Inspector
+    public GameObject gunPrefab; 
     public GameObject bowPrefab;
     public Dictionary<KeyCode, GameObject> weapons = new Dictionary<KeyCode, GameObject>();
     public Transform point;
@@ -23,13 +23,12 @@ public class Player : MonoBehaviour
 
         GameObject initialWeapon = Instantiate(gunPrefab, point.position, point.rotation);
         weapons.Add(KeyCode.Alpha1, initialWeapon);
-        SetWeapon(initialWeapon);  // ตั้งค่าอาวุธเริ่มต้น
+        SetWeapon(initialWeapon);  
         currentWeaponObject = initialWeapon;
 
-        // Instantiate ธนู และเก็บไว้ใน Dictionary แต่ *ไม่ activate*
         GameObject bow = Instantiate(bowPrefab, point.position, point.rotation);
         weapons.Add(KeyCode.Alpha2, bow);
-        bow.SetActive(false); // ซ่อนธนูไว้ก่อนwwwwq
+        bow.SetActive(false); 
 
         
 
@@ -59,15 +58,15 @@ public class Player : MonoBehaviour
             {
                 if (currentWeaponObject != null) currentWeaponObject.SetActive(false);
                 GameObject newWeapon = weapons[key];
-                newWeapon.SetActive(true); // เปิดใช้งานอาวุธใหม่
+                newWeapon.SetActive(true); 
                 SetWeapon(newWeapon);
                 currentWeaponObject = newWeapon;
             }
         }
         else
         {
-            // ไม่ควรเข้ามาใน else block นี้แล้ว เพราะอาวุธทุกชนิดถูกสร้างใน Start() แล้ว
-            Debug.LogError("Weapon not found in dictionary: " + key); // แสดง error ถ้า key ไม่ถูกต้อง
+           
+            Debug.LogError("Weapon not found in dictionary: " + key); 
         }
     }
 }
