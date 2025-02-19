@@ -18,7 +18,7 @@ TagManager:
   - Player
   - Wall
   - Bullet
-  - 
+  - Light buidfing
   - 
   - 
   - 
@@ -52,4 +52,10 @@ TagManager:
     locked: 0
   - name: sky
     uniqueID: 4092172027
+    locked: 0
+  - name: sp
+    uniqueID: 1795448215
+    locked: 0
+  - name: lab
+    uniqueID: 1602074989
     locked: 0
