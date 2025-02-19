@@ -8,10 +8,16 @@ public class EnemyHp : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public Image enemyHp;
+    private Renderer objRenderer;
+    private Color originalColor;
+    private Animator anim;
 
     void Start()
     {
         currentHealth = maxHealth;
+        objRenderer = GetComponent<Renderer>();
+        originalColor = objRenderer.material.color;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -22,13 +28,24 @@ public class EnemyHp : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
+       anim.SetTrigger("Damage");
+        ChangeRed();
 
         if (currentHealth <= 0)
         {
             Die();
         }
     }
-
+    public void ChangeRed()
+    {
+        StartCoroutine(ChangeColorRoutine());
+    }
+    private IEnumerator ChangeColorRoutine()
+    {
+        objRenderer.material.color = Color.red;
+        yield return new WaitForSeconds(2f);
+        objRenderer.material.color = originalColor;
+    }
     void Die()
     {
         Debug.Log(gameObject.name + " ???????!");

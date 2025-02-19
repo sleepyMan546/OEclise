@@ -10,12 +10,17 @@ public class Hp : MonoBehaviour
     public Image healthBar;
     private Renderer objRenderer;
     private Color originalColor;
+    private Animator anim;
+    private CheckpointSystem checkpointSystem;
 
     void Start()
     {
         currentHealth = maxHealth;
         objRenderer = GetComponent<Renderer>(); 
-        originalColor = objRenderer.material.color; 
+        originalColor = objRenderer.material.color;
+        anim = GetComponent<Animator>();
+        checkpointSystem = FindObjectOfType<CheckpointSystem>();
+        UpdateHealthBar();
     }
 
     void Update()
@@ -26,6 +31,7 @@ public class Hp : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
+        anim.SetTrigger("Take");
         ChangeToRed ();
 
         if (currentHealth <= 0)
@@ -37,7 +43,8 @@ public class Hp : MonoBehaviour
     void Die()
     {
         Debug.Log(gameObject.name + " ???????!");
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        checkpointSystem.RespawnPlayer();
     }
     public void ChangeToRed()
     {
@@ -48,5 +55,18 @@ public class Hp : MonoBehaviour
         objRenderer.material.color = Color.red;
         yield return new WaitForSeconds(1f);
         objRenderer.material.color = originalColor;
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth; 
+        UpdateHealthBar();
+    }
+    void UpdateHealthBar()
+    {
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = (float)currentHealth / maxHealth;
+        }
     }
 }
