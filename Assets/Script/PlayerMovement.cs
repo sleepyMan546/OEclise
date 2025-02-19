@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         //set animation
         anim.SetBool("Walk", move != 0);
 
-        if (Input.GetKey(KeyCode.LeftShift) && CanDash()) 
+        if (Input.GetKey(KeyCode.Mouse1) && CanDash()) 
         {
             Debug.Log("Dash");
             Dash();
