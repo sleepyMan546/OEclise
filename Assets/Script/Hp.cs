@@ -5,13 +5,17 @@ using UnityEngine.UI;
 
 public class Hp : MonoBehaviour
 {
-    public int maxHealth = 100; 
-    public int currentHealth; 
+    public int maxHealth = 100;
+    public int currentHealth;
     public Image healthBar;
+    private Renderer objRenderer;
+    private Color originalColor;
 
     void Start()
     {
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
+        objRenderer = GetComponent<Renderer>(); 
+        originalColor = objRenderer.material.color; 
     }
 
     void Update()
@@ -22,16 +26,27 @@ public class Hp : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
+        ChangeToRed ();
 
         if (currentHealth <= 0)
         {
-            Die(); 
+            Die();
         }
     }
 
     void Die()
     {
         Debug.Log(gameObject.name + " ???????!");
-        Destroy(gameObject); 
+        Destroy(gameObject);
+    }
+    public void ChangeToRed()
+    {
+        StartCoroutine(ChangeColorRoutine());
+    }
+    private IEnumerator ChangeColorRoutine()
+    {
+        objRenderer.material.color = Color.red;
+        yield return new WaitForSeconds(1f);
+        objRenderer.material.color = originalColor;
     }
 }

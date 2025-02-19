@@ -29,11 +29,11 @@ public class WeaponSwitchDop : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.Q))
         {
             SwitchWeapon("pistol");
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKey(KeyCode.W))
         {
             SwitchWeapon("shotgun");
         }
@@ -58,5 +58,10 @@ public class WeaponSwitchDop : MonoBehaviour
 
        
         weapons[currentWeapon].SetActive(true);
+    }
+
+    public string GetCurrentWeapon()
+    {  
+        return currentWeapon;
     }
 }

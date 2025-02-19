@@ -51,26 +51,26 @@ public class Pistol : MonoBehaviour
         }
 
        
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Debug.Log("Pistol Dash activated");
-            Dash();
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftShift))
+        //{
+        //    Debug.Log("Pistol Dash activated");
+        //    Dash();
+        //}
     }
 
-    void Dash()
-    {
-        if (rb == null)
-        {
-            Debug.LogWarning("ไม่พบ Rigidbody2D ใน Parent");
-            return;
-        }
+    //void Dash()
+    //{
+    //    if (rb == null)
+    //    {
+    //        Debug.LogWarning("ไม่พบ Rigidbody2D ใน Parent");
+    //        return;
+    //    }
 
 
-        Vector2 dashDirection = shootPoint.right.normalized;
-        //float dashDirection = faceRight ? 1f : -1f; 
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
-        //rb.AddForce(new Vector2(dashDirection * dashSpeed, 0f), ForceMode2D.Impulse);
-        rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
-    }
+    //    Vector2 dashDirection = shootPoint.right.normalized;
+    //    //float dashDirection = faceRight ? 1f : -1f; 
+    //    rb.velocity = new Vector2(rb.velocity.x, 0f);
+    //    //rb.AddForce(new Vector2(dashDirection * dashSpeed, 0f), ForceMode2D.Impulse);
+    //    rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
+    //}
 }
