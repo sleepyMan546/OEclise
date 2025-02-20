@@ -17,8 +17,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask walllayer;
     private bool faceRight = true;
     public float dashSpeed = 1f;
-    public float dashDuration = 0.2f;
+    public float dashDuration = 1f;
     public bool isDashing = false;
+    public float dashCooldown = 0.5f;
+    private bool canDash = true;
     private float direction  ;
     public float moveDirection;
     public Transform shootPoint;
@@ -63,11 +65,12 @@ public class PlayerMovement : MonoBehaviour
         }
         //set animation
         anim.SetBool("Walk", move != 0);
+        
 
-        if (Input.GetKey(KeyCode.Mouse1) && CanDash()) 
+        if (Input.GetKey(KeyCode.Mouse1) && CanDash() && !isDashing && canDash )
         {
             Debug.Log("Dash");
-            Dash();
+            StartCoroutine(DashRoutine());
         }
         if (Input.GetKey(KeyCode.E) )
         {
@@ -75,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+  
     bool CanDash()  
     {
        
@@ -98,11 +102,37 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash()
     {
+       
         Vector2 dashDirection = shootPoint.right.normalized;
         //float dashDirection = faceRight ? 1f : -1f; 
         rb.velocity = new Vector2(rb.velocity.x, 0f);
         //rb.AddForce(new Vector2(dashDirection * dashSpeed, 0f), ForceMode2D.Impulse);
         rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
+    }
+    private IEnumerator DashRoutine()
+    {
+        canDash  = false; 
+        isDashing = true; 
+        Debug.Log("DashRoutine");
+        float startTime = Time.time;
+        Debug.Log("Startime");
+        while (Time.time < startTime + dashDuration && Input.GetKey(KeyCode.Mouse1))
+        {
+            Debug.Log("Isdashing");
+            Vector2 dashDirection = shootPoint.right.normalized;
+
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+
+            rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
+            yield return null;
+        }
+
+
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+        Debug.Log("DashRoutine End");
     }
     public void Flip()
     {
