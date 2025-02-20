@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1504052675887644654}
   - component: {fileID: -7399826113822450830}
   m_Layer: 9
-  m_Name: Pistol
+  m_Name: Pistol 1
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1582132538760173044}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1794, y: 0.2942, z: 0}
-  m_LocalScale: {x: 0.8077171, y: 0.7545529, z: 0.8491361}
+  m_LocalPosition: {x: 3.2381, y: 0.2531, z: 0}
+  m_LocalScale: {x: 1.0873487, y: 1.1872135, z: 0.8491361}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,15 +76,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: 355845799, guid: 5d59389f3dd31074692698cb2c638c02, type: 3}
+  m_Sprite: {fileID: 1882366188, guid: ea8be10a8ecf22649960e5795790a69e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 0.39, y: 0.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &-2904341954842585202
@@ -146,18 +146,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0014854372, y: -0.0135347545}
+  m_Offset: {x: 0.005678974, y: 0.009509146}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.35}
-    newSize: {x: 0.64, y: 0.35}
+    oldSize: {x: 0.42, y: 0.19}
+    newSize: {x: 0.39, y: 0.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0564525, y: 0.6245206}
+  m_Size: {x: 0.3603481, y: 0.14059725}
   m_EdgeRadius: 0
 --- !u!114 &-7399826113822450830
 MonoBehaviour:

@@ -119,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
         while (Time.time < startTime + dashDuration && Input.GetKey(KeyCode.Mouse1))
         {
             Debug.Log("Isdashing");
+            anim.SetTrigger("Dash");
             Vector2 dashDirection = shootPoint.right.normalized;
 
             rb.velocity = new Vector2(rb.velocity.x, 0f);
