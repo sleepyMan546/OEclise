@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wait_time: 81
-  scene_index: 3
+  scene_index: 4
 --- !u!328 &1256511390
 VideoPlayer:
   m_ObjectHideFlags: 0
