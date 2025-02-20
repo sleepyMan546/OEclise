@@ -26,7 +26,11 @@ public class PlayerMovement : MonoBehaviour
     public Transform shootPoint;
     public WeaponSwitchDop weaponSwitchDop;
     private int airJumpCount = 0; 
-    public int airJumpsAllowed = 1; 
+    public int airJumpsAllowed = 1;
+    public GameObject ghostPrefab;  
+    public float ghostSpawnRate = 0.1f;  
+    private float nextGhostTime = 0f;  
+
 
     void Start()
     {
@@ -63,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
                 AirJump();
             }
         }
-        //set animation
+        
         anim.SetBool("Walk", move != 0);
         
 
@@ -92,6 +96,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
        anim.SetTrigger("Jump");
+        
+            SpawnGhost();
+            
+        
+
     }
     private bool IsGrounded()
     {
@@ -109,31 +118,79 @@ public class PlayerMovement : MonoBehaviour
         //rb.AddForce(new Vector2(dashDirection * dashSpeed, 0f), ForceMode2D.Impulse);
         rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
     }
+    /* private IEnumerator DashRoutine()
+     {
+         canDash  = false; 
+         isDashing = true; 
+         Debug.Log("DashRoutine");
+         float startTime = Time.time;
+         Debug.Log("Startime");
+         while (Time.time < startTime + dashDuration && Input.GetKey(KeyCode.Mouse1))
+         {
+             Debug.Log("Isdashing");
+             anim.SetTrigger("Dash");
+             Vector2 dashDirection = shootPoint.right.normalized;
+
+             rb.velocity = new Vector2(rb.velocity.x, 0f);
+
+             rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
+
+             if (Time.time >= nextGhostTime)
+             {
+                 SpawnGhost();
+                 nextGhostTime = Time.time + ghostSpawnRate;
+             }
+             yield return null;
+         }
+
+
+         isDashing = false;
+
+         yield return new WaitForSeconds(dashCooldown);
+         canDash = true;
+         Debug.Log("DashRoutine End");
+     }*/
+ 
+
     private IEnumerator DashRoutine()
     {
-        canDash  = false; 
-        isDashing = true; 
-        Debug.Log("DashRoutine");
+        canDash = false;
+        isDashing = true;
+        anim.SetTrigger("Dash");
+
         float startTime = Time.time;
-        Debug.Log("Startime");
+
         while (Time.time < startTime + dashDuration && Input.GetKey(KeyCode.Mouse1))
         {
-            Debug.Log("Isdashing");
-            anim.SetTrigger("Dash");
             Vector2 dashDirection = shootPoint.right.normalized;
-
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.velocity = new Vector2(dashDirection.x * dashSpeed, 0f);
 
             rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
+            if (Time.time >= nextGhostTime)
+            {
+                SpawnGhost();
+                nextGhostTime = Time.time + ghostSpawnRate;
+            }
+
             yield return null;
         }
 
-
         isDashing = false;
-
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
-        Debug.Log("DashRoutine End");
+    }
+    void SpawnGhost()
+    {
+        GameObject ghost = Instantiate(ghostPrefab, transform.position, Quaternion.identity);
+        Ghost ghostScript = ghost.GetComponent<Ghost>();
+
+        StartCoroutine(SetGhostSpriteDelayed(ghostScript));
+    }
+
+    IEnumerator SetGhostSpriteDelayed(Ghost ghostScript)
+    {
+        yield return null; 
+        ghostScript.SetSprite(bodyRenderer.sprite, bodyRenderer.color);
     }
     public void Flip()
     {
