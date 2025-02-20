@@ -562,9 +562,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4264ae56e3494d543af0b4a516c24cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBulletPrefab: {fileID: 2183209267073675124, guid: 8fd379390aedf6e418aa5fdfd89e62e4, type: 3}
+  enemyBulletPrefab: {fileID: 1582132538760173044, guid: bcedbbaad4f54b348999b74aafd6bd3c, type: 3}
   firePoint: {fileID: 8878716893164380421}
-  bulletSpeed: 10
+  bulletSpeed: 1
   fireRate: 1
   detectionRange: 10
   anim: {fileID: 0}
