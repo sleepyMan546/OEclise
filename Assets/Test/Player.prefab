@@ -921,10 +921,15 @@ MonoBehaviour:
   dashSpeed: 20
   dashDuration: 0.2
   isDashing: 0
+  dashCooldown: 0.5
   moveDirection: 0
   shootPoint: {fileID: 5045912919692119296}
   weaponSwitchDop: {fileID: 8336511747441858917}
   airJumpsAllowed: 1
+  ghostPrefab: {fileID: 0}
+  ghostSpawnRate: 0.1
+  wallSlideSpeed: 0.5
+  wallStickTime: 1
 --- !u!114 &2591263025802943647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,6 +961,8 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   healthBar: {fileID: 0}
+  numberOfFlashes: 0
+  iFrameDelay: 0
 --- !u!212 &7257424976232155133
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1259,7 +1266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5931565393062114551
 Transform:
   m_ObjectHideFlags: 0
@@ -1537,6 +1544,8 @@ MonoBehaviour:
   fireRate: 1.5
   bulletCount: 30
   spreadAngle: 50
+  muzzleFlashEffect: {fileID: 0}
+  muzzleFlashPosition: {fileID: 0}
 --- !u!114 &7535326205478533080
 MonoBehaviour:
   m_ObjectHideFlags: 0

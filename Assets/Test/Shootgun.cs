@@ -13,10 +13,7 @@ public class Shotgun : MonoBehaviour
         {
             playerMovement = transform.parent.GetComponent<PlayerMovement>();
         }
-        else
-        {
-            Debug.LogWarning("Pistol is not child of Player");
-        }
+       
     }
     void Update()
     {
