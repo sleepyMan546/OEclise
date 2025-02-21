@@ -12,6 +12,9 @@ public class EnemyHp : MonoBehaviour
     private Color originalColor;
     private Animator anim;
 
+    
+    public ParticleSystem deathEffect;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -28,7 +31,7 @@ public class EnemyHp : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
-       anim.SetTrigger("Damage");
+        anim.SetTrigger("Damage");
         ChangeRed();
 
         if (currentHealth <= 0)
@@ -49,6 +52,15 @@ public class EnemyHp : MonoBehaviour
     void Die()
     {
         Debug.Log(gameObject.name + " ???????!");
-        Destroy(gameObject);
+
+        
+        if (deathEffect != null)
+        {
+            
+            deathEffect.transform.position = transform.position;
+            deathEffect.Play(); 
+        }
+
+        Destroy(gameObject); 
     }
 }
