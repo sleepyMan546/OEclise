@@ -21,7 +21,10 @@ public class Pistol : MonoBehaviour
             playerMovement = transform.parent.GetComponent<PlayerMovement>();
             rb = transform.parent.GetComponent<Rigidbody2D>();
         }
-        
+        else
+        {
+            Debug.LogWarning("Pistol is not child of Player");
+        }
 
         if (shootPoint == null)
         {
