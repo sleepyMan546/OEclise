@@ -12,6 +12,10 @@ public class Stiker_Bullet : MonoBehaviour
     {
         Destroy(gameObject, lifetime);
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Bullet"), LayerMask.NameToLayer("Bullet"));
+
+        
+        
+
     }
 
     void Update()
