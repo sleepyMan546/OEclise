@@ -11,8 +11,8 @@ public class EnemyHp : MonoBehaviour
     private Renderer objRenderer;
     private Color originalColor;
     private Animator anim;
+    private Rigidbody2D rb;
 
-    
     public ParticleSystem deathEffect;
 
     void Start()
@@ -21,19 +21,21 @@ public class EnemyHp : MonoBehaviour
         objRenderer = GetComponent<Renderer>();
         originalColor = objRenderer.material.color;
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         enemyHp.fillAmount = Mathf.Clamp((float)currentHealth / maxHealth, 0, 1);
     }
-    public void TakeDamageEnemy(int damage)
+    public void TakeDamageEnemy(int damage )
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
         anim.SetTrigger("Damage");
         ChangeRed();
-
+        
+        
         if (currentHealth <= 0)
         {
             Die();
@@ -43,6 +45,7 @@ public class EnemyHp : MonoBehaviour
     {
         StartCoroutine(ChangeColorRoutine());
     }
+  
     private IEnumerator ChangeColorRoutine()
     {
         objRenderer.material.color = Color.red;
