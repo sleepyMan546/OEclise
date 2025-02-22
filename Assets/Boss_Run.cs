@@ -57,7 +57,7 @@ public class Boss_Run : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Shoot");
-        animator.ResetTrigger("Dash");
+       
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
