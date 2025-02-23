@@ -10,7 +10,12 @@ public class Boss_Run : StateMachineBehaviour
     Boss boss;
     public float attackRange = 3f;
     public float superspeed = 3f;
-    
+
+    public GameObject chainPrefab; 
+    public Transform firePoint;    
+    public float shootCooldown = 3f;
+    private float lastShootTime = 0;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -26,7 +31,10 @@ public class Boss_Run : StateMachineBehaviour
             return; 
         }
         boss = animator.GetComponent<Boss>();
+       
+        firePoint = GameObject.FindGameObjectWithTag("FirePoint")?.transform;
 
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -38,10 +46,10 @@ public class Boss_Run : StateMachineBehaviour
 
         float currentSpeed = speed; 
 
-        if (distance >= 5f)
+        if (distance >= 10f)
         {
-            Debug.Log("distance more 5");
-            currentSpeed = superspeed; 
+            Debug.Log("distance more 10");
+           
         }
 
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, currentSpeed * Time.fixedDeltaTime); 
@@ -52,7 +60,7 @@ public class Boss_Run : StateMachineBehaviour
             animator.SetTrigger("Shoot");
         }
     }
-
+   
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
