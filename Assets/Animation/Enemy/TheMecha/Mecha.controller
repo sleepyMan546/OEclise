@@ -27,6 +27,9 @@ MonoBehaviour:
   speed: 1.5
   attackRange: 7
   superspeed: 2
+  chainPrefab: {fileID: 3014660363181920045, guid: 037e66658e3b16841b65e1726d03b36e, type: 3}
+  firePoint: {fileID: 0}
+  shootCooldown: 3
 --- !u!1101 &-3301890407003297726
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
