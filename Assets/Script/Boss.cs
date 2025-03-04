@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +6,12 @@ public class Boss : MonoBehaviour
 {
     public Transform player;
     public bool isFlipped = true;
+
+  
+    public GameObject chainPrefab;
+    public Transform firePoint;
+
+    private Rigidbody2D playerRb;
 
     public void LookAtPlayer()
     {
@@ -23,4 +29,6 @@ public class Boss : MonoBehaviour
             isFlipped = false; 
         }
     }
+  
+
 }

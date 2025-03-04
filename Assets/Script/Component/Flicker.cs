@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Flicker : MonoBehaviour
 {
-    public float flickerSpeed = 5f; 
-    public float minAlpha = 0.2f; 
-    public float maxAlpha = 1f; 
+    public float flickerSpeed = 5f;
+    public float minAlpha = 0.2f;
+    public float maxAlpha = 1f;
 
     private SpriteRenderer spriteRenderer;
     private float currentAlpha;
     private bool isFadingIn = true;
 
-    void Start()
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer == null)
         {
             Debug.LogError("Flicker script requires a SpriteRenderer component.");
-            enabled = false; 
+            enabled = false;
             return;
         }
-        currentAlpha = spriteRenderer.color.a; 
+        currentAlpha = spriteRenderer.color.a;
     }
 
     void Update()
@@ -46,7 +46,7 @@ public class Flicker : MonoBehaviour
             }
         }
 
-      
+        // กำหนดค่า Alpha ให้กับ SpriteRenderer
         Color color = spriteRenderer.color;
         color.a = currentAlpha;
         spriteRenderer.color = color;
