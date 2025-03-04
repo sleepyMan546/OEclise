@@ -34,9 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isWallSliding;
     public float wallStickTime = 1f;
     private float wallStickCounter;
-
-
-
+    private bool isParent;
 
 
 
@@ -130,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Wall", isWallSliding);
 
     }
+ 
     bool CanDash()
     {
 
