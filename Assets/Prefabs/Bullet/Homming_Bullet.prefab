@@ -187,10 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef9365f3442ff348a69be7da2e1d891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 10
   rotateSpeed: 200
   lifetime: 10
-  damage: 50
+  damage: 100
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 128
