@@ -10,7 +10,7 @@ public class EnemyHoming : MonoBehaviour
     public float detectionRange = 15f;
 
     private Transform player;
-    private float nextFireTime = 0f;
+    private float nextFireTime ;
 
     void Start()
     {
