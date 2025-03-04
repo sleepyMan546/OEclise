@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - FirePoint
   - AttackIndicatorPoint
+  - BulletBoss
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Light buidfing
   - prop
   - Enemy
-  - 
+  - BulletBoss
   - 
   - 
   - 
