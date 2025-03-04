@@ -20,6 +20,9 @@ public class Boss_Run : StateMachineBehaviour
     private bool isAttacking = false;
     private float attackTimer = 0f;
     private GameObject attackIndicatorInstance;
+    public int triggerHp = 2000; 
+
+    private EnemyHp bossHealth;
     //private Vector2 indicatorPosition;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -29,6 +32,12 @@ public class Boss_Run : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
         firePoint = GameObject.FindGameObjectWithTag("FirePoint")?.transform;
+        bossHealth = animator.GetComponent<EnemyHp>();
+        if (bossHealth == null)
+        {
+            Debug.LogError("BossHealth component missing!");
+           
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -77,6 +86,10 @@ public class Boss_Run : StateMachineBehaviour
         else
         {
             animator.ResetTrigger("Shoot");
+        }
+        if (bossHealth != null && bossHealth.currentHealth < triggerHp)
+        {
+            animator.SetTrigger("Pull");
         }
     }
 
