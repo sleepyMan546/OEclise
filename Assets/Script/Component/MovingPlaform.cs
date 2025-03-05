@@ -19,12 +19,8 @@ public class MovingPlaform : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
       
-        Collider2D collider = GetComponent<Collider2D>();
-        if (collider == null)
-        {
-            Debug.LogError("MovingPlatform is missing a Collider2D!");
-            enabled = false;
-        }
+        Collider2D collider = GetComponent<BoxCollider2D>();
+       
 
     }
 
