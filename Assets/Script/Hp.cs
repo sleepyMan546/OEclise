@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Hp : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Hp : MonoBehaviour
     private CheckpointSystem checkpointSystem;
     [SerializeField] private int numberOfFlashes;
     [SerializeField] private float iFrameDelay;
+
 
     void Start()
     {
@@ -44,9 +46,10 @@ public class Hp : MonoBehaviour
 
     void Die()
     {
-        Debug.Log(gameObject.name + " ???????!");
+        Debug.Log(gameObject.name + "Die");
         //Destroy(gameObject);
         checkpointSystem.RespawnPlayer();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void ChangeToRed()
     {
