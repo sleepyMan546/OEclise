@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Animator anim;
+
     public float jumpForce = 10f;
     private bool isGrounded;
     public bool facingRight = true;
@@ -36,13 +36,19 @@ public class PlayerMovement : MonoBehaviour
     private float wallStickCounter;
     private bool isParent;
 
-
+    [SerializeField] private AudioSource dashSoundSource; 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+
+        
+        if (dashSoundSource == null)
+        {
+            Debug.LogError("No audio sourc");
+        }
     }
 
 
@@ -76,10 +82,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 anim.SetTrigger("Jump");
-
-
-
-
             }
         }
 
@@ -96,15 +98,6 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Can Dash" + CanDash());
         }
 
-        //    if(onWall())
-        //{
-        //    Debug.Log("Onwall");
-        //    anim.SetBool("Wall", true);
-        //}
-        //else
-        //{
-        //    anim.SetBool("Wall", false);
-        //}
         isWallSliding = onWall() && rb.velocity.x < 0;
 
         if (isWallSliding)
@@ -131,7 +124,6 @@ public class PlayerMovement : MonoBehaviour
 
     bool CanDash()
     {
-
         return weaponSwitchDop != null && weaponSwitchDop.GetCurrentWeapon() == "pistol";
     }
     bool CanAirJump()
@@ -142,11 +134,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         anim.SetTrigger("Jump");
-
         SpawnGhost();
-
-
-
     }
 
     private bool IsGrounded()
@@ -159,50 +147,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, new Vector2(transform.localScale.x, 0), 0.1f, walllayer);
         return raycastHit.collider != null;
-
     }
-
-    void Dash()
-    {
-
-        Vector2 dashDirection = shootPoint.right.normalized;
-        //float dashDirection = faceRight ? 1f : -1f; 
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
-        //rb.AddForce(new Vector2(dashDirection * dashSpeed, 0f), ForceMode2D.Impulse);
-        rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
-    }
-    /* private IEnumerator DashRoutine()
-     {
-         canDash  = false; 
-         isDashing = true; 
-         Debug.Log("DashRoutine");
-         float startTime = Time.time;
-         Debug.Log("Startime");
-         while (Time.time < startTime + dashDuration && Input.GetKey(KeyCode.Mouse1))
-         {
-             Debug.Log("Isdashing");
-             anim.SetTrigger("Dash");
-             Vector2 dashDirection = shootPoint.right.normalized;
-
-             rb.velocity = new Vector2(rb.velocity.x, 0f);
-
-             rb.AddForce(new Vector2(dashDirection.x * dashSpeed, 0f), ForceMode2D.Impulse);
-
-             if (Time.time >= nextGhostTime)
-             {
-                 SpawnGhost();
-                 nextGhostTime = Time.time + ghostSpawnRate;
-             }
-             yield return null;
-         }
-
-
-         isDashing = false;
-
-         yield return new WaitForSeconds(dashCooldown);
-         canDash = true;
-         Debug.Log("DashRoutine End");
-     }*/
 
 
     private IEnumerator DashRoutine()
@@ -210,6 +155,12 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         anim.SetTrigger("Dash");
+
+        
+        if (dashSoundSource != null)
+        {
+            dashSoundSource.Play();
+        }
 
         float startTime = Time.time;
 
