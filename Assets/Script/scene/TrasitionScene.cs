@@ -23,7 +23,7 @@ public class TrasitionScene : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); Destroy(gameObject);
         }
     }
 
@@ -44,7 +44,7 @@ public class TrasitionScene : MonoBehaviour
 
     private IEnumerator FadeOutAndLoad(string sceneName)
     {
-        fadeCanvasGroup.alpha = 0; 
+        fadeCanvasGroup.alpha = 0;
         while (fadeCanvasGroup.alpha < 1)
         {
             fadeCanvasGroup.alpha += Time.deltaTime / fadeDuration;
@@ -52,6 +52,16 @@ public class TrasitionScene : MonoBehaviour
         }
 
         SceneManager.LoadScene(sceneName);
-        StartCoroutine(FadeIn()); 
+        yield return new WaitForSeconds(0.5f); 
+
+        
+        fadeCanvasGroup = FindObjectOfType<CanvasGroup>();
+        if (fadeCanvasGroup == null)
+        {
+            Debug.LogError("fadeCanvasGroup not found in new scene!");
+            yield break;
+        }
+
+        StartCoroutine(FadeIn());
     }
 }

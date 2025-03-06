@@ -25,7 +25,7 @@ public class Hp : MonoBehaviour
         objRenderer = GetComponent<Renderer>(); 
         originalColor = objRenderer.material.color;
         anim = GetComponent<Animator>();
-        checkpointSystem = FindObjectOfType<CheckpointSystem>();
+        //checkpointSystem = FindObjectOfType<CheckpointSystem>();
         UpdateHealthBar();
         
     }
@@ -51,9 +51,13 @@ public class Hp : MonoBehaviour
     {
         Debug.Log(gameObject.name + "Die");
         //Destroy(gameObject);
-        checkpointSystem.RespawnPlayer();
+        gameObject.SetActive(false);
         TrasitionScene.Instance.LoadScene(SceneManager.GetActiveScene().name);
-       
+        //checkpointSystem.RespawnPlayer();
+    }
+    public void DisableGameObject()
+    {
+        gameObject.SetActive(false);
     }
     public void ChangeToRed()
     {
