@@ -16,6 +16,17 @@ public class Shotgundop : MonoBehaviour
     public ParticleSystem muzzleFlashEffect;
     public GameObject muzzleFlashPosition;
 
+    [SerializeField] private AudioSource shootingSoundSource; 
+
+    void Start()
+    {
+        
+        if (shootingSoundSource == null)
+        {
+            Debug.LogError("No audio sourch");
+        }
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
@@ -27,11 +38,16 @@ public class Shotgundop : MonoBehaviour
 
     void ShootShotgun()
     {
+        
+        if (shootingSoundSource != null)
+        {
+            shootingSoundSource.Play();
+        }
+
         if (muzzleFlashEffect != null && muzzleFlashPosition != null)
         {
-         
             muzzleFlashEffect.transform.position = muzzleFlashPosition.transform.position;
-            muzzleFlashEffect.transform.rotation = muzzleFlashPosition.transform.rotation; 
+            muzzleFlashEffect.transform.rotation = muzzleFlashPosition.transform.rotation;
             muzzleFlashEffect.Play();
         }
 

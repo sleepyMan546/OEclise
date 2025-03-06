@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Animator anim;
-
     public float jumpForce = 10f;
     private bool isGrounded;
     public bool facingRight = true;
@@ -128,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Wall", isWallSliding);
 
     }
- 
+
     bool CanDash()
     {
 
