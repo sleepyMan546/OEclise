@@ -57,7 +57,7 @@ public class EnemyHp : MonoBehaviour
   
     private IEnumerator ChangeColorRoutine()
     {
-        objRenderer.material.color = Color.red;
+        objRenderer.material.color = new Color(1, 0, 0, 0.5f);
         yield return new WaitForSeconds(2f);
         objRenderer.material.color = originalColor;
     }
@@ -67,7 +67,7 @@ public class EnemyHp : MonoBehaviour
         isBlinking = true;
         for (int i = 0; i < 5; i++) 
         {
-            objRenderer.material.color = Color.red;
+            objRenderer.material.color = new Color(1, 0, 0, 0.5f);
             yield return new WaitForSeconds(0.1f);
             objRenderer.material.color = originalColor;
             yield return new WaitForSeconds(0.1f);
