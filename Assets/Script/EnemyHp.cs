@@ -12,6 +12,7 @@ public class EnemyHp : MonoBehaviour
     private Color originalColor;
     private Animator anim;
     private Rigidbody2D rb;
+    private bool isBlinking = false;
 
     public ParticleSystem deathEffect;
 
@@ -33,9 +34,17 @@ public class EnemyHp : MonoBehaviour
         currentHealth -= damage;
         Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
         anim.SetTrigger("Damage");
-        ChangeRed();
-        
-        
+
+        if (!isBlinking) 
+        {
+            StartCoroutine(BlinkWhiteEffect());
+            Debug.Log("take");
+        }
+
+       
+
+
+
         if (currentHealth <= 0)
         {
             Die();
@@ -51,6 +60,19 @@ public class EnemyHp : MonoBehaviour
         objRenderer.material.color = Color.red;
         yield return new WaitForSeconds(2f);
         objRenderer.material.color = originalColor;
+    }
+
+    private IEnumerator BlinkWhiteEffect()
+    {
+        isBlinking = true;
+        for (int i = 0; i < 5; i++) 
+        {
+            objRenderer.material.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            objRenderer.material.color = originalColor;
+            yield return new WaitForSeconds(0.1f);
+        }
+        isBlinking = false;
     }
     void Die()
     {
