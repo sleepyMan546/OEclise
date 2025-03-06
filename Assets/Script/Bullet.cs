@@ -21,6 +21,7 @@ public class Bullet : MonoBehaviour
 
     void  OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Bullet Take: " + collision.gameObject.name + " | Layer: " + LayerMask.LayerToName(collision.gameObject.layer));
         if (collision.gameObject.tag != "Player") 
         {
             EnemyHp targetHealth = collision.GetComponent<EnemyHp>();
