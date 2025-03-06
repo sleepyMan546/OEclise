@@ -1819,7 +1819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1778772398}
   pointB: {fileID: 947255594}
-  speed: 0.5
+  speed: 1
   checkDistance: 0.01
 --- !u!1 &161690985
 GameObject:
@@ -11464,11 +11464,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1331981813968135622, guid: 9c68e30fc01cac74182e06f7a737e997, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.96
+      value: 7.73
       objectReference: {fileID: 0}
     - target: {fileID: 1331981813968135622, guid: 9c68e30fc01cac74182e06f7a737e997, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.05
+      value: -2.14
       objectReference: {fileID: 0}
     - target: {fileID: 1331981813968135622, guid: 9c68e30fc01cac74182e06f7a737e997, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13902,7 +13902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1464659791}
   pointB: {fileID: 1057676316}
-  speed: 0.5
+  speed: 1
   checkDistance: 0.01
 --- !u!212 &1244024562
 SpriteRenderer:
@@ -17467,6 +17467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1570199201}
   - component: {fileID: 1570199202}
+  - component: {fileID: 1570199203}
   m_Layer: 0
   m_Name: Square (20)
   m_TagString: Untagged
@@ -17541,6 +17542,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1570199203
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570199200}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.42593062, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.14813879, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1574563286
 GameObject:
   m_ObjectHideFlags: 0
