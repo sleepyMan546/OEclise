@@ -20,8 +20,8 @@ public class Boss_Run : StateMachineBehaviour
     private bool isAttacking = false;
     private float attackTimer = 0f;
     private GameObject attackIndicatorInstance;
-    public int triggerHp = 2000; 
-
+    public int triggerHp = 2000;
+   
     private EnemyHp bossHealth;
     //private Vector2 indicatorPosition;
 
@@ -32,6 +32,7 @@ public class Boss_Run : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
         firePoint = GameObject.FindGameObjectWithTag("FirePoint")?.transform;
+        
         bossHealth = animator.GetComponent<EnemyHp>();
         if (bossHealth == null)
         {

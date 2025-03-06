@@ -36,7 +36,8 @@ public class SceneLoaderWithDelay : MonoBehaviour
 
         if (isPlayerInside) // ตรวจสอบอีกครั้งว่าผู้เล่นยังอยู่ใน Trigger (เพื่อความปลอดภัย)
         {
-            SceneManager.LoadSceneAsync(sceneIndexToLoad); // โหลด Scene แบบ Asynchronous (ไม่ทำให้เกมค้าง)
+            SceneManager.LoadSceneAsync(sceneIndexToLoad);
+         
         }
     }
 }
