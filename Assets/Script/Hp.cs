@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Transactions;
 
 public class Hp : MonoBehaviour
 {
@@ -51,7 +52,8 @@ public class Hp : MonoBehaviour
         Debug.Log(gameObject.name + "Die");
         //Destroy(gameObject);
         checkpointSystem.RespawnPlayer();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        TrasitionScene.Instance.LoadScene(SceneManager.GetActiveScene().name);
+       
     }
     public void ChangeToRed()
     {
