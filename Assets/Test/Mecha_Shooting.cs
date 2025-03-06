@@ -9,16 +9,24 @@ public class Mecha_Shooting : MonoBehaviour
     public float bulletSpeed = 5f;
     public float fireRate = 1f;
     public float detectionRange = 10f;
-    public float spreadAngle = 15f; 
+    public float spreadAngle = 15f;
 
     private Transform player;
     private float nextFireTime = 0f;
     public Animator anim;
 
+    [SerializeField] private AudioSource bossShootingSoundSource; // เพิ่มตัวแปร AudioSource สำหรับเสียงยิงบอส
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+
+        // ตรวจสอบว่าได้กำหนด AudioSource สำหรับเสียงยิงบอสใน Inspector หรือยัง
+        if (bossShootingSoundSource == null)
+        {
+            Debug.LogError("ไม่ได้กำหนด AudioSource สำหรับเสียงยิงบอสใน Inspector! กรุณาลาก GameObject ที่มี AudioSource มาใส่ในช่อง Boss Shooting Sound Source ใน Inspector ของสคริปต์ Mecha_Shooting");
+        }
     }
 
     public void Normal_Shoot()
@@ -50,15 +58,21 @@ public class Mecha_Shooting : MonoBehaviour
     {
         anim.SetTrigger("Shoot");
 
+        // เล่นเสียงยิงบอส (ถ้า AudioSource ถูกกำหนดไว้)
+        if (bossShootingSoundSource != null)
+        {
+            bossShootingSoundSource.Play();
+        }
+
         foreach (Transform firePoint in firePoints)
         {
-            float randomSpread = Random.Range(-spreadAngle, spreadAngle); 
+            float randomSpread = Random.Range(-spreadAngle, spreadAngle);
             Quaternion spreadRotation = Quaternion.Euler(0, 0, randomSpread);
 
             GameObject bullet = Instantiate(enemyBulletPrefab, firePoint.position, firePoint.rotation * spreadRotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
-            Vector2 direction = spreadRotation * (player.position - firePoint.position).normalized; 
+            Vector2 direction = spreadRotation * (player.position - firePoint.position).normalized;
             rb.velocity = direction * bulletSpeed;
         }
     }
