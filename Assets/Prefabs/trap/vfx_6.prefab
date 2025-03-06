@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71db23b34833ff347ad9f2c52e701eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 50
   hp: {fileID: 0}
   damagepersecond: 1
 --- !u!61 &5559027888110749551
