@@ -15,6 +15,7 @@ public class Hp : MonoBehaviour
     private CheckpointSystem checkpointSystem;
     [SerializeField] private int numberOfFlashes;
     [SerializeField] private float iFrameDelay;
+    
 
 
     void Start()
@@ -25,6 +26,7 @@ public class Hp : MonoBehaviour
         anim = GetComponent<Animator>();
         checkpointSystem = FindObjectOfType<CheckpointSystem>();
         UpdateHealthBar();
+        
     }
 
     void Update()
@@ -60,12 +62,21 @@ public class Hp : MonoBehaviour
         //objRenderer.material.color = Color.red;
         //yield return new WaitForSeconds(1f);
         //objRenderer.material.color = originalColor;
+        
         Physics2D.IgnoreLayerCollision(7, 9, true);
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
         for (int i = 0; i < numberOfFlashes; i++)
         {
-            objRenderer.material.color = new Color(1,0,0,0.5f);
-            yield return new WaitForSeconds(iFrameDelay /(numberOfFlashes*2));
-            objRenderer.material.color = originalColor;
+            foreach (Renderer rend in renderers)
+            {
+                rend.material.color = new Color(1, 0, 0, 0.5f);
+            }
+            yield return new WaitForSeconds(iFrameDelay / (numberOfFlashes * 2));
+
+            foreach (Renderer rend in renderers)
+            {
+                rend.material.color = originalColor;
+            }
             yield return new WaitForSeconds(iFrameDelay / (numberOfFlashes * 2));
         }
         Physics2D.IgnoreLayerCollision(7, 9, false);
