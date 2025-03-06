@@ -15806,7 +15806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 623918603561019416, guid: 880f87168382eec43aa26b957a76113c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 435
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 1400927560293023246, guid: 880f87168382eec43aa26b957a76113c, type: 3}
       propertyPath: spriteQ
@@ -15822,7 +15822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3547440428015393203, guid: 880f87168382eec43aa26b957a76113c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -256.6023
+      value: -331.6023
       objectReference: {fileID: 0}
     - target: {fileID: 4297038359393968667, guid: 880f87168382eec43aa26b957a76113c, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -15830,7 +15830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4297038359393968667, guid: 880f87168382eec43aa26b957a76113c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 448
+      value: 373
       objectReference: {fileID: 0}
     - target: {fileID: 5109280710467788614, guid: 880f87168382eec43aa26b957a76113c, type: 3}
       propertyPath: m_Pivot.x
@@ -15918,7 +15918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5273465186912189253, guid: 880f87168382eec43aa26b957a76113c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 290
+      value: 215
       objectReference: {fileID: 0}
     - target: {fileID: 6794418453913269979, guid: 880f87168382eec43aa26b957a76113c, type: 3}
       propertyPath: m_Name
