@@ -32,4 +32,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesGame/Map_4_boss.unity
     guid: 4f0eae10329def9499d220d4220caa8a
+  - enabled: 1
+    path: Assets/ScenesGame/boss1_intro.unity
+    guid: 17560261e308d0b4a88f1e45523a2509
+  - enabled: 1
+    path: Assets/ScenesGame/Boss1_dead.unity
+    guid: b68de3c6025a26d47881a1792671a0cc
+  - enabled: 1
+    path: Assets/ScenesGame/Map5.unity
+    guid: bec4442f674e7c54581133278bffba7b
+  - enabled: 1
+    path: Assets/ScenesGame/Musem_cutscene.unity
+    guid: f4bb422363731ad418c41f2d433e4a6f
   m_configObjects: {}

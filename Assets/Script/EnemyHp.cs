@@ -29,19 +29,19 @@ public class EnemyHp : MonoBehaviour
     {
         enemyHp.fillAmount = Mathf.Clamp((float)currentHealth / maxHealth, 0, 1);
     }
-    public void TakeDamageEnemy(int damage )
+    public void TakeDamageEnemy(int damage)
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
         anim.SetTrigger("Damage");
 
-        if (!isBlinking) 
+        if (!isBlinking)
         {
             StartCoroutine(BlinkWhiteEffect());
             Debug.Log("take");
         }
 
-       
+
 
 
 
@@ -54,7 +54,7 @@ public class EnemyHp : MonoBehaviour
     {
         StartCoroutine(ChangeColorRoutine());
     }
-  
+
     private IEnumerator ChangeColorRoutine()
     {
         objRenderer.material.color = new Color(1, 0, 0, 0.5f);
@@ -65,7 +65,7 @@ public class EnemyHp : MonoBehaviour
     private IEnumerator BlinkWhiteEffect()
     {
         isBlinking = true;
-        for (int i = 0; i < 5; i++) 
+        for (int i = 0; i < 5; i++)
         {
             objRenderer.material.color = new Color(1, 0, 0, 0.5f);
             yield return new WaitForSeconds(0.1f);
@@ -78,14 +78,14 @@ public class EnemyHp : MonoBehaviour
     {
         Debug.Log(gameObject.name + " ???????!");
 
-        
+
         if (deathEffect != null)
         {
-            
+
             deathEffect.transform.position = transform.position;
-            deathEffect.Play(); 
+            deathEffect.Play();
         }
 
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 }
