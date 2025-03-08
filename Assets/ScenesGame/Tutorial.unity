@@ -539,7 +539,7 @@ Transform:
   m_GameObject: {fileID: 90834300}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.33, y: -0.15941226, z: 0}
+  m_LocalPosition: {x: -0.23, y: 0.198, z: 0}
   m_LocalScale: {x: 0.58823526, y: 0.58823526, z: 0.58823526}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.531
-  m_Color: {r: 0.735849, g: 0.32627267, b: 0.32627267, a: 0.95686275}
+  m_Color: {r: 0.85660374, g: 0, b: 0, a: 0.95686275}
   m_Intensity: 3.28
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -6059,6 +6059,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4960868267987473350, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1041209031, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+    - target: {fileID: 4960868267987473350, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
@@ -6097,6 +6101,26 @@ PrefabInstance:
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: speaker.Array.data[6]
       value: ????
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
+      propertyPath: portrait.Array.data[0]
+      value: 
+      objectReference: {fileID: -1865147463, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+    - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
+      propertyPath: portrait.Array.data[2]
+      value: 
+      objectReference: {fileID: -1865147463, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+    - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
+      propertyPath: portrait.Array.data[4]
+      value: 
+      objectReference: {fileID: -1865147463, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+    - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
+      propertyPath: portrait.Array.data[6]
+      value: 
+      objectReference: {fileID: -1865147463, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+    - target: {fileID: 5809364072819283500, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
