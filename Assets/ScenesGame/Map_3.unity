@@ -17320,6 +17320,67 @@ Transform:
   - {fileID: 1322428801}
   m_Father: {fileID: 1983368057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1439239173
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50.797108
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 149.4794
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -42.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526630685684594655, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5462246140925289815, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
+      propertyPath: m_Name
+      value: DeathDetechtor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b26f982da132414c8c11b6d877f3eab, type: 3}
 --- !u!1 &1445872278
 GameObject:
   m_ObjectHideFlags: 0
@@ -26069,3 +26130,4 @@ SceneRoots:
   - {fileID: 1344833149}
   - {fileID: 1983368057}
   - {fileID: 1145609646}
+  - {fileID: 1439239173}
