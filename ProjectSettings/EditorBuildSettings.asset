@@ -53,4 +53,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesGame/Map6.unity
     guid: 050ed572a67b261478d2d94966765a97
+  - enabled: 1
+    path: Assets/ScenesGame/extra.unity
+    guid: bb9e4188705bdd341b9a251c93d3b31c
+  - enabled: 1
+    path: Assets/ScenesGame/Boss_final.unity
+    guid: 75195cdce016f304cb2ffbb5644e3ebc
   m_configObjects: {}
