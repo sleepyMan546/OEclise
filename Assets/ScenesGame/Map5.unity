@@ -5217,6 +5217,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 199200753}
+    - target: {fileID: 3537138865785360066, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
+      propertyPath: grappleRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3688392242363459858, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -83.92
