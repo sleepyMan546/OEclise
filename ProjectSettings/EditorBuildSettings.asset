@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesGame/Tutorial_1.unity
     guid: 2905f01cc162cf44fa9677e62df3b18c
+  - enabled: 1
+    path: Assets/ScenesGame/Map6.unity
+    guid: 050ed572a67b261478d2d94966765a97
   m_configObjects: {}
