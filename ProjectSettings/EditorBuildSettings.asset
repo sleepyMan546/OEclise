@@ -44,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesGame/Musem_cutscene.unity
     guid: f4bb422363731ad418c41f2d433e4a6f
+  - enabled: 1
+    path: Assets/ScenesGame/Tutorial.unity
+    guid: cbaf089b323aea544acb472975d0af5b
+  - enabled: 1
+    path: Assets/ScenesGame/Tutorial_1.unity
+    guid: 2905f01cc162cf44fa9677e62df3b18c
   m_configObjects: {}

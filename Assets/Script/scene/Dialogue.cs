@@ -33,7 +33,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse1) && dialogueActivated == true)
+        if (Input.GetKeyDown(KeyCode.F) && dialogueActivated == true)
         {
             if (step >= speaker.Length) { 
              dialogueCanvas.SetActive(false);
