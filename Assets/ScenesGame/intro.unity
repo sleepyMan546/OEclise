@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wait_time: 81
-  scene_index: 4
+  scene_index: 12
 --- !u!328 &1256511390
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf1502202d69444f809519536fb38cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndexToLoad: 4
+  sceneIndexToLoad: 12
   delayTime: 2
 --- !u!4 &1822289673
 Transform:
