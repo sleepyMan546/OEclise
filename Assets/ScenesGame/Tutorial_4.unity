@@ -1518,7 +1518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -248, y: -387}
+  m_AnchoredPosition: {x: -462, y: -387}
   m_SizeDelta: {x: 158.9507, y: 83.5251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &384589161
@@ -1541,8 +1541,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E1B\u0E37\u0E19\u0E40\u0E40\u0E25\u0E30
-    Space bar \u0E40\u0E1E\u0E37\u0E48\u0E2D Double jump"
+  m_text: "\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E1B\u0E37\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E25\u0E39\u0E01\u0E0B\u0E2D\u0E07
+    \u0E40\u0E40\u0E25\u0E30\u0E01\u0E14 Space bar \u0E40\u0E1E\u0E37\u0E48\u0E2D
+    Double jump"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a92f5d9fb19cca4a862ce1b378c535a, type: 2}
   m_sharedMaterial: {fileID: -2542135123608434694, guid: 8a92f5d9fb19cca4a862ce1b378c535a, type: 2}
@@ -1605,7 +1606,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -911.9792, w: -83.537964}
+  m_margin: {x: 0, y: 0, z: -1477.5469, w: -83.537964}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7480,7 +7481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -475.5, y: -421.7287}
+  m_AnchoredPosition: {x: -689.5, y: -421.7287}
   m_SizeDelta: {x: 33.058, y: 18.0486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398390299
@@ -7966,7 +7967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -426.8, y: -367}
+  m_AnchoredPosition: {x: -640.8, y: -367}
   m_SizeDelta: {x: 158.9507, y: 83.5251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492819021
@@ -8004,7 +8005,7 @@ MonoBehaviour:
   m_colorMode: 2
   m_fontColorGradient:
     topLeft: {r: 1, g: 0.19215687, b: 0.19215687, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 0.19215687, b: 0.19215687, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
