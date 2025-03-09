@@ -3995,7 +3995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetGameObject: {fileID: 766363968}
   targetAudioSource: {fileID: 1116958968}
-  activationDuration: 3
+  activationDuration: 5
 --- !u!4 &778993002
 Transform:
   m_ObjectHideFlags: 0
