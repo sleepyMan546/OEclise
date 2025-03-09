@@ -3108,23 +3108,23 @@ PrefabInstance:
       objectReference: {fileID: 1482188736}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: speaker.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: portrait.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: speaker.Array.data[0]
-      value: Number 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
-      propertyPath: speaker.Array.data[1]
       value: ????
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
-      propertyPath: speaker.Array.data[2]
+      propertyPath: speaker.Array.data[1]
       value: Number 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
+      propertyPath: speaker.Array.data[2]
+      value: ????
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: speaker.Array.data[3]
@@ -3157,19 +3157,19 @@ PrefabInstance:
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: portrait.Array.data[0]
       value: 
-      objectReference: {fileID: -218512389, guid: d8a2a3618f3784d4f9c31e02b9aa243d, type: 3}
+      objectReference: {fileID: 1084863262, guid: 4f2100a3561beb44a97db458acacaacf, type: 3}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: portrait.Array.data[1]
       value: 
-      objectReference: {fileID: 1084863262, guid: 4f2100a3561beb44a97db458acacaacf, type: 3}
+      objectReference: {fileID: -218512389, guid: d8a2a3618f3784d4f9c31e02b9aa243d, type: 3}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: portrait.Array.data[2]
       value: 
-      objectReference: {fileID: -218512389, guid: d8a2a3618f3784d4f9c31e02b9aa243d, type: 3}
+      objectReference: {fileID: 1084863262, guid: 4f2100a3561beb44a97db458acacaacf, type: 3}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: portrait.Array.data[3]
       value: 
-      objectReference: {fileID: 1084863262, guid: 4f2100a3561beb44a97db458acacaacf, type: 3}
+      objectReference: {fileID: -218512389, guid: d8a2a3618f3784d4f9c31e02b9aa243d, type: 3}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: portrait.Array.data[4]
       value: 
@@ -3252,44 +3252,44 @@ PrefabInstance:
       objectReference: {fileID: -218512389, guid: d8a2a3618f3784d4f9c31e02b9aa243d, type: 3}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: dialogueWords.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: dialogueWords.Array.data[0]
-      value: "\u0E09\u0E31\u0E19\u0E16\u0E39\u0E01\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E21\u0E32\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E2B\u0E22\u0E38\u0E14\u0E21\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07
-        \u0E46 \u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E2D\u0E37\u0E48\u0E19?"
+      value: "\u0E40\u0E08\u0E15\u0E08\u0E33\u0E19\u0E07\u0E02\u0E2D\u0E07\u0E02\u0E49\u0E32\u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E15\u0E31\u0E27\u0E40\u0E08\u0E49\u0E32
+        \u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02 19 \u0E41\u0E25\u0E30\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E31\u0E19\u0E19\u0E31\u0E49\u0E19\u0E21\u0E32\u0E16\u0E36\u0E07
+        \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E23\u0E39\u0E49\u0E27\u0E48\u0E32\u0E17\u0E33\u0E44\u0E21\u0E02\u0E49\u0E32\u0E16\u0E36\u0E07\u0E21\u0E2D\u0E1A\u0E20\u0E32\u0E23\u0E01\u0E34\u0E08\u0E19\u0E35\u0E49\u0E43\u0E2B\u0E49\u0E40\u0E08\u0E49\u0E32
+        \u0E41\u0E15\u0E48\u0E15\u0E2D\u0E19\u0E19\u0E35\u0E49 \u0E08\u0E07\u0E40\u0E15\u0E23\u0E35\u0E22\u0E21\u0E15\u0E31\u0E27\u0E43\u0E2B\u0E49\u0E1E\u0E23\u0E49\u0E2D\u0E21\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: dialogueWords.Array.data[1]
-      value: "\"\u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E2B\u0E22\u0E38\u0E14\u0E21\u0E31\u0E19
-        \u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02 19! \u0E40\u0E08\u0E49\u0E32\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E48\u0E04\u0E19\u0E18\u0E23\u0E23\u0E21\u0E14\u0E32
-        \u0E40\u0E08\u0E49\u0E32\u0E21\u0E35\u0E1A\u0E32\u0E07\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E17\u0E35\u0E48\u0E02\u0E49\u0E32\u0E1D\u0E32\u0E01\u0E44\u0E27\u0E49
-        \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E23\u0E48\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E02\u0E49\u0E32\u0E2A\u0E25\u0E32\u0E22\u0E44\u0E1B
-        \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E49\u0E32\u0E27\u0E15\u0E48\u0E2D\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E21\u0E19\u0E38\u0E29\u0E22\u0E0A\u0E32\u0E15\u0E34
-        \u0E44\u0E21\u0E48\u0E21\u0E35\u0E17\u0E32\u0E07\u0E17\u0E35\u0E48\u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E2B\u0E25\u0E35\u0E01\u0E2B\u0E19\u0E35\u0E08\u0E32\u0E01\u0E2A\u0E34\u0E48\u0E07\u0E19\u0E35\u0E49\u0E44\u0E14\u0E49!\"\r\n"
+      value: "\u0E40\u0E08\u0E15\u0E08\u0E33\u0E19\u0E07? \u0E21\u0E31\u0E19\u0E08\u0E30\u0E1A\u0E31\u0E07\u0E04\u0E31\u0E1A\u0E09\u0E31\u0E19\u0E44\u0E14\u0E49\u0E22\u0E31\u0E07\u0E44\u0E07?
+        \u0E27\u0E31\u0E19\u0E19\u0E31\u0E49\u0E19\u0E17\u0E35\u0E48\u0E19\u0E32\u0E22\u0E1E\u0E39\u0E14\u0E16\u0E36\u0E07\u0E04\u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23?
+        \u0E09\u0E31\u0E19\u0E08\u0E30\u0E2B\u0E32\u0E04\u0E33\u0E15\u0E2D\u0E1A\u0E08\u0E32\u0E01\u0E2B\u0E25\u0E38\u0E21\u0E19\u0E35\u0E49\u0E44\u0E14\u0E49\u0E44\u0E2B\u0E21?"
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: dialogueWords.Array.data[2]
-      value: "\u0E1A\u0E32\u0E07\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E17\u0E35\u0E48\u0E19\u0E32\u0E22\u0E1D\u0E32\u0E01\u0E44\u0E27\u0E49?
-        \u0E21\u0E31\u0E19\u0E04\u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23\u0E01\u0E31\u0E19\u0E41\u0E19\u0E48?
-        \u0E16\u0E49\u0E32\u0E23\u0E48\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E19\u0E32\u0E22\u0E2A\u0E25\u0E32\u0E22
-        \u0E17\u0E33\u0E44\u0E21\u0E09\u0E31\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E23\u0E31\u0E1A\u0E1C\u0E34\u0E14\u0E0A\u0E2D\u0E1A?
-        \u0E17\u0E33\u0E44\u0E21\u0E09\u0E31\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E17\u0E33\u0E2D\u0E30\u0E44\u0E23\u0E43\u0E2B\u0E49\u0E04\u0E19\u0E2D\u0E37\u0E48\u0E19?
-        \u0E09\u0E31\u0E19\u0E2D\u0E22\u0E32\u0E01\u0E23\u0E39\u0E49\u0E41\u0E04\u0E48\u0E27\u0E48\u0E32\u0E09\u0E31\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E2D\u0E30\u0E44\u0E23!\r\n"
+      value: "\u0E2B\u0E22\u0E38\u0E14\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E19\u0E35\u0E49
+        \u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02 19! \u0E2D\u0E22\u0E48\u0E32\u0E01\u0E23\u0E30\u0E42\u0E14\u0E14\u0E25\u0E07\u0E44\u0E1B!
+        \u0E40\u0E1D\u0E49\u0E32\u0E23\u0E2D\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07\u0E02\u0E2D\u0E07\u0E02\u0E49\u0E32
+        \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E16\u0E36\u0E07
+        \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E40\u0E23\u0E34\u0E48\u0E21 Operation
+        Eclipse \u0E08\u0E07\u0E23\u0E2D\u0E08\u0E19\u0E01\u0E27\u0E48\u0E32\u0E02\u0E49\u0E32\u0E08\u0E30\u0E1A\u0E2D\u0E01!"
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: dialogueWords.Array.data[3]
-      value: "\u0E04\u0E33\u0E16\u0E32\u0E21\u0E02\u0E2D\u0E07\u0E40\u0E08\u0E49\u0E32\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E16\u0E36\u0E07\u0E40\u0E27\u0E25\u0E32\u0E17\u0E35\u0E48\u0E08\u0E30\u0E44\u0E14\u0E49\u0E04\u0E33\u0E15\u0E2D\u0E1A
-        \u0E08\u0E07\u0E1F\u0E31\u0E07\u0E02\u0E49\u0E32 \u0E42\u0E25\u0E01\u0E19\u0E35\u0E49\u0E01\u0E33\u0E25\u0E31\u0E07\u0E1E\u0E31\u0E07\u0E17\u0E25\u0E32\u0E22
-        \u0E14\u0E27\u0E07\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E2A\u0E35\u0E40\u0E25\u0E37\u0E2D\u0E14\u0E2B\u0E34\u0E27\u0E01\u0E23\u0E30\u0E2B\u0E32\u0E22\u0E21\u0E32\u0E01\u0E02\u0E36\u0E49\u0E19\u0E17\u0E38\u0E01\u0E27\u0E31\u0E19
-        \u0E16\u0E49\u0E32\u0E40\u0E08\u0E49\u0E32\u0E44\u0E21\u0E48\u0E2B\u0E22\u0E38\u0E14\u0E21\u0E31\u0E19
-        \u0E41\u0E2A\u0E07\u0E2A\u0E35\u0E41\u0E14\u0E07\u0E08\u0E32\u0E01\u0E14\u0E27\u0E07\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E08\u0E30\u0E01\u0E25\u0E37\u0E19\u0E01\u0E34\u0E19\u0E17\u0E38\u0E01\u0E2D\u0E22\u0E48\u0E32\u0E07
-        \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E22\u0E2D\u0E21\u0E43\u0E2B\u0E49\u0E21\u0E31\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E1A\u0E1A\u0E19\u0E31\u0E49\u0E19\u0E2B\u0E23\u0E37\u0E2D?"
+      value: "\u0E23\u0E2D\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07? \u0E09\u0E31\u0E19\u0E08\u0E30\u0E23\u0E39\u0E49\u0E44\u0E14\u0E49\u0E22\u0E31\u0E07\u0E44\u0E07\u0E27\u0E48\u0E32\u0E19\u0E32\u0E22\u0E1E\u0E39\u0E14\u0E04\u0E27\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07?
+        \u0E09\u0E31\u0E19\u0E40\u0E1A\u0E37\u0E48\u0E2D\u0E17\u0E35\u0E48\u0E08\u0E30\u0E1F\u0E31\u0E07\u0E41\u0E25\u0E49\u0E27
+        \u0E09\u0E31\u0E19\u0E08\u0E30\u0E2B\u0E32\u0E04\u0E33\u0E15\u0E2D\u0E1A\u0E40\u0E2D\u0E07!"
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: dialogueWords.Array.data[4]
-      value: "\u0E09\u0E31\u0E19\u0E16\u0E39\u0E01\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E21\u0E32\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E2B\u0E22\u0E38\u0E14\u0E21\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07
-        \u0E46 \u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E2D\u0E37\u0E48\u0E19?"
+      value: "\u0E2B\u0E22\u0E38\u0E14\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E19\u0E35\u0E49
+        \u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02 19! \u0E2D\u0E22\u0E48\u0E32\u0E01\u0E23\u0E30\u0E42\u0E14\u0E14\u0E25\u0E07\u0E44\u0E1B!
+        \u0E40\u0E1D\u0E49\u0E32\u0E23\u0E2D\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07\u0E02\u0E2D\u0E07\u0E02\u0E49\u0E32
+        \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E16\u0E36\u0E07
+        \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E40\u0E23\u0E34\u0E48\u0E21 Operation
+        Eclipse \u0E08\u0E07\u0E23\u0E2D\u0E08\u0E19\u0E01\u0E27\u0E48\u0E32\u0E02\u0E49\u0E32\u0E08\u0E30\u0E1A\u0E2D\u0E01!"
       objectReference: {fileID: 0}
     - target: {fileID: 5065054462607874058, guid: 675dce5f457aa6f41b9611e70d206650, type: 3}
       propertyPath: dialogueWords.Array.data[5]
@@ -9085,8 +9085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c563248f6f4868c48b28d21ee495572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndexToLoad: 18
-  delayInSeconds: 0.2
+  sceneIndexToLoad: 0
+  delayInSeconds: 1
 --- !u!1001 &1793854933
 PrefabInstance:
   m_ObjectHideFlags: 0
