@@ -63,6 +63,12 @@ EditorBuildSettings:
     path: Assets/ScenesGame/Tutorial_2.unity
     guid: 9b027c4db4763c941b43dfb935b8ddc2
   - enabled: 1
-    path: Assets/ScenesGame/Tutorial_3.unity
+    path: Assets/ScenesGame/Tutorial_5.unity
     guid: be50f87b58dff294296814309b2bda9f
+  - enabled: 1
+    path: Assets/ScenesGame/Tutorial_4.unity
+    guid: 942129243e783274882a1f86420e85de
+  - enabled: 1
+    path: Assets/ScenesGame/Tutorial_3.unity
+    guid: a82181cdaf797624ea3241e405d404f4
   m_configObjects: {}

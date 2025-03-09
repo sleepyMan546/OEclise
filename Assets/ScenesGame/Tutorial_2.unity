@@ -2298,7 +2298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2979168509420642236, guid: 5916237e674de0f4ab1b632c10635c2e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3032111706749739657, guid: 5916237e674de0f4ab1b632c10635c2e, type: 3}
       propertyPath: fadeDuration
@@ -9085,7 +9085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c563248f6f4868c48b28d21ee495572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndexToLoad: 18
+  sceneIndexToLoad: 20
   delayInSeconds: 0.2
 --- !u!1001 &1793854933
 PrefabInstance:
