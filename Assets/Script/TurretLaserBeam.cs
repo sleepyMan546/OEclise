@@ -1,0 +1,107 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TurretLaserBeam : MonoBehaviour
+{
+    [SerializeField] private GameObject laserBeamPrefab; 
+    [SerializeField] private Transform firePoint; 
+    [SerializeField] private float fireRate = 2f; 
+    [SerializeField] private float health = 20f; 
+    [SerializeField] private float rotationSpeed = 5f; 
+    [SerializeField] private int beamsPerBurst = 1; 
+    [SerializeField] private float beamInterval = 0.5f;
+    [SerializeField] private float spriteAngleOffset = 90f; 
+    [SerializeField] private float minAngle = -10f; 
+    [SerializeField] private float maxAngle = 100f;
+
+    private float fireTimer = 0f;
+    public bool isActive = false;
+    public bool isFiring = false;
+    private GameObject player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogError("Player not found! Please assign 'Player' tag to the player GameObject.");
+        }
+    }
+
+    void Update()
+    {
+        if (!isActive || player == null) return;
+
+      
+        RotateTowardsPlayer();
+
+       
+        if (!isFiring)
+        {
+            fireTimer += Time.deltaTime;
+            if (fireTimer >= fireRate)
+            {
+                StartCoroutine(FireBurst());
+                fireTimer = 0f;
+            }
+        }
+    }
+
+    
+    void RotateTowardsPlayer()
+    {
+        if (player != null)
+        {
+            Vector2 direction = (player.transform.position - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            angle -= spriteAngleOffset;
+            angle = Mathf.Clamp(angle, minAngle, maxAngle);
+            Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+    }
+
+   
+    IEnumerator FireBurst()
+    {
+        isFiring = true;
+        for (int i = 0; i < beamsPerBurst; i++)
+        {
+            Fire();
+            yield return new WaitForSeconds(beamInterval);
+        }
+        isFiring = false;
+    }
+
+    void Fire()
+    {
+        if (player != null)
+        {
+         
+            Instantiate(laserBeamPrefab, firePoint.position, transform.rotation);
+            Debug.Log("Turret fired a laser beam!");
+        }
+    }
+
+    public void Activate()
+    {
+        isActive = true;
+    }
+
+    public bool IsActive()
+    {
+        return isActive;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            isActive = false;
+            gameObject.SetActive(false);
+            Debug.Log("Turret Destroyed!");
+        }
+    }
+}
