@@ -7,7 +7,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab; 
     [SerializeField] private Transform firePoint; 
     [SerializeField] private float fireRate = 2f; 
-    [SerializeField] private float health = 20f; 
+   
     [SerializeField] private float rotationSpeed = 5f; 
     [SerializeField] private int bulletsPerBurst = 5; 
     [SerializeField] private float bulletInterval = 0.1f; 
@@ -101,14 +101,5 @@ public class Turret : MonoBehaviour
         return isActive;
     }
 
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-        if (health <= 0)
-        {
-            isActive = false;
-            gameObject.SetActive(false);
-            Debug.Log("Turret Destroyed!");
-        }
-    }
+  
 }
