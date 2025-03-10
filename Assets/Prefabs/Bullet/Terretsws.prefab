@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1504052675887644654}
   - component: {fileID: -3732257129537718167}
   m_Layer: 13
-  m_Name: The_Mecha_Bullet
+  m_Name: Terretsws
   m_TagString: BulletBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1582132538760173044}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4538, y: -0.8839, z: 0}
-  m_LocalScale: {x: 1.7561189, y: 1.1502411, z: 0.7505407}
+  m_LocalPosition: {x: 6.6257, y: -0.9653, z: 0}
+  m_LocalScale: {x: 1.4317638, y: 0.86452127, z: 0.7505407}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbaf36b14454a564190666d08ac02c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 15
   lifetime: 0.5
-  damage: 50
+  damage: 10
