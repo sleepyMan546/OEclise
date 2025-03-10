@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -2904341954842585202}
   - component: {fileID: 1504052675887644654}
   - component: {fileID: -3732257129537718167}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Striker_Bullet
-  m_TagString: Bullet
+  m_TagString: BulletBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

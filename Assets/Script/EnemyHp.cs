@@ -76,7 +76,7 @@ public class EnemyHp : MonoBehaviour
     }
     void Die()
     {
-        Debug.Log(gameObject.name + " ???????!");
+        
 
 
         if (deathEffect != null)

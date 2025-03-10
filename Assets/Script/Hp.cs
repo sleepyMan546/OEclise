@@ -17,7 +17,7 @@ public class Hp : MonoBehaviour
     [SerializeField] private int numberOfFlashes;
     [SerializeField] private float iFrameDelay;
 
-    private bool isGodMode = false; 
+    private bool isGodMode = false;
 
     void Start()
     {
@@ -38,7 +38,7 @@ public class Hp : MonoBehaviour
             Debug.Log("God Mode: " + (isGodMode ? "ON" : "OFF"));
         }
 
-        
+
         if (Input.GetKeyDown(KeyCode.L))
         {
             SceneManager.LoadScene("SceneNameHere");
@@ -47,7 +47,7 @@ public class Hp : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (!GodMode.isGodMode) 
+        if (!this.isGodMode)
         {
             currentHealth -= damage;
             Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
@@ -59,19 +59,24 @@ public class Hp : MonoBehaviour
                 Die();
             }
         }
+        else
+        {
+            Debug.Log(gameObject.name + " is in God Mode, no damage taken!");
+        }
     }
 
     public void Die()
     {
-       
-            Debug.Log(gameObject.name + " Die");
-            gameObject.SetActive(false);
-            TrasitionScene.Instance.LoadScene(SceneManager.GetActiveScene().name);
-        
+
+        Debug.Log(gameObject.name + " Die");
+        gameObject.SetActive(false);
+        TrasitionScene.Instance.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 
     public void ChangeToRed()
     {
+        StopAllCoroutines();
         StartCoroutine(ChangeColorRoutine());
     }
 
@@ -99,6 +104,13 @@ public class Hp : MonoBehaviour
     public void ResetHealth()
     {
         currentHealth = maxHealth;
+        isGodMode = false;
+        StopAllCoroutines();
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in renderers)
+        {
+            rend.material.color = originalColor;
+        }
         UpdateHealthBar();
     }
 
@@ -109,4 +121,5 @@ public class Hp : MonoBehaviour
             healthBar.fillAmount = (float)currentHealth / maxHealth;
         }
     }
+
 }

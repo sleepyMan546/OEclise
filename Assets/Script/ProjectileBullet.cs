@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class ProjectileBullet : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float damage = 10f;
-    [SerializeField] private float lifetime = 5f;
+    public float speed = 10f;
+    public float lifetime = 0.5f;
+    public int damage = 30;
 
     void Start()
     {
         Destroy(gameObject, lifetime);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Bullet"), LayerMask.NameToLayer("Bullet"));
+
+
+
+
     }
 
     void Update()
@@ -21,13 +26,14 @@ public class ProjectileBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.tag != "Enemy")
         {
-            Hp playerHp = collision.GetComponent<Hp>();
-            if (playerHp != null)
+            Hp targetHealth = collision.GetComponent<Hp>();
+            if (targetHealth != null)
             {
-                playerHp.TakeDamage((int)damage);
+                targetHealth.TakeDamage(damage);
             }
+
             Destroy(gameObject);
         }
     }
