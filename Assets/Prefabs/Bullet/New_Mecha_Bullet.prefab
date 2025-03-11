@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1504052675887644654}
   - component: {fileID: -3732257129537718167}
   m_Layer: 13
-  m_Name: The_Mecha_Bullet
+  m_Name: New_Mecha_Bullet
   m_TagString: BulletBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1582132538760173044}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4538, y: -0.8839, z: 0}
-  m_LocalScale: {x: 1.7561189, y: 1.1502411, z: 0.7505407}
+  m_LocalPosition: {x: 3.3496, y: 0.145, z: 0}
+  m_LocalScale: {x: 1.6801621, y: 1.5695733, z: 1.7663194}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1906101061, guid: ea8be10a8ecf22649960e5795790a69e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 2136283895, guid: ea8be10a8ecf22649960e5795790a69e, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -146,18 +146,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0047902167, y: -0.00094875693}
+  m_Offset: {x: 0.027949806, y: -0.016102403}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.06, y: 0.57}
+    oldSize: {x: 0.39, y: 0.4}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.77735215, y: 0.42189658}
+  m_Size: {x: 0.26122826, y: 0.2804631}
   m_EdgeRadius: 0
 --- !u!114 &-3732257129537718167
 MonoBehaviour:
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbaf36b14454a564190666d08ac02c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  lifetime: 3
+  speed: 12
+  lifetime: 0.5
   damage: 50
