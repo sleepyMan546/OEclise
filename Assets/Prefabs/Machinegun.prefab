@@ -293,7 +293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1848156994925483568}
   - component: {fileID: 3216003884982335868}
-  - component: {fileID: 4535549916786908454}
   - component: {fileID: 6048434659861800541}
   m_Layer: 7
   m_Name: Machinegun
@@ -343,20 +342,6 @@ MonoBehaviour:
   muzzleFlashEffect: {fileID: 0}
   muzzleFlashPosition: {fileID: 0}
   shootingSoundSource: {fileID: 0}
---- !u!114 &4535549916786908454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7588244178125116992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e73d8b983764554da94590dbe805af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovement: {fileID: 0}
-  armRenderer: {fileID: 8982867583649171805}
 --- !u!114 &6048434659861800541
 MonoBehaviour:
   m_ObjectHideFlags: 0

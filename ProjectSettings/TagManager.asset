@@ -11,6 +11,7 @@ TagManager:
   - AttackIndicatorPoint
   - BulletBoss
   - platform
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Enemy
   - BulletBoss
   - platform
-  - 
+  - Shield
   - 
   - 
   - 

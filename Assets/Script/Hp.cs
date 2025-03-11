@@ -19,6 +19,14 @@ public class Hp : MonoBehaviour
 
     private bool isGodMode = false;
 
+    //Barier
+    [SerializeField] private GameObject barrierPrefab; 
+    [SerializeField] private float barrierDuration = 5f; 
+    [SerializeField] private float barrierCooldown = 10f; 
+    private GameObject currentBarrier; 
+    private bool isBarrierActive = false; 
+    private float currentBarrierCooldown = 0f; 
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -38,16 +46,21 @@ public class Hp : MonoBehaviour
             Debug.Log("God Mode: " + (isGodMode ? "ON" : "OFF"));
         }
 
-
         if (Input.GetKeyDown(KeyCode.L))
         {
             SceneManager.LoadScene("SceneNameHere");
+        }
+
+        // ลด Cooldown ของบาเรีย
+        if (currentBarrierCooldown > 0)
+        {
+            currentBarrierCooldown -= Time.deltaTime;
         }
     }
 
     public void TakeDamage(int damage)
     {
-        if (!this.isGodMode)
+        if (!this.isGodMode && !isBarrierActive) 
         {
             currentHealth -= damage;
             Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
@@ -59,19 +72,21 @@ public class Hp : MonoBehaviour
                 Die();
             }
         }
-        else
+        else if (isGodMode)
         {
             Debug.Log(gameObject.name + " is in God Mode, no damage taken!");
+        }
+        else if (isBarrierActive)
+        {
+            Debug.Log(gameObject.name + " is protected by Barrier, no damage taken!");
         }
     }
 
     public void Die()
     {
-
         Debug.Log(gameObject.name + " Die");
         gameObject.SetActive(false);
         TrasitionScene.Instance.LoadScene(SceneManager.GetActiveScene().name);
-
     }
 
     public void ChangeToRed()
@@ -120,6 +135,53 @@ public class Hp : MonoBehaviour
         {
             healthBar.fillAmount = (float)currentHealth / maxHealth;
         }
+    }
+
+   
+    public bool ActivateBarrier()
+    {
+        if (currentBarrierCooldown > 0 || isBarrierActive)
+        {
+            Debug.Log("Barrier is on cooldown or already active! Cooldown remaining: " + currentBarrierCooldown);
+            return false;
+        }
+
+        StartCoroutine(BarrierCoroutine());
+        return true;
+    }
+
+    private IEnumerator BarrierCoroutine()
+    {
+        isBarrierActive = true;
+        currentBarrier = Instantiate(barrierPrefab, transform.position, Quaternion.identity);
+        currentBarrier.transform.SetParent(transform); 
+        currentBarrier.tag = "Barrier"; 
+
+        yield return new WaitForSeconds(barrierDuration);
+
+        DeactivateBarrier();
+    }
+
+    private void DeactivateBarrier()
+    {
+        if (currentBarrier != null)
+        {
+            Destroy(currentBarrier);
+        }
+        isBarrierActive = false;
+        currentBarrierCooldown = barrierCooldown;
+        Debug.Log("Barrier deactivated. Cooldown started: " + currentBarrierCooldown);
+    }
+
+  
+    public bool IsBarrierActive()
+    {
+        return isBarrierActive;
+    }
+
+    public float GetBarrierCooldown()
+    {
+        return currentBarrierCooldown;
     }
 
 }

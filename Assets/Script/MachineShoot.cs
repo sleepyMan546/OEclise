@@ -5,20 +5,20 @@ using UnityEngine;
 public class MachineShoot : MonoBehaviour
 {
     [Header("Bullet Settings")]
-    public GameObject bulletPrefab; // Prefab ของกระสุน
-    public Transform firePoint;     // จุดยิงกระสุน
-    public float bulletSpeed = 10f; // ความเร็วของกระสุน
+    public GameObject bulletPrefab;
+    public Transform firePoint;     
+    public float bulletSpeed = 10f; 
 
     [Header("Burst Settings")]
-    public int bulletsPerBurst = 3;  // จำนวนกระสุนต่อชุด
-    public float bulletInterval = 0.1f; // ระยะห่างระหว่างนัดในชุด (วินาที)
-    public float fireRate = 1f;      // ความถี่ในการยิงชุด (วินาที)
+    public int bulletsPerBurst = 3;  
+    public float bulletInterval = 0.1f; 
+    public float fireRate = 1f;      
 
     [Header("Audio")]
-    [SerializeField] private AudioSource shootingSoundSource; // เสียงยิง
+    [SerializeField] private AudioSource shootingSoundSource; 
 
-    private float nextFireTime = 0f; // เวลาที่จะยิงชุดถัดไป
-    private bool isFiring = false;   // ตรวจสอบว่ากำลังยิงอยู่หรือไม่
+    private float nextFireTime = 0f; 
+    private bool isFiring = false;   
 
     void Start()
     {
