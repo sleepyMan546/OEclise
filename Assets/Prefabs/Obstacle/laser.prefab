@@ -155,8 +155,8 @@ MonoBehaviour:
   laserMask:
     serializedVersion: 2
     m_Bits: 192
-  maxLaserLength: 10
-  damage: 10
+  maxLaserLength: 60
+  damage: 1
   hp: {fileID: 0}
 --- !u!1 &2948169678074738308
 GameObject:
