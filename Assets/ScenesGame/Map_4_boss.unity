@@ -1048,7 +1048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4252750405604099359, guid: ae6535a732c903349868809e232d85ef, type: 3}
       propertyPath: fireRate
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4252750405604099359, guid: ae6535a732c903349868809e232d85ef, type: 3}
       propertyPath: enemyBulletPrefab

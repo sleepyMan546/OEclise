@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4951320104254482886}
   - component: {fileID: 9005009647068008014}
-  - component: {fileID: -2904341954842585202}
   - component: {fileID: 1504052675887644654}
   - component: {fileID: -3732257129537718167}
+  - component: {fileID: -3014412134954407722}
   m_Layer: 13
   m_Name: New_Mecha_Bullet
   m_TagString: BulletBoss
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1582132538760173044}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3496, y: 0.145, z: 0}
-  m_LocalScale: {x: 1.6801621, y: 1.5695733, z: 1.7663194}
+  m_LocalPosition: {x: 3.4779, y: 0.022, z: 0}
+  m_LocalScale: {x: 1.5753527, y: 1.4716625, z: 1.6561354}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,33 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &-2904341954842585202
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582132538760173044}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.5
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &1504052675887644654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,6 +144,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbaf36b14454a564190666d08ac02c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  lifetime: 0.5
+  speed: 8
+  lifetime: 1
   damage: 50
+--- !u!50 &-3014412134954407722
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582132538760173044}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
