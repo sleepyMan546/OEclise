@@ -7353,6 +7353,14 @@ PrefabInstance:
       propertyPath: shotgunSwitchSoundSource
       value: 
       objectReference: {fileID: 1324321573}
+    - target: {fileID: 3120225973333056708, guid: 2065a3bde43e54640b421171b594ce9c, type: 3}
+      propertyPath: mechineGunSwitchSoundSource
+      value: 
+      objectReference: {fileID: 481064013}
+    - target: {fileID: 3610533155602239169, guid: 2065a3bde43e54640b421171b594ce9c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4056075870989247380, guid: 2065a3bde43e54640b421171b594ce9c, type: 3}
       propertyPath: dashSoundSource
       value: 
