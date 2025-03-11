@@ -6,10 +6,11 @@ public class WeaponSwitchDop : MonoBehaviour
 {
     public GameObject pistol;
     public GameObject shotgun;
+    public GameObject machineGun;
 
-    [SerializeField] private AudioSource pistolSwitchSoundSource; // AudioSource สำหรับเสียงสลับไปปืนพก
-    [SerializeField] private AudioSource shotgunSwitchSoundSource; // AudioSource สำหรับเสียงสลับไปลูกซอง
-
+    [SerializeField] private AudioSource pistolSwitchSoundSource; 
+    [SerializeField] private AudioSource shotgunSwitchSoundSource;
+    [SerializeField] private AudioSource mechineGunSwitchSoundSource;
     private Dictionary<string, GameObject> weapons;
     private string currentWeapon = "pistol";
 
@@ -19,11 +20,12 @@ public class WeaponSwitchDop : MonoBehaviour
         {
             { "pistol", pistol },
             { "shotgun", shotgun }
+            ,{ "machineGun", machineGun }
         };
 
         UpdateWeaponVisibility();
 
-        // ตรวจสอบว่าได้กำหนด AudioSource ใน Inspector หรือยัง
+        
         if (pistolSwitchSoundSource == null)
         {
             Debug.LogError("No audio sourch");
@@ -36,14 +38,20 @@ public class WeaponSwitchDop : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) // เปลี่ยนจาก GetKey เป็น GetKeyDown เพื่อให้เล่นเสียงแค่ครั้งเดียวตอนกดปุ่ม
+        if (Input.GetKeyDown(KeyCode.Q)) 
         {
             SwitchWeapon("pistol");
         }
-        else if (Input.GetKeyDown(KeyCode.W)) // เปลี่ยนจาก GetKey เป็น GetKeyDown เพื่อให้เล่นเสียงแค่ครั้งเดียวตอนกดปุ่ม
+        else if (Input.GetKeyDown(KeyCode.W)) 
         {
             SwitchWeapon("shotgun");
         }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            SwitchWeapon("machineGun");
+        }
+
+
     }
 
     void SwitchWeapon(string weaponName)
@@ -66,6 +74,13 @@ public class WeaponSwitchDop : MonoBehaviour
                 if (shotgunSwitchSoundSource != null)
                 {
                     shotgunSwitchSoundSource.Play();
+                }
+            }
+            else if (weaponName == "machineGun")
+            {
+                if (mechineGunSwitchSoundSource != null)
+                {
+                    mechineGunSwitchSoundSource.Play();
                 }
             }
         }
