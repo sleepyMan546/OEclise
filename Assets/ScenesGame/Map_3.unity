@@ -4689,6 +4689,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1890335135500176252, guid: 95a512be0ff5faa4c9368c3354c76c37, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2203987244148878389, guid: 95a512be0ff5faa4c9368c3354c76c37, type: 3}
       propertyPath: m_Name
       value: Canvas_Pause
