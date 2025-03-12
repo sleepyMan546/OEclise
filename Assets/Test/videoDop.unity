@@ -627,6 +627,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 38659f171a0e029428810b5273789dae, type: 3}
   - {fileID: 32900000, guid: 90dc00134df3ce44a815c9c4880c4784, type: 3}
   - {fileID: 32900000, guid: 5422e06ef18ee3e4a9fb1dbbd9a474cd, type: 3}
+  - {fileID: 32900000, guid: f1db279657651a143bddf1ae5937159d, type: 3}
   sceneIndex: 12
   nextButton: {fileID: 374436232}
   skipButton: {fileID: 179549142}
@@ -651,7 +652,7 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_TimeUpdateMode: 2
-  m_PlaybackSpeed: 1
+  m_PlaybackSpeed: 0.9
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
@@ -661,7 +662,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -939,8 +940,8 @@ Transform:
   m_GameObject: {fileID: 1094295574}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 975.075, y: 426.2492, z: 0}
-  m_LocalScale: {x: 17.68984, y: 9.837977, z: 1}
+  m_LocalPosition: {x: 974.3379, y: 426.2318, z: 0}
+  m_LocalScale: {x: 23.076082, y: 13.722885, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
