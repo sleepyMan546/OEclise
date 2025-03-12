@@ -1589,6 +1589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -4233,6 +4237,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -4298,6 +4306,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
@@ -5589,6 +5601,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -6472,6 +6488,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -6706,6 +6726,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
@@ -8701,6 +8725,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -9047,6 +9075,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -9112,6 +9144,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
@@ -10134,6 +10170,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
@@ -11743,6 +11783,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -13226,6 +13270,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
@@ -14749,6 +14797,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
@@ -16732,6 +16784,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -17795,6 +17851,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
@@ -20420,6 +20480,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -22706,6 +22770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -24307,6 +24375,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
@@ -26401,6 +26473,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -26785,6 +26861,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
@@ -28531,6 +28611,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
       value: 
@@ -29078,6 +29162,10 @@ PrefabInstance:
     - target: {fileID: 599904538871960294, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994839588708638020, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458704573514770992, guid: cba2f39c9dd6c7548be74207734f8971, type: 3}
       propertyPath: enemyShootingSoundSource
