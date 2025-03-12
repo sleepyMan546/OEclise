@@ -10,7 +10,7 @@ public class ClawWave : MonoBehaviour
 
     void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = Vector2.left * speed;
+       
         Destroy(gameObject, lifetime);
     }
 

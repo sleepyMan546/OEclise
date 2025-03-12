@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8256884901600930333}
   - component: {fileID: 6362846095386516023}
   - component: {fileID: 1972601459578974880}
-  - component: {fileID: 3681340278747603981}
   - component: {fileID: 565744443822163451}
+  - component: {fileID: 5859917322435305506}
   m_Layer: 0
   m_Name: BloodShoot
   m_TagString: Untagged
@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2628252605306408718}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.709453, w: -0.7047528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.3827, y: -9.3677, z: 0}
   m_LocalScale: {x: 2.0610342, y: 2.0610342, z: 2.0610342}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6362846095386516023
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 0df0e65714293d94d8263dfe93d0ab6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1110176499, guid: ea8be10a8ecf22649960e5795790a69e, type: 3}
-  m_Color: {r: 0.554717, g: 0, b: 0, a: 1}
+  m_SortingOrder: 8
+  m_Sprite: {fileID: 21300000, guid: d1410b4ad30cc604e819a0cc6ff99c32, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -114,8 +114,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &3681340278747603981
-CircleCollider2D:
+--- !u!114 &565744443822163451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628252605306408718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3955d7c0114bc67409b312818e1a1f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+  lifetime: 3
+--- !u!61 &5859917322435305506
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,20 +160,16 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008307025, y: -0.002223038}
+  m_Offset: {x: 0.008107394, y: -0.05945599}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.81, y: 3.9}
+    newSize: {x: 0.07, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.31206825
---- !u!114 &565744443822163451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2628252605306408718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3955d7c0114bc67409b312818e1a1f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 15
-  lifetime: 3
+  m_Size: {x: 0.7591539, y: 0.2765054}
+  m_EdgeRadius: 0

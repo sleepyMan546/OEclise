@@ -12,7 +12,14 @@ public class WolfBoss : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] public float moveSpeed = 2f;
     [SerializeField] public float attackRange = 3f;
-    [SerializeField] private Transform firePoint; // เพิ่ม FirePoint
+    [SerializeField] private Transform firePoint;
+
+    [Header("Blood Shot Attack")]
+    [SerializeField] private float bloodShotSpeed = 10f;       // ความเร็วของกระสุน
+    [SerializeField] private int numberOfSeries = 3;            // จำนวนชุดกระสุน
+    [SerializeField] private int shotsPerSeries = 5;           // จำนวนกระสุนในแต่ละชุด
+    [SerializeField] private float delayBetweenSeries = 0.5f;    // ระยะห่างระหว่างชุด
+    [SerializeField] private float shotSpacing = 0.5f;          // ระยะห่างระหว่างกระสุนในชุด
 
     private Animator anim;
     private EnemyHp hp;
@@ -100,11 +107,10 @@ public class WolfBoss : MonoBehaviour
     {
         anim.SetTrigger("Claw");
         yield return new WaitForSeconds(0.5f);
-        // ใช้ firePoint.position แทน spawnPos
-        GameObject clawWave = Instantiate(clawWavePrefab, firePoint.position, Quaternion.identity);
-        // ตั้ง velocity ตามทิศที่บอสหันหน้า
-        float direction = isFacingRight ? 1f : -1f;
-        clawWave.GetComponent<Rigidbody2D>().velocity = new Vector2(direction * 5f, 0f);
+
+        Quaternion rotation = isFacingRight ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+        GameObject clawWave = Instantiate(clawWavePrefab, transform.position, rotation);
+        clawWave.GetComponent<Rigidbody2D>().velocity = clawWave.transform.right * 10f;
     }
 
     IEnumerator BloodShotAttack()
@@ -112,13 +118,22 @@ public class WolfBoss : MonoBehaviour
         anim.SetTrigger("Charge");
         yield return new WaitForSeconds(2f);
         anim.SetTrigger("BloodShot");
-        for (int i = 0; i < 3; i++)
+
+        for (int series = 0; series < numberOfSeries; series++)
         {
-            float angle = Random.Range(0f, 45f);
-            Vector3 direction = Quaternion.Euler(0, 0, isFacingRight ? -angle : angle) * (isFacingRight ? Vector3.right : Vector3.left);
-            GameObject bloodShot = Instantiate(bloodShotPrefab, firePoint.position, Quaternion.identity); // ใช้ firePoint
-            bloodShot.GetComponent<Rigidbody2D>().velocity = direction * 10f;
-            yield return new WaitForSeconds(0.2f);
+            for (int i = 0; i < shotsPerSeries; i++)
+            {
+                Vector3 shotOffset = new Vector3(i * shotSpacing * (isFacingRight ? 1 : -1), 0, 0);
+                Vector3 shotPosition = firePoint.position + shotOffset;
+                GameObject bloodShot = Instantiate(bloodShotPrefab, shotPosition, Quaternion.identity);
+
+                Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
+                bloodShot.GetComponent<Rigidbody2D>().velocity = direction * bloodShotSpeed; 
+
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return new WaitForSeconds(delayBetweenSeries);
         }
     }
 
@@ -135,6 +150,5 @@ public class WolfBoss : MonoBehaviour
         GameObject slamArea = Instantiate(slamAreaPrefab, targetPos, Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
         Destroy(slamArea);
-        transform.position = originalPosition;
     }
 }
