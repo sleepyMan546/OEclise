@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Pausemenu : MonoBehaviour
 {
-    private void Awake()
-    {
-        
-    }
+    
     [SerializeField] GameObject pauseMenu;
     private bool isPaused = false; 
 
@@ -26,6 +23,7 @@ public class Pausemenu : MonoBehaviour
             }
             isPaused = !isPaused; 
         }
+        
     }
 
     public void Pause()
@@ -48,6 +46,9 @@ public class Pausemenu : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
         Time.timeScale = 1f;
+        Debug.Log("Game Restart (Esc)");
+
     }
 }
