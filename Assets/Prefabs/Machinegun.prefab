@@ -294,13 +294,14 @@ GameObject:
   - component: {fileID: 1848156994925483568}
   - component: {fileID: 3216003884982335868}
   - component: {fileID: 6048434659861800541}
+  - component: {fileID: -8447133497714641554}
   m_Layer: 7
   m_Name: Machinegun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1848156994925483568
 Transform:
   m_ObjectHideFlags: 0
@@ -361,6 +362,23 @@ MonoBehaviour:
   bulletInterval: 0.1
   fireRate: 0.75
   shootingSoundSource: {fileID: 0}
+--- !u!114 &-8447133497714641554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7588244178125116992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099d0f0394bb09e439baf0d98543538c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armRenderer: {fileID: 8982867583649171805}
+  shootPoint: {fileID: 401311509343746365}
+  playerMovement: {fileID: 0}
+  dashSpeed: 5
+  dashDuration: 0.2
 --- !u!1 &8643452963196788724
 GameObject:
   m_ObjectHideFlags: 0
