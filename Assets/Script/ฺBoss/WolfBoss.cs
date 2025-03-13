@@ -81,9 +81,9 @@ public class WolfBoss : MonoBehaviour
 
     void MoveTowardsPlayer()
     {
-        float targetX = player.transform.position.x;
-        float newX = Mathf.MoveTowards(transform.position.x, targetX, moveSpeed * Time.deltaTime);
-        transform.position = new Vector3(newX, originalPosition.y, transform.position.z);
+        Vector2 targetPosition = player.transform.position;
+        Vector2 newPosition = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
     }
 
     void ChooseAttack()
@@ -143,12 +143,12 @@ public class WolfBoss : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y + 50f, transform.position.z);
         Vector3 targetPos = player.transform.position;
         GameObject warning = Instantiate(warningPrefab, targetPos, Quaternion.identity);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         Destroy(warning);
         transform.position = new Vector3(targetPos.x, originalPosition.y, targetPos.z);
         anim.SetTrigger("Slam");
         GameObject slamArea = Instantiate(slamAreaPrefab, targetPos, Quaternion.identity);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.75f);
         Destroy(slamArea);
     }
 }
