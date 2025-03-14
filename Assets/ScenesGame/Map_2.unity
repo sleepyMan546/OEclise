@@ -29888,6 +29888,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Pause_1
       objectReference: {fileID: 0}
+    - target: {fileID: 147041756705529477, guid: 8471c331f58418140ad096a6bfc58de8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5466502388809376829, guid: 8471c331f58418140ad096a6bfc58de8, type: 3}
       propertyPath: m_SortingOrder
       value: 1
