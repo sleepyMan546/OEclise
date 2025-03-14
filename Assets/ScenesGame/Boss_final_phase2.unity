@@ -2217,7 +2217,7 @@ PrefabInstance:
       objectReference: {fileID: 1733302782}
     - target: {fileID: 1323281890994585265, guid: 40fd09c2f1d75004bad74a8d82084849, type: 3}
       propertyPath: attackCooldown
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1769706040773418161, guid: 40fd09c2f1d75004bad74a8d82084849, type: 3}
       propertyPath: enemyHp
