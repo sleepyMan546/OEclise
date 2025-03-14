@@ -12,6 +12,7 @@ TagManager:
   - BulletBoss
   - platform
   - Shield
+  - Barrier
   layers:
   - Default
   - TransparentFX
