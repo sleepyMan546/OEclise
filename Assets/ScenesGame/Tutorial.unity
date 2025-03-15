@@ -7345,7 +7345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 123265823}
   GossipSource: {fileID: 110072320}
-  sceneIndicesToDestroyOnLoad: 0400000001000000
+  sceneIndicesToDestroyOnLoad: 0200000001000000
 --- !u!4 &2047808586
 Transform:
   m_ObjectHideFlags: 0
