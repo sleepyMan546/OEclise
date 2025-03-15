@@ -74,4 +74,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesGame/Boss_final_phase2.unity
     guid: 52f642ee57f3f5a4ba593e11beee92b2
+  - enabled: 1
+    path: Assets/ScenesGame/enter_map2_intro.unity
+    guid: 2a7af325e22f86743b1ab09ed2d69d46
+  - enabled: 1
+    path: Assets/ScenesGame/Win_mecha_intro.unity
+    guid: f7b3196834f300f40812829fb98aecdd
+  - enabled: 1
+    path: Assets/ScenesGame/Lab_Hope_engine_.unity
+    guid: 47094e7cd9c8b7a4da9d2d48d269a6f3
+  - enabled: 1
+    path: Assets/ScenesGame/firstmeet_boss.unity
+    guid: fa0776452c0a0cd4e95fdb43dc299642
+  - enabled: 1
+    path: Assets/ScenesGame/wolf_tranform_intro.unity
+    guid: 1122ddce8789dbe4884a0f3322bcc602
+  - enabled: 1
+    path: Assets/ScenesGame/rifle_train_intro.unity
+    guid: 56b5b4717477e974580706fbc08c9321
   m_configObjects: {}
