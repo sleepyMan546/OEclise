@@ -5329,7 +5329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetGameObject: {fileID: 730909735}
-  sceneIndexToLoad: 21
+  sceneIndexToLoad: 26
   delayTime: 1
 --- !u!4 &1033030387
 Transform:
