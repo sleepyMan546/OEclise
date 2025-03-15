@@ -6,7 +6,8 @@ using UnityEngine.UI; // สำคัญ: ต้องมี namespace นี้เพื่อใช้งาน UI Image
 public class SpriteSwitcher : MonoBehaviour
 {
     public Sprite spriteW; 
-    public Sprite spriteQ; 
+    public Sprite spriteQ;
+    public Sprite spriteE;
 
     private Image uiImage; 
 
@@ -35,6 +36,10 @@ public class SpriteSwitcher : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Q))
         {
             ChangeSprite(spriteQ); 
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            ChangeSprite(spriteE);
         }
     }
 
