@@ -196,7 +196,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 942e4639720dfb241978f804256de761, type: 3}
   - {fileID: 32900000, guid: 5c7f16cd777ef9d44b897855759c68be, type: 3}
   - {fileID: 32900000, guid: ba935b40bbb48d440a3cf28043a003f7, type: 3}
-  sceneIndex: 1
+  sceneIndex: 15
   nextButton: {fileID: 1658811494}
   skipButton: {fileID: 217703987}
   loadingScreen: {fileID: 2020708216}
