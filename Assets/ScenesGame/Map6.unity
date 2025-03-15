@@ -8195,6 +8195,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 799031531}
+    - target: {fileID: 2845602233395847217, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
+      propertyPath: barrierCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845602233395847217, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
+      propertyPath: barrierDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2937795638563912988, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
       propertyPath: shootingSoundSource
       value: 

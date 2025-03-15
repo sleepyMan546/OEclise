@@ -976,7 +976,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 1872493166}
   videoClips:
   - {fileID: 32900000, guid: bc064a9450f0e5b4f84f3104b6630871, type: 3}
-  sceneIndex: 1
+  sceneIndex: 31
   nextButton: {fileID: 2100442214}
   skipButton: {fileID: 266698538}
   loadingScreen: {fileID: 1404840899}
