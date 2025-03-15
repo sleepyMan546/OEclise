@@ -47,6 +47,7 @@ public class MachineShoot : MonoBehaviour
             Debug.Log("Fire1 pressed, checking conditions...");
             if (Time.time >= nextFireTime && !isFiring)
             {
+                shootingSoundSource.Play();
                 StartCoroutine(FireBurst());
                 Debug.Log("MachineShoot triggered");
             }
@@ -88,19 +89,21 @@ public class MachineShoot : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
             if (rb != null)
             {
                 rb.velocity = firePoint.right * bulletSpeed;
+                
             }
             else
             {
                 Debug.LogWarning("No Rigidbody2D found on bulletPrefab!");
             }
 
-            if (shootingSoundSource != null)
-            {
-                shootingSoundSource.Play();
-            }
+            //if (shootingSoundSource != null)
+            //{
+            //    shootingSoundSource.Play();
+            //}
         }
         else
         {

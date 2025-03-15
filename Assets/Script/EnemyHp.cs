@@ -13,7 +13,7 @@ public class EnemyHp : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private bool isBlinking = false;
-
+    [SerializeField] private AudioSource deathSoundSource;
     public ParticleSystem deathEffect;
 
     void Start()
@@ -76,7 +76,7 @@ public class EnemyHp : MonoBehaviour
     }
     void Die()
     {
-        
+
 
 
         if (deathEffect != null)
@@ -84,6 +84,8 @@ public class EnemyHp : MonoBehaviour
 
             deathEffect.transform.position = transform.position;
             deathEffect.Play();
+            deathSoundSource.Play();
+            Debug.Log("Death Effect");
         }
 
         Destroy(gameObject);

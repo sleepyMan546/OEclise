@@ -526,7 +526,7 @@ MonoBehaviour:
   firePoint: {fileID: 4938065883935940358}
   bulletSpeed: 1
   fireRate: 1
-  detectionRange: 10
+  detectionRange: 8
   anim: {fileID: 0}
   enemyShootingSoundSource: {fileID: 0}
 --- !u!114 &4194053213607301763
@@ -544,6 +544,7 @@ MonoBehaviour:
   maxHealth: 200
   currentHealth: 0
   enemyHp: {fileID: 259993532055812643}
+  deathSoundSource: {fileID: 0}
   deathEffect: {fileID: 7316607533419571604, guid: 5b1d5e7fbdc3d6943ab23f98c25bc76c, type: 3}
 --- !u!212 &8976322264779148354
 SpriteRenderer:
