@@ -2123,6 +2123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_simple_ui
       objectReference: {fileID: 0}
+    - target: {fileID: 8011145068070150879, guid: 8257411f1694d374eba4f6b31ac00826, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2673,7 +2677,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 14
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3862,6 +3866,7 @@ MonoBehaviour:
   maxHealth: 3000
   currentHealth: 0
   enemyHp: {fileID: 1827132289}
+  deathSoundSource: {fileID: 0}
   deathEffect: {fileID: 0}
 --- !u!212 &730909738
 SpriteRenderer:
