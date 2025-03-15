@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesGame/Tutorial_3.unity
     guid: a82181cdaf797624ea3241e405d404f4
+  - enabled: 1
+    path: Assets/ScenesGame/Boss_final_phase2.unity
+    guid: 52f642ee57f3f5a4ba593e11beee92b2
   m_configObjects: {}
