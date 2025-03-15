@@ -15,8 +15,8 @@ public class Terret : MonoBehaviour
     [SerializeField] private float minAngle = -75f;
     [SerializeField] private float maxAngle = 75f;
     [SerializeField] private float warningTime = 0.5f; 
-    [SerializeField] private Color warningColor = Color.red; 
-
+    [SerializeField] private Color warningColor = Color.red;
+    [SerializeField] private AudioSource turretSoundSource;
     private float fireTimer = 0f;
     public bool isActive = false;
     public bool isFiring = false;
@@ -55,6 +55,7 @@ public class Terret : MonoBehaviour
             if (fireTimer >= fireRate)
             {
                 StartCoroutine(FireBurst());
+                turretSoundSource.Play();
                 fireTimer = 0f;
             }
         }
