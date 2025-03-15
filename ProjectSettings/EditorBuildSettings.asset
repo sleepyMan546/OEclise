@@ -92,4 +92,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesGame/rifle_train_intro.unity
     guid: 56b5b4717477e974580706fbc08c9321
+  - enabled: 1
+    path: Assets/ScenesGame/ending_1.unity
+    guid: 872fe91df4c84534f851c406942238f3
+  - enabled: 1
+    path: Assets/ScenesGame/Win_wolf.unity
+    guid: 6f734a4222e4e4a4280462594d40e197
+  - enabled: 1
+    path: Assets/ScenesGame/ending_2.unity
+    guid: dbd3bef7e06afc54184c02844203150c
   m_configObjects: {}
