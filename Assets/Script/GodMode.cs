@@ -10,13 +10,21 @@ public class GodMode : MonoBehaviour
     public static bool isGodMode = false; 
     private bool isSelectingScene = false;
     private List<string> sceneNames = new List<string> { "Tutorial", 
-    "Tutorial_1" ,
+    "Tutorial_1",
+        "Tutorial_2",
+        "Tutorial_3",
+        "Tutorial_4",
+        "Tutorial_5",
+        "Map_test",
         "Map_2",
     "Map_3",
     "Map_4_boss",
-    "boss1_intro",
+    "Map5",
+    "Map6",
+    "Boss_final",
+        "Boss_final_phase2",
     "Boss1_dead",
-    "Map5", };
+    };
     private int selectedSceneIndex = 0;
 
     void Update()

@@ -36,7 +36,9 @@ public class PlayerMovement : MonoBehaviour
     private float wallStickCounter;
     private bool isParent;
 
-    [SerializeField] private AudioSource dashSoundSource; 
+    [SerializeField] private AudioSource dashSoundSource;
+    [SerializeField] private AudioSource walkSoundSource; // เพิ่ม AudioSource สำหรับเสียงเดิน
+    [SerializeField] private AudioSource jumpSoundSource; // เพิ่ม AudioSource สำหรับเสียงกระโดด
 
     void Start()
     {
@@ -44,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
 
-        
+
         if (dashSoundSource == null)
         {
             Debug.LogError("No audio sourc");
@@ -82,10 +84,30 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 anim.SetTrigger("Jump");
+                if (jumpSoundSource != null) // เล่นเสียงกระโดดเมื่อกระโดดจากกำแพง
+                {
+                    jumpSoundSource.Play();
+                }
             }
         }
 
         anim.SetBool("Walk", move != 0);
+
+        // ควบคุมเสียงเดิน
+        if (move != 0)
+        {
+            if (walkSoundSource != null && !walkSoundSource.isPlaying)
+            {
+                walkSoundSource.Play();
+            }
+        }
+        else
+        {
+            if (walkSoundSource != null && walkSoundSource.isPlaying)
+            {
+                walkSoundSource.Stop();
+            }
+        }
 
 
         if (Input.GetKey(KeyCode.Mouse1) && CanDash() && !isDashing && canDash)
@@ -135,6 +157,10 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         anim.SetTrigger("Jump");
         SpawnGhost();
+        if (jumpSoundSource != null) // เล่นเสียงกระโดดเมื่อกระโดดจากพื้น
+        {
+            jumpSoundSource.Play();
+        }
     }
 
     private bool IsGrounded()
@@ -156,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
         anim.SetTrigger("Dash");
 
-        
+
         if (dashSoundSource != null)
         {
             dashSoundSource.Play();
@@ -209,5 +235,9 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         anim.SetTrigger("Jump");
         airJumpCount++;
+        if (jumpSoundSource != null) // เล่นเสียงกระโดดเมื่อกระโดดกลางอากาศ
+        {
+            jumpSoundSource.Play();
+        }
     }
 }
