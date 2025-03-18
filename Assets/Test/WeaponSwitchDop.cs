@@ -8,41 +8,39 @@ public class WeaponSwitchDop : MonoBehaviour
     public GameObject shotgun;
     public GameObject machineGun;
 
-    [SerializeField] private AudioSource pistolSwitchSoundSource; 
+    [SerializeField] private AudioSource pistolSwitchSoundSource;
     [SerializeField] private AudioSource shotgunSwitchSoundSource;
-    [SerializeField] private AudioSource mechineGunSwitchSoundSource;
+    [SerializeField] private AudioSource machineGunSwitchSoundSource;
+
     private Dictionary<string, GameObject> weapons;
-    private string currentWeapon = "pistol";
+    private string[] weaponOrder = { "pistol", "shotgun", "machineGun" }; 
+    private int currentWeaponIndex = 0;
 
     void Start()
     {
         weapons = new Dictionary<string, GameObject>
         {
             { "pistol", pistol },
-            { "shotgun", shotgun }
-            ,{ "machineGun", machineGun }
+            { "shotgun", shotgun },
+            { "machineGun", machineGun }
         };
 
         UpdateWeaponVisibility();
 
-        
-        if (pistolSwitchSoundSource == null)
+        if (pistolSwitchSoundSource == null || shotgunSwitchSoundSource == null || machineGunSwitchSoundSource == null)
         {
-            Debug.LogError("No audio sourch");
-        }
-        if (shotgunSwitchSoundSource == null)
-        {
-            Debug.LogError("No audio sourch");
+            Debug.LogError("Missing audio source for one or more weapons!");
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) 
+      
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             SwitchWeapon("pistol");
         }
-        else if (Input.GetKeyDown(KeyCode.W)) 
+        else if (Input.GetKeyDown(KeyCode.W))
         {
             SwitchWeapon("shotgun");
         }
@@ -51,39 +49,55 @@ public class WeaponSwitchDop : MonoBehaviour
             SwitchWeapon("machineGun");
         }
 
+      
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
+            SwitchWeapon("pistol");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) 
+        {
+            SwitchWeapon("shotgun");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) 
+        {
+            SwitchWeapon("machineGun");
+        }
 
+       
+        if (Input.mouseScrollDelta.y > 0) 
+        {
+            SwitchToNextWeapon();
+        }
+        else if (Input.mouseScrollDelta.y < 0) 
+        {
+            SwitchToPreviousWeapon();
+        }
     }
 
     void SwitchWeapon(string weaponName)
     {
-        if (weapons.ContainsKey(weaponName) && currentWeapon != weaponName)
+        if (weapons.ContainsKey(weaponName) && weaponOrder[currentWeaponIndex] != weaponName)
         {
-            currentWeapon = weaponName;
+            currentWeaponIndex = System.Array.IndexOf(weaponOrder, weaponName);
             UpdateWeaponVisibility();
 
-            // เล่นเสียงสลับอาวุธตาม weaponName
-            if (weaponName == "pistol")
-            {
-                if (pistolSwitchSoundSource != null)
-                {
-                    pistolSwitchSoundSource.Play();
-                }
-            }
-            else if (weaponName == "shotgun")
-            {
-                if (shotgunSwitchSoundSource != null)
-                {
-                    shotgunSwitchSoundSource.Play();
-                }
-            }
-            else if (weaponName == "machineGun")
-            {
-                if (mechineGunSwitchSoundSource != null)
-                {
-                    mechineGunSwitchSoundSource.Play();
-                }
-            }
+           
+            PlaySwitchSound(weaponName);
         }
+    }
+
+    void SwitchToNextWeapon()
+    {
+        currentWeaponIndex = (currentWeaponIndex + 1) % weaponOrder.Length;
+        UpdateWeaponVisibility();
+        PlaySwitchSound(weaponOrder[currentWeaponIndex]);
+    }
+
+    void SwitchToPreviousWeapon()
+    {
+        currentWeaponIndex = (currentWeaponIndex - 1 + weaponOrder.Length) % weaponOrder.Length;
+        UpdateWeaponVisibility();
+        PlaySwitchSound(weaponOrder[currentWeaponIndex]);
     }
 
     void UpdateWeaponVisibility()
@@ -92,11 +106,27 @@ public class WeaponSwitchDop : MonoBehaviour
         {
             weapon.SetActive(false);
         }
-        weapons[currentWeapon].SetActive(true);
+        weapons[weaponOrder[currentWeaponIndex]].SetActive(true);
+    }
+
+    void PlaySwitchSound(string weaponName)
+    {
+        if (weaponName == "pistol" && pistolSwitchSoundSource != null)
+        {
+            pistolSwitchSoundSource.Play();
+        }
+        else if (weaponName == "shotgun" && shotgunSwitchSoundSource != null)
+        {
+            shotgunSwitchSoundSource.Play();
+        }
+        else if (weaponName == "machineGun" && machineGunSwitchSoundSource != null)
+        {
+            machineGunSwitchSoundSource.Play();
+        }
     }
 
     public string GetCurrentWeapon()
     {
-        return currentWeapon;
+        return weaponOrder[currentWeaponIndex];
     }
 }
