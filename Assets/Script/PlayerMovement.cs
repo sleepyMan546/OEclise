@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce = 10f;
     private bool isGrounded;
+    private bool isGroundedLastFrame = false; // เพิ่มตัวแปรนี้
     public bool facingRight = true;
     public SpriteRenderer bodyRenderer;
     private BoxCollider2D boxCollider2D;
@@ -37,8 +38,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isParent;
 
     [SerializeField] private AudioSource dashSoundSource;
-    [SerializeField] private AudioSource walkSoundSource; // เพิ่ม AudioSource สำหรับเสียงเดิน
-    [SerializeField] private AudioSource jumpSoundSource; // เพิ่ม AudioSource สำหรับเสียงกระโดด
+    [SerializeField] private AudioSource walkSoundSource;
+    [SerializeField] private AudioSource jumpSoundSource;
+    [SerializeField] private AudioSource landSoundSource; // เพิ่ม AudioSource สำหรับเสียงลงพื้น
 
     void Start()
     {
@@ -46,10 +48,21 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
 
-
         if (dashSoundSource == null)
         {
-            Debug.LogError("No audio sourc");
+            Debug.LogError("No audio source for dash sound");
+        }
+        if (walkSoundSource == null)
+        {
+            Debug.LogError("No audio source for walk sound");
+        }
+        if (jumpSoundSource == null)
+        {
+            Debug.LogError("No audio source for jump sound");
+        }
+        if (landSoundSource == null) // เพิ่มการตรวจสอบสำหรับ landSoundSource
+        {
+            Debug.LogError("No audio source for land sound");
         }
     }
 
@@ -142,6 +155,14 @@ public class PlayerMovement : MonoBehaviour
         }
         anim.SetBool("Wall", isWallSliding);
 
+        bool currentlyGrounded = IsGrounded(); // ตรวจสอบสถานะการอยู่บนพื้นในเฟรมปัจจุบัน
+
+        if (currentlyGrounded && !isGroundedLastFrame) // ถ้าอยู่บนพื้นในเฟรมนี้ แต่ไม่อยู่บนพื้นในเฟรมก่อนหน้า = ลงพื้น
+        {
+            PlayLandSound(); // เรียกฟังก์ชันเพื่อเล่นเสียงลงพื้น
+        }
+
+        isGroundedLastFrame = currentlyGrounded; // อัปเดตสถานะการอยู่บนพื้นของเฟรมก่อนหน้า
     }
 
     bool CanDash()
@@ -166,7 +187,8 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
-        return raycastHit.collider != null;
+        isGrounded = raycastHit.collider != null; // อัปเดตค่า isGrounded
+        return isGrounded;
     }
 
     private bool onWall()
@@ -238,6 +260,15 @@ public class PlayerMovement : MonoBehaviour
         if (jumpSoundSource != null) // เล่นเสียงกระโดดเมื่อกระโดดกลางอากาศ
         {
             jumpSoundSource.Play();
+        }
+    }
+
+    // ฟังก์ชันใหม่สำหรับเล่นเสียงลงพื้น
+    void PlayLandSound()
+    {
+        if (landSoundSource != null)
+        {
+            landSoundSource.Play();
         }
     }
 }
