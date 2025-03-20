@@ -8405,6 +8405,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &522062386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522062388}
+  - component: {fileID: 522062387}
+  m_Layer: 0
+  m_Name: Cursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &522062387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522062386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09cf91ce87bae1249b8cb004f9844c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalCursorSprite: {fileID: 21300000, guid: c162ec9e30c2a184886b72bbe84c74f5, type: 3}
+  clickCursorSprite: {fileID: 21300000, guid: a71f5382df08e1546b60a302b266759e, type: 3}
+  cursorSize: {x: 100, y: 100}
+--- !u!4 &522062388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522062386}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.083621, y: 4.9981384, z: 0.4034082}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &525853576
 GameObject:
   m_ObjectHideFlags: 0
@@ -12856,9 +12903,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9807a3682ac17b45b0f45277e4bcc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 353010338}
-  parent: {fileID: 376416231}
   Speed: 2
+  floatHeight: 10
+  gravityScale: 2
+--- !u!114 &827819233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827819224}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab6d0603801842946bdc7830f44ed7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &829791762
 GameObject:
   m_ObjectHideFlags: 0
@@ -20042,6 +20101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 931270368772464474, guid: dadf8b28f7d31ff44b155e00104d5e22, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1310587034733510704, guid: dadf8b28f7d31ff44b155e00104d5e22, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -20056,7 +20119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2291615077322093376, guid: dadf8b28f7d31ff44b155e00104d5e22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.51
+      value: -3.33
       objectReference: {fileID: 0}
     - target: {fileID: 5927034456068540775, guid: dadf8b28f7d31ff44b155e00104d5e22, type: 3}
       propertyPath: m_Name
@@ -20109,6 +20172,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 247185363963310268, guid: dadf8b28f7d31ff44b155e00104d5e22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 827819226}
+    - targetCorrespondingSourceObject: {fileID: 247185363963310268, guid: dadf8b28f7d31ff44b155e00104d5e22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 827819233}
   m_SourcePrefab: {fileID: 100100000, guid: dadf8b28f7d31ff44b155e00104d5e22, type: 3}
 --- !u!1 &1270848032
 GameObject:
@@ -20624,7 +20690,7 @@ Transform:
   m_GameObject: {fileID: 1312597485}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.35, y: 13.34, z: -0.043597147}
+  m_LocalPosition: {x: 43.35, y: 31.13, z: -0.043597147}
   m_LocalScale: {x: 2.7223, y: 3.2346, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30825,5 +30891,6 @@ SceneRoots:
   - {fileID: 1063172000}
   - {fileID: 1473366452}
   - {fileID: 164024238}
+  - {fileID: 522062388}
   - {fileID: 941016641}
   - {fileID: 1327270325}

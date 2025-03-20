@@ -4,90 +4,73 @@ using UnityEngine;
 
 public class VerticalD0p_platform : MonoBehaviour
 {
-   public Transform child;         
-    public Transform parent;        
-    public float Speed = 2f;      
-    private Rigidbody2D rb;         
-    private float targetSpeed;      
-    private bool isPlayerOnPlatform = false; 
-    private float exitDelay = 0.1f; 
-    private float exitTimer = 0f;    
-    private bool isChangingDirection = false; 
-    private float changeDirectionPause = 0.5f; 
-    private float pauseTimer = 0.5f;   
+    public float Speed = 2f;
+    private Rigidbody2D rb;
+    private Transform playerTransform = null; 
+    private bool isPlayerOnPlatform = false;
+    private bool shouldMoveUp = false;
+    private float initialY; 
 
-    private void Start()
+    public float floatHeight = 1f;
+    public float gravityScale = 2f;
+
+    void Start()
     {
-        parent = transform;
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic; 
-        targetSpeed = Speed; 
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("platform"))
-        {
-            isChangingDirection = true; 
-            targetSpeed = -Speed; 
-            pauseTimer = changeDirectionPause; 
-        }
+        rb.gravityScale = 0; 
+        initialY = transform.position.y;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player") && !isPlayerOnPlatform)
         {
-            child = collision.transform;
-            child.transform.SetParent(parent);
+            playerTransform = collision.transform;
             isPlayerOnPlatform = true;
+            shouldMoveUp = true;
+            rb.velocity = Vector2.up * Speed; 
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player") && isPlayerOnPlatform)
         {
+            playerTransform = null;
             isPlayerOnPlatform = false;
-            exitTimer = exitDelay; 
+            shouldMoveUp = false;
+            rb.velocity = Vector2.down * Speed * gravityScale; 
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-       
-        if (isChangingDirection)
+        if (rb.bodyType == RigidbodyType2D.Kinematic)
         {
-            pauseTimer -= Time.fixedDeltaTime;
-            if (pauseTimer <= 0)
+            if (shouldMoveUp && isPlayerOnPlatform)
             {
-                Speed = targetSpeed; 
-                isChangingDirection = false;
+                Vector2 targetPosition = new Vector2(transform.position.x, initialY + floatHeight);
+                rb.MovePosition(Vector2.Lerp(rb.position, targetPosition, Speed * Time.fixedDeltaTime));
             }
-            return; 
+            else if (!isPlayerOnPlatform && rb.velocity.y < 0)
+            {
+                Vector2 targetPosition = new Vector2(transform.position.x, initialY);
+                rb.MovePosition(Vector2.Lerp(rb.position, targetPosition, Speed * gravityScale * Time.fixedDeltaTime));
+            }
+            else if (!isPlayerOnPlatform && rb.velocity.y == 0)
+            {
+                rb.MovePosition(Vector2.Lerp(rb.position, new Vector2(transform.position.x, initialY), 0.5f * Time.fixedDeltaTime));
+            }
         }
-
-       
-        Vector2 newPosition = rb.position + new Vector2(0, Speed * Time.fixedDeltaTime);
-        rb.MovePosition(newPosition);
+  
     }
 
-    private void Update()
+    void Update()
     {
-      
-        if (!isPlayerOnPlatform && exitTimer > 0)
+        if (isPlayerOnPlatform && playerTransform != null)
         {
-            exitTimer -= Time.deltaTime;
-            if (exitTimer <= 0 && child != null)
-            {
-                
-                RaycastHit2D hit = Physics2D.Raycast(child.position, Vector2.down, 0.3f, LayerMask.GetMask("Platform"));
-                if (hit.collider == null || hit.collider.gameObject != gameObject)
-                {
-                    child.transform.SetParent(null);
-                    child = null;
-                }
-            }
+          
         }
     }
 }
