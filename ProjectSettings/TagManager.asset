@@ -62,6 +62,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Glowing
+    uniqueID: 3286155261
+    locked: 0
   - name: foreground
     uniqueID: 2667463385
     locked: 0

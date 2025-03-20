@@ -36,6 +36,7 @@ public class WeaponSwitchDop : MonoBehaviour
     void Update()
     {
 
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             SwitchWeapon("pistol");
@@ -48,6 +49,21 @@ public class WeaponSwitchDop : MonoBehaviour
         {
             SwitchWeapon("machineGun");
         }
+
+      
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    SwitchWeapon("pistol");
+        //}
+        //else if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    SwitchWeapon("shotgun");
+        //}
+        //else if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    SwitchWeapon("machineGun");
+        //}
+
 
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
