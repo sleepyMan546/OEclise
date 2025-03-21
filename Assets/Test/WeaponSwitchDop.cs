@@ -7,14 +7,16 @@ public class WeaponSwitchDop : MonoBehaviour
     public GameObject pistol;
     public GameObject shotgun;
     public GameObject machineGun;
+    public GameObject weaponSwitchEffectPrefab;
 
     [SerializeField] private AudioSource pistolSwitchSoundSource;
     [SerializeField] private AudioSource shotgunSwitchSoundSource;
     [SerializeField] private AudioSource machineGunSwitchSoundSource;
 
     private Dictionary<string, GameObject> weapons;
-    private string[] weaponOrder = { "pistol", "shotgun", "machineGun" }; 
+    private string[] weaponOrder = { "pistol", "shotgun", "machineGun" };
     private int currentWeaponIndex = 0;
+    
 
     void Start()
     {
@@ -31,60 +33,45 @@ public class WeaponSwitchDop : MonoBehaviour
         {
             Debug.LogError("Missing audio source for one or more weapons!");
         }
+      
     }
 
     void Update()
     {
-
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
             SwitchWeapon("pistol");
+            
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
             SwitchWeapon("shotgun");
+         
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
             SwitchWeapon("machineGun");
+            
         }
 
-      
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    SwitchWeapon("pistol");
-        //}
-        //else if (Input.GetKeyDown(KeyCode.W))
-        //{
-        //    SwitchWeapon("shotgun");
-        //}
-        //else if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    SwitchWeapon("machineGun");
-        //}
-
-
-
-        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SwitchWeapon("pistol");
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) 
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SwitchWeapon("shotgun");
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3)) 
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SwitchWeapon("machineGun");
         }
 
-       
-        if (Input.mouseScrollDelta.y > 0) 
+        if (Input.mouseScrollDelta.y > 0)
         {
             SwitchToNextWeapon();
         }
-        else if (Input.mouseScrollDelta.y < 0) 
+        else if (Input.mouseScrollDelta.y < 0)
         {
             SwitchToPreviousWeapon();
         }
@@ -96,9 +83,8 @@ public class WeaponSwitchDop : MonoBehaviour
         {
             currentWeaponIndex = System.Array.IndexOf(weaponOrder, weaponName);
             UpdateWeaponVisibility();
-
-           
             PlaySwitchSound(weaponName);
+            TriggerWeaponSwitchEffect(); 
         }
     }
 
@@ -107,6 +93,7 @@ public class WeaponSwitchDop : MonoBehaviour
         currentWeaponIndex = (currentWeaponIndex + 1) % weaponOrder.Length;
         UpdateWeaponVisibility();
         PlaySwitchSound(weaponOrder[currentWeaponIndex]);
+        TriggerWeaponSwitchEffect(); 
     }
 
     void SwitchToPreviousWeapon()
@@ -114,6 +101,7 @@ public class WeaponSwitchDop : MonoBehaviour
         currentWeaponIndex = (currentWeaponIndex - 1 + weaponOrder.Length) % weaponOrder.Length;
         UpdateWeaponVisibility();
         PlaySwitchSound(weaponOrder[currentWeaponIndex]);
+        TriggerWeaponSwitchEffect(); 
     }
 
     void UpdateWeaponVisibility()
@@ -144,5 +132,42 @@ public class WeaponSwitchDop : MonoBehaviour
     public string GetCurrentWeapon()
     {
         return weaponOrder[currentWeaponIndex];
+    }
+
+    
+    void TriggerWeaponSwitchEffect()
+    {
+        if (weaponSwitchEffectPrefab != null)
+        {
+            GameObject effectInstance = Instantiate(weaponSwitchEffectPrefab, transform.position, Quaternion.identity); 
+
+            
+            StartCoroutine(AnimateScaleBurst(effectInstance));
+        }
+    }
+
+    IEnumerator AnimateScaleBurst(GameObject effect)
+    {
+        SpriteRenderer spriteRenderer = effect.GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null) yield break; 
+
+        Vector3 initialScale = Vector3.zero;
+        Vector3 targetScale = Vector3.one * 3f; 
+        float duration = 1f;
+        float time = 0f;
+
+        effect.transform.localScale = initialScale; 
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float normalizedTime = time / duration;
+            
+            effect.transform.localScale = Vector3.Lerp(initialScale, targetScale, normalizedTime);
+            spriteRenderer.color = Color.Lerp(Color.white, new Color(1f, 1f, 1f, 0f), normalizedTime);
+            yield return null;
+        }
+
+        Destroy(effect); 
     }
 }

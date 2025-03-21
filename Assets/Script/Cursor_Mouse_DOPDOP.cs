@@ -54,7 +54,7 @@ public class Cursor_Mouse_DOPDOP : MonoBehaviour
         UnityEngine.Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
-    // ฟังก์ชันสำหรับปรับขนาด Texture2D
+    
     private Texture2D ResizeTexture(Texture2D source, int newWidth, int newHeight)
     {
         RenderTexture rt = RenderTexture.GetTemporary(

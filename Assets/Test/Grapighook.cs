@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +10,15 @@ public class Grapighook : MonoBehaviour
     public float grappleSpeed = 20f;
     public float grappleRange = 10f;
     public Rigidbody2D rb;
+    public GameObject targetIndicatorPrefab;
+    private GameObject targetIndicator;
     private Vector2 grapplePoint;
     private bool isGrappling = false;
     private Animator animator;
     public float cooldownDuration = 2f;
     private bool isCooldown = false;
+
+    private GameObject destinationMarker; 
 
     private void Start()
     {
@@ -23,11 +27,13 @@ public class Grapighook : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !isCooldown) 
+        if (Input.GetKeyDown(KeyCode.R) && !isCooldown)
         {
+           
+            CalculateGrapplePoint();
             FireGrapple();
             animator.SetTrigger("Jump");
-            StartCoroutine(CooldownRoutine()); 
+            StartCoroutine(CooldownRoutine());
         }
 
         if (isGrappling)
@@ -42,14 +48,30 @@ public class Grapighook : MonoBehaviour
         }
     }
 
-    void FireGrapple()
+    
+    void CalculateGrapplePoint()
     {
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, (MouseWorldPosition() - (Vector2)firePoint.position).normalized, grappleRange, grappleLayer);
+        Vector2 direction = (MouseWorldPosition() - (Vector2)firePoint.position).normalized;
+        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction, grappleRange, grappleLayer);
 
         if (hit.collider != null)
         {
             grapplePoint = hit.point;
+        }
+        else
+        {
+            grapplePoint = Vector2.zero; 
+        }
+    }
+
+
+    void FireGrapple()
+    {
+       
+        if (grapplePoint != Vector2.zero)
+        {
             isGrappling = true;
+            ShowDestinationMarker(grapplePoint);  
             StartCoroutine(PullToTarget());
         }
     }
@@ -66,6 +88,7 @@ public class Grapighook : MonoBehaviour
         rb.velocity = Vector2.zero;
         isGrappling = false;
         lineRenderer.enabled = false;
+        DestroyDestinationMarker(); 
     }
 
     void DrawRope()
@@ -92,7 +115,24 @@ public class Grapighook : MonoBehaviour
     IEnumerator CooldownRoutine()
     {
         isCooldown = true;
-        yield return new WaitForSeconds(cooldownDuration); 
+        yield return new WaitForSeconds(cooldownDuration);
         isCooldown = false;
+    }
+
+   
+    void ShowDestinationMarker(Vector2 position)
+    {
+        destinationMarker = Instantiate(targetIndicatorPrefab);
+        destinationMarker.transform.position = position;
+    }
+
+   
+    void DestroyDestinationMarker()
+    {
+        if (destinationMarker != null)
+        {
+            Destroy(destinationMarker);
+            destinationMarker = null;
+        }
     }
 }
