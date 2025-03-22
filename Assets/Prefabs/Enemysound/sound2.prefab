@@ -1963,9 +1963,10 @@ MonoBehaviour:
   pistol: {fileID: 2204222004839026290}
   shotgun: {fileID: 485602591283492491}
   machineGun: {fileID: 1331839773502917889}
+  weaponSwitchEffectPrefab: {fileID: 0}
   pistolSwitchSoundSource: {fileID: 0}
   shotgunSwitchSoundSource: {fileID: 0}
-  mechineGunSwitchSoundSource: {fileID: 0}
+  machineGunSwitchSoundSource: {fileID: 0}
 --- !u!114 &4811967781638284577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1999,6 +2000,7 @@ MonoBehaviour:
   grappleSpeed: 10
   grappleRange: 100
   rb: {fileID: 1749954539395335555}
+  targetIndicatorPrefab: {fileID: 2308129935091237631, guid: 8f15bc22a6b43c54697bf73e3a3693ef, type: 3}
   cooldownDuration: 0.5
 --- !u!120 &3332058896700961954
 LineRenderer:
