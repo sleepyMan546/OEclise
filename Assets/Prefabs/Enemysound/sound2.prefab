@@ -2132,6 +2132,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   numberOfFlashes: 3
   iFrameDelay: 0.5
+  hpText: {fileID: 0}
+  animator: {fileID: 0}
   barrierPrefab: {fileID: 214658553608114245, guid: 33abdf71e998d5f47942e3348ecf4edf, type: 3}
   barrierDuration: 5
   barrierCooldown: 10
@@ -2229,6 +2231,10 @@ MonoBehaviour:
   pistolSwitchSoundSource: {fileID: 0}
   shotgunSwitchSoundSource: {fileID: 8664120969834324682}
   machineGunSwitchSoundSource: {fileID: 5386217312270040352}
+  pistolIcon: {fileID: 21300000, guid: 3320f07ced3cf1e43ba7408303123a5c, type: 3}
+  shotgunIcon: {fileID: 21300000, guid: 4bafe41841ba9fc47b5f5be3bdfa7679, type: 3}
+  machineGunIcon: {fileID: 21300000, guid: d64cda634943d054cae5458594a3695f, type: 3}
+  weaponIconUI: {fileID: 0}
 --- !u!114 &4811967781638284577
 MonoBehaviour:
   m_ObjectHideFlags: 0

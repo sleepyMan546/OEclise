@@ -127,7 +127,7 @@ public class WolfBoss : MonoBehaviour
         anim.SetTrigger("Claw");
         yield return new WaitForSeconds(0.5f);
 
-        // เล่นเสียงสำหรับ ClawWaveAttack
+       
         if (clawWaveSound != null)
         {
             audioSource.PlayOneShot(clawWaveSound);
@@ -135,14 +135,14 @@ public class WolfBoss : MonoBehaviour
 
         Quaternion rotation = isFacingRight ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
         GameObject clawWave = Instantiate(clawWavePrefab, transform.position, rotation);
-        clawWave.GetComponent<Rigidbody2D>().velocity = clawWave.transform.right * 10f;
+        clawWave.GetComponent<Rigidbody2D>().velocity = clawWave.transform.right * 7f;
     }
 
     IEnumerator BloodShotAttack()
     {
         anim.SetTrigger("Charge");
 
-        // เล่นเสียงชาร์จสำหรับ BloodShotAttack
+       
         if (bloodShotChargeSound != null)
         {
             audioSource.PlayOneShot(bloodShotChargeSound);
@@ -159,7 +159,7 @@ public class WolfBoss : MonoBehaviour
                 Vector3 shotPosition = firePoint.position + shotOffset;
                 GameObject bloodShot = Instantiate(bloodShotPrefab, shotPosition, Quaternion.identity);
 
-                // เล่นเสียงยิงสำหรับ BloodShotAttack
+               
                 if (bloodShotFireSound != null)
                 {
                     audioSource.PlayOneShot(bloodShotFireSound);
@@ -177,14 +177,14 @@ public class WolfBoss : MonoBehaviour
 
     IEnumerator JumpSlamAttack()
     {
-        // เล่นเสียงคำรามก่อนกระโดด
+        
         if (jumpRoarSound != null)
         {
             audioSource.PlayOneShot(jumpRoarSound);
         }
 
         anim.SetTrigger("Jump");
-        yield return new WaitForSeconds(0.5f); // รอให้คำรามเสร็จก่อนกระโดด
+        yield return new WaitForSeconds(0.5f); 
 
         transform.position = new Vector3(transform.position.x, transform.position.y + 50f, transform.position.z);
         Vector3 targetPos = player.transform.position;
@@ -194,13 +194,13 @@ public class WolfBoss : MonoBehaviour
         transform.position = new Vector3(targetPos.x, originalPosition.y, targetPos.z);
         anim.SetTrigger("Slam");
 
-        // เล่นเสียงกระแทกเมื่อลงพื้น
+        
         if (slamSound != null)
         {
             audioSource.PlayOneShot(slamSound);
         }
 
-        // เรียกการสั่นกล้องเมื่อกระแทกลงพื้น
+        
         StartCoroutine(ShakeCamera());
 
         GameObject slamArea = Instantiate(slamAreaPrefab, targetPos, Quaternion.identity);
@@ -208,7 +208,7 @@ public class WolfBoss : MonoBehaviour
         Destroy(slamArea);
     }
 
-    // ฟังก์ชันสำหรับการสั่นกล้อง
+    
     private IEnumerator ShakeCamera()
     {
         Vector3 originalCameraPosition = mainCamera.transform.position;

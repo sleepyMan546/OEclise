@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class WeaponSwitchDop : MonoBehaviour
 {
     public GameObject pistol;
@@ -17,7 +17,12 @@ public class WeaponSwitchDop : MonoBehaviour
     private Dictionary<string, GameObject> weapons;
     private string[] weaponOrder = { "pistol", "shotgun", "machineGun" };
     private int currentWeaponIndex = 0;
+    public Sprite pistolIcon;
+    public Sprite shotgunIcon;
+    public Sprite machineGunIcon;
+
     
+    public Image weaponIconUI;
 
     void Start()
     {
@@ -29,7 +34,7 @@ public class WeaponSwitchDop : MonoBehaviour
         };
 
         UpdateWeaponVisibility();
-
+        UpdateWeaponIconUI();
         if (pistolSwitchSoundSource == null || shotgunSwitchSoundSource == null || machineGunSwitchSoundSource == null)
         {
             Debug.LogError("Missing audio source for one or more weapons!");
@@ -87,7 +92,8 @@ public class WeaponSwitchDop : MonoBehaviour
             currentWeaponIndex = System.Array.IndexOf(weaponOrder, weaponName);
             UpdateWeaponVisibility();
             PlaySwitchSound(weaponName);
-           
+            UpdateWeaponIconUI();
+
         }
     }
 
@@ -96,7 +102,8 @@ public class WeaponSwitchDop : MonoBehaviour
         currentWeaponIndex = (currentWeaponIndex + 1) % weaponOrder.Length;
         UpdateWeaponVisibility();
         PlaySwitchSound(weaponOrder[currentWeaponIndex]);
-        
+        UpdateWeaponIconUI();
+
     }
 
     void SwitchToPreviousWeapon()
@@ -104,7 +111,7 @@ public class WeaponSwitchDop : MonoBehaviour
         currentWeaponIndex = (currentWeaponIndex - 1 + weaponOrder.Length) % weaponOrder.Length;
         UpdateWeaponVisibility();
         PlaySwitchSound(weaponOrder[currentWeaponIndex]);
-       
+        UpdateWeaponIconUI();
     }
 
     void UpdateWeaponVisibility()
@@ -180,7 +187,7 @@ public class WeaponSwitchDop : MonoBehaviour
 
         Vector3 initialScale = Vector3.zero;
         Vector3 targetScale = Vector3.one * 3f; 
-        float duration = 1f;
+        float duration = 0.5f;
         float time = 0f;
 
         effect.transform.localScale = initialScale; 
@@ -196,5 +203,30 @@ public class WeaponSwitchDop : MonoBehaviour
         }
 
         Destroy(effect); 
+    }
+    void UpdateWeaponIconUI()
+    {
+        if (weaponIconUI != null)
+        {
+            string currentWeaponName = GetCurrentWeapon();
+
+           
+            switch (currentWeaponName)
+            {
+                case "pistol":
+                    weaponIconUI.sprite = pistolIcon;
+                    break;
+                case "shotgun":
+                    weaponIconUI.sprite = shotgunIcon;
+                    break;
+                case "machineGun":
+                    weaponIconUI.sprite = machineGunIcon;
+                    break;
+                default:
+                    weaponIconUI.sprite = null; 
+                    Debug.LogWarning("Unknown weapon name: " + currentWeaponName);
+                    break;
+            }
+        }
     }
 }

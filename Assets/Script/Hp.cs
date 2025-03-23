@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Transactions;
 
+
 public class Hp : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -16,6 +17,8 @@ public class Hp : MonoBehaviour
     private CheckpointSystem checkpointSystem;
     [SerializeField] private int numberOfFlashes;
     [SerializeField] private float iFrameDelay;
+    public TMPro.TextMeshProUGUI hpText;
+    public Animator animator;
 
     private bool isGodMode = false;
 
@@ -34,11 +37,13 @@ public class Hp : MonoBehaviour
         originalColor = objRenderer.material.color;
         anim = GetComponent<Animator>();
         UpdateHealthBar();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         healthBar.fillAmount = Mathf.Clamp((float)currentHealth / maxHealth, 0, 1);
+        UpdateHealthUI();
 
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -66,7 +71,9 @@ public class Hp : MonoBehaviour
             Debug.Log(gameObject.name + " Takedamage " + damage + " CurrentHp " + currentHealth);
             anim.SetTrigger("Take");
             ChangeToRed();
-
+            UpdateHealthUI();
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+            animator.SetTrigger("Scale");
             if (currentHealth <= 0)
             {
                 Die();
@@ -131,13 +138,24 @@ public class Hp : MonoBehaviour
 
     void UpdateHealthBar()
     {
+        Debug.Log("UpdateHealthBar called! Current Health: " + currentHealth);
         if (healthBar != null)
         {
             healthBar.fillAmount = (float)currentHealth / maxHealth;
         }
+     
+    }
+    void UpdateHealthUI()
+    {
+        if (hpText != null)
+        {
+            hpText.text = currentHealth.ToString();
+            //hpText.color = currentHealth < 170 ? Color.red : Color.white; 
+           
+        }
     }
 
-   
+
     public bool ActivateBarrier()
     {
         if (currentBarrierCooldown > 0 || isBarrierActive)

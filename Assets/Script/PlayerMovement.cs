@@ -257,13 +257,13 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         anim.SetTrigger("Jump");
         airJumpCount++;
-        if (jumpSoundSource != null) // เล่นเสียงกระโดดเมื่อกระโดดกลางอากาศ
+        if (jumpSoundSource != null) 
         {
             jumpSoundSource.Play();
         }
     }
 
-    // ฟังก์ชันใหม่สำหรับเล่นเสียงลงพื้น
+   
     void PlayLandSound()
     {
         if (landSoundSource != null)
