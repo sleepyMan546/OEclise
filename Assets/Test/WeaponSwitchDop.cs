@@ -7,8 +7,9 @@ public class WeaponSwitchDop : MonoBehaviour
     public GameObject pistol;
     public GameObject shotgun;
     public GameObject machineGun;
-    public GameObject weaponSwitchEffectPrefab;
-
+    public GameObject shotgunEffectPrefab;
+    public GameObject pistolSwitchEffectPrefab;
+    public GameObject machinegunSwitchEffectPrefab;
     [SerializeField] private AudioSource pistolSwitchSoundSource;
     [SerializeField] private AudioSource shotgunSwitchSoundSource;
     [SerializeField] private AudioSource machineGunSwitchSoundSource;
@@ -42,11 +43,13 @@ public class WeaponSwitchDop : MonoBehaviour
         {
             SwitchWeapon("pistol");
             
+
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
             SwitchWeapon("shotgun");
-         
+          TriggerWeaponSwitchEffectShotGun();
+
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
@@ -84,7 +87,7 @@ public class WeaponSwitchDop : MonoBehaviour
             currentWeaponIndex = System.Array.IndexOf(weaponOrder, weaponName);
             UpdateWeaponVisibility();
             PlaySwitchSound(weaponName);
-            TriggerWeaponSwitchEffect(); 
+           
         }
     }
 
@@ -93,7 +96,7 @@ public class WeaponSwitchDop : MonoBehaviour
         currentWeaponIndex = (currentWeaponIndex + 1) % weaponOrder.Length;
         UpdateWeaponVisibility();
         PlaySwitchSound(weaponOrder[currentWeaponIndex]);
-        TriggerWeaponSwitchEffect(); 
+        
     }
 
     void SwitchToPreviousWeapon()
@@ -101,7 +104,7 @@ public class WeaponSwitchDop : MonoBehaviour
         currentWeaponIndex = (currentWeaponIndex - 1 + weaponOrder.Length) % weaponOrder.Length;
         UpdateWeaponVisibility();
         PlaySwitchSound(weaponOrder[currentWeaponIndex]);
-        TriggerWeaponSwitchEffect(); 
+       
     }
 
     void UpdateWeaponVisibility()
@@ -118,14 +121,17 @@ public class WeaponSwitchDop : MonoBehaviour
         if (weaponName == "pistol" && pistolSwitchSoundSource != null)
         {
             pistolSwitchSoundSource.Play();
+            TriggerWeaponSwitchEffectPistol();
         }
         else if (weaponName == "shotgun" && shotgunSwitchSoundSource != null)
         {
             shotgunSwitchSoundSource.Play();
+            TriggerWeaponSwitchEffectShotGun();
         }
         else if (weaponName == "machineGun" && machineGunSwitchSoundSource != null)
         {
             machineGunSwitchSoundSource.Play();
+            TriggerWeaponSwitchEffectMachinegun();
         }
     }
 
@@ -135,13 +141,34 @@ public class WeaponSwitchDop : MonoBehaviour
     }
 
     
-    void TriggerWeaponSwitchEffect()
+    void TriggerWeaponSwitchEffectShotGun()
     {
-        if (weaponSwitchEffectPrefab != null)
+        if (shotgunEffectPrefab != null)
         {
-            GameObject effectInstance = Instantiate(weaponSwitchEffectPrefab, transform.position, Quaternion.identity); 
+            GameObject effectInstance = Instantiate(shotgunEffectPrefab, transform.position, Quaternion.identity); 
 
             
+            StartCoroutine(AnimateScaleBurst(effectInstance));
+        }
+    }
+    void TriggerWeaponSwitchEffectPistol()
+    {
+        if (pistolSwitchEffectPrefab != null)
+        {
+            GameObject effectInstance = Instantiate(pistolSwitchEffectPrefab, transform.position, Quaternion.identity);
+
+
+            StartCoroutine(AnimateScaleBurst(effectInstance));
+        }
+    }
+
+    void TriggerWeaponSwitchEffectMachinegun()
+    {
+        if (pistolSwitchEffectPrefab != null)
+        {
+            GameObject effectInstance = Instantiate(machinegunSwitchEffectPrefab, transform.position, Quaternion.identity);
+
+
             StartCoroutine(AnimateScaleBurst(effectInstance));
         }
     }
