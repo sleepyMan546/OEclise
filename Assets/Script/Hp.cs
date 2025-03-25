@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Transactions;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using System.Security.Cryptography.X509Certificates;
+using UnityEngine.TextCore.Text;
+using UnityEngine.Events;
 
 
 public class Hp : MonoBehaviour
@@ -19,7 +23,7 @@ public class Hp : MonoBehaviour
     [SerializeField] private float iFrameDelay;
     public TMPro.TextMeshProUGUI hpText;
     public Animator animator;
-
+    public UnityEvent onTakeDamage;
     private bool isGodMode = false;
 
     //Barier
@@ -29,6 +33,7 @@ public class Hp : MonoBehaviour
     private GameObject currentBarrier; 
     private bool isBarrierActive = false; 
     private float currentBarrierCooldown = 0f; 
+   
 
     void Start()
     {
@@ -38,6 +43,7 @@ public class Hp : MonoBehaviour
         anim = GetComponent<Animator>();
         UpdateHealthBar();
         animator = GetComponent<Animator>();
+      
     }
 
     void Update()
@@ -73,7 +79,9 @@ public class Hp : MonoBehaviour
             ChangeToRed();
             UpdateHealthUI();
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-            animator.SetTrigger("Scale");
+            onTakeDamage.Invoke();
+
+
             if (currentHealth <= 0)
             {
                 Die();
@@ -150,7 +158,7 @@ public class Hp : MonoBehaviour
         if (hpText != null)
         {
             hpText.text = currentHealth.ToString();
-            //hpText.color = currentHealth < 170 ? Color.red : Color.white; 
+            hpText.color = currentHealth < 170 ? Color.red : Color.white; 
            
         }
     }

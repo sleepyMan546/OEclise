@@ -2984,7 +2984,7 @@ PrefabInstance:
       objectReference: {fileID: 2308129935091237631, guid: 7f416c3c1c56f7643bf22deafcddbf3b, type: 3}
     - target: {fileID: 1323281890994585265, guid: 40fd09c2f1d75004bad74a8d82084849, type: 3}
       propertyPath: attackCooldown
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1323281890994585265, guid: 40fd09c2f1d75004bad74a8d82084849, type: 3}
       propertyPath: numberOfSeries
@@ -3048,7 +3048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773105103963053076, guid: 40fd09c2f1d75004bad74a8d82084849, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5282
+      value: 29.73
       objectReference: {fileID: 0}
     - target: {fileID: 7773105103963053076, guid: 40fd09c2f1d75004bad74a8d82084849, type: 3}
       propertyPath: m_LocalPosition.y
