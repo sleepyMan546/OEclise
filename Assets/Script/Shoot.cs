@@ -9,6 +9,8 @@ public class Shoot : MonoBehaviour
     public float bulletSpeed = 10f;
     public float fireRate = 0.5f;
     private float nextFireTime = 0f;
+    [SerializeField] private ParticleSystem shootEffect; 
+    [SerializeField] private GameObject muzzleFlashPrefab;
 
     [SerializeField] private AudioSource shootingSoundSource;
 
@@ -36,10 +38,23 @@ public class Shoot : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed;
 
-        // เล่นเสียงยิง (ถ้า AudioSource ถูกกำหนดไว้)
+        
         if (shootingSoundSource != null)
         {
             shootingSoundSource.Play();
+        }
+        if (shootEffect != null)
+        {
+            ParticleSystem effect = Instantiate(shootEffect, firePoint.position, firePoint.rotation);
+            effect.Play();
+            Destroy(effect.gameObject, effect.main.duration); 
+        }
+
+        
+        if (muzzleFlashPrefab != null)
+        {
+            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, firePoint.position, firePoint.rotation);
+            Destroy(muzzleFlash, 0.1f); 
         }
     }
 }
