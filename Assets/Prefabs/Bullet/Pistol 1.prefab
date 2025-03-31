@@ -174,3 +174,4 @@ MonoBehaviour:
   speed: 20
   lifetime: 0.7
   damage: 100
+  maxBounces: 3
