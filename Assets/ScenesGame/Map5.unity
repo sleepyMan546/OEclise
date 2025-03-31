@@ -4669,7 +4669,7 @@ GameObject:
   - component: {fileID: 429556050}
   - component: {fileID: 429556052}
   - component: {fileID: 429556051}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Square (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -12511,7 +12511,7 @@ GameObject:
   - component: {fileID: 1268342533}
   - component: {fileID: 1268342535}
   - component: {fileID: 1268342534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: prop_38 (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -19038,6 +19038,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 197136690}
     m_Modifications:
+    - target: {fileID: 1203056990716182387, guid: b8fea4e26dc9cd9458dbde84ff2e8747, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1485103791297259194, guid: b8fea4e26dc9cd9458dbde84ff2e8747, type: 3}
       propertyPath: m_Name
       value: laser
@@ -19081,6 +19085,18 @@ PrefabInstance:
     - target: {fileID: 5276123994599662242, guid: b8fea4e26dc9cd9458dbde84ff2e8747, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655904200568952476, guid: b8fea4e26dc9cd9458dbde84ff2e8747, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655904200568952476, guid: b8fea4e26dc9cd9458dbde84ff2e8747, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069176711641651030, guid: b8fea4e26dc9cd9458dbde84ff2e8747, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19942,7 +19958,7 @@ GameObject:
   - component: {fileID: 1959479238}
   - component: {fileID: 1959479240}
   - component: {fileID: 1959479239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: prop_38 (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
