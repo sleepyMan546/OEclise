@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Rendering.LookDev;
 
 public class ComboSystem : MonoBehaviour
 {
     public WeaponSwitchDop weaponSwitchDop;
     public PlayerMovement playerMovement;
     public Hp hp;
+    public float hakiRange = 100f;
+    public GameObject hakiEffectPrefab;
+    public EnemyHp enemyHp;
+    [SerializeField] private float shakeDuration = 0.5f;       
+    [SerializeField] private float shakeMagnitude = 0.3f;
 
     // UI Elements
     public Image[] comboImages; // Array ของ Image สำหรับแสดงรูปปืน (2-3 ช่อง)
     public TextMeshProUGUI buffText; // Text สำหรับแสดงสถานะบัฟ
+    public Camera mainCamera;
 
     // Combo Data
     private List<string> currentCombo = new List<string>(); // เก็บลำดับปืนในคอมโบ
@@ -243,7 +250,7 @@ public class ComboSystem : MonoBehaviour
         //}
 
         // สุ่มบัฟ (0-5) เพิ่มจาก 4 เป็น 6 ตัวเลือก
-        int buffIndex = Random.Range(0, 6);
+        int buffIndex = Random.Range(0, 7);
         switch (buffIndex)
         {
             case 0: // ฟื้นฟู HP
@@ -284,6 +291,11 @@ public class ComboSystem : MonoBehaviour
                 StartCoroutine(MiniFormBuff());
                 buffText.text = "Buff: Mini Form";
                 Debug.Log("ComboSystem: Mini Form Buff applied!");
+                break;
+            case 6: // ฮาคิราชันย์
+                StartCoroutine(ConquerorsHakiBuff());
+                buffText.text = "Buff: Conqueror's Haki";
+                Debug.Log("ComboSystem: Conqueror's Haki Buff applied!");
                 break;
         }
     }
@@ -385,5 +397,59 @@ public class ComboSystem : MonoBehaviour
 
         isBuffActive = false;
         buffText.text = "";
+    }
+    IEnumerator ConquerorsHakiBuff()
+    {
+        isBuffActive = true;
+
+        // สร้าง Visual Effect รอบตัวผู้เล่น
+        GameObject hakiEffect = Instantiate(hakiEffectPrefab, playerMovement.transform.position, Quaternion.identity);
+        hakiEffect.transform.SetParent(playerMovement.transform); // ทำให้ Effect ติดตามผู้เล่น
+
+        // ปล่อยออร่า Conqueror's Haki
+        // ตรวจจับศัตรูในระยะรอบตัวผู้เล่น
+        
+        Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(playerMovement.transform.position, hakiRange);
+        foreach (Collider2D enemy in enemiesInRange)
+        {
+            if (enemy.CompareTag("Enemy"))
+            {
+                StartCoroutine(ShakeCamera());
+                Debug.Log($"ComboSystem: Enemy {enemy.name} defeated by Conqueror's Haki!");
+                Destroy(enemy.gameObject);
+            }
+        }
+
+        // รอตามระยะเวลา
+        yield return new WaitForSeconds(1f);
+
+        // ทำลาย Visual Effect
+        Destroy(hakiEffect);
+
+        isBuffActive = false;
+        buffText.text = "";
+    }
+    private IEnumerator ShakeCamera()
+    {
+        Vector3 originalCameraPosition = mainCamera.transform.position;
+        float elapsed = 0f;
+
+        while (elapsed < shakeDuration)
+        {
+            elapsed += Time.deltaTime;
+            float x = Random.Range(-1f, 1f) * shakeMagnitude;
+            float y = Random.Range(-1f, 1f) * shakeMagnitude;
+            mainCamera.transform.position = new Vector3(originalCameraPosition.x + x, originalCameraPosition.y + y, originalCameraPosition.z);
+            yield return null;
+        }
+
+        mainCamera.transform.position = originalCameraPosition;
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(playerMovement.transform.position, hakiRange);
     }
 }
