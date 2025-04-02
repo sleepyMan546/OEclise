@@ -29,7 +29,7 @@ public class Hp : MonoBehaviour
     //Barier
     [SerializeField] private GameObject barrierPrefab; 
     [SerializeField] private float barrierDuration = 5f; 
-    [SerializeField] private float barrierCooldown = 10f; 
+     public float barrierCooldown = 10f; 
     private GameObject currentBarrier; 
     private bool isBarrierActive = false; 
     private float currentBarrierCooldown = 0f; 

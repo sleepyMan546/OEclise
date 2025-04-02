@@ -6305,6 +6305,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2129760736}
     m_Modifications:
+    - target: {fileID: 1495080328095718351, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495080328095718351, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1627503911
+      objectReference: {fileID: 0}
     - target: {fileID: 1749954539395335555, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
       propertyPath: m_Material
       value: 
@@ -6355,7 +6363,7 @@ PrefabInstance:
       objectReference: {fileID: 2032237318}
     - target: {fileID: 3537138865785360066, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
       propertyPath: grappleRange
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3688392242363459858, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6399,6 +6407,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4351363740501371152, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
       propertyPath: dashCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351363740501371152, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
+      propertyPath: airJumpsAllowed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4351363740501371152, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
@@ -13018,11 +13030,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &808804310 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5753162067387771879, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
-  m_PrefabInstance: {fileID: 382087515}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &815902480
 GameObject:
   m_ObjectHideFlags: 0
@@ -15317,7 +15324,6 @@ MonoBehaviour:
   pistolSprite: {fileID: 21300000, guid: 3320f07ced3cf1e43ba7408303123a5c, type: 3}
   shotgunSprite: {fileID: 21300000, guid: 8afe0bbcc302bb84aa42683fdc54de23, type: 3}
   machineGunSprite: {fileID: 21300000, guid: f654c6cbeb28ac64db6a2cd39bf86575, type: 3}
-  clonespaw: {fileID: 808804310}
   playerPrefab: {fileID: 8730357777710577420, guid: 7f80e95514feecb4782451d4f1826a97, type: 3}
   comboTimeLimit: 20
 --- !u!1001 &944596686

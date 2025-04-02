@@ -12,7 +12,7 @@ public class ComboSystem : MonoBehaviour
 
     // UI Elements
     public Image[] comboImages; // Array ของ Image สำหรับแสดงรูปปืน (2-3 ช่อง)
-    public TextMeshProUGUI buffText;// Text สำหรับแสดงสถานะบัฟ (เพิ่มเข้ามา)
+    public TextMeshProUGUI buffText; // Text สำหรับแสดงสถานะบัฟ
 
     // Combo Data
     private List<string> currentCombo = new List<string>(); // เก็บลำดับปืนในคอมโบ
@@ -22,10 +22,13 @@ public class ComboSystem : MonoBehaviour
     public Sprite machineGunSprite; // Sprite ของปืนกล
 
     // Buff Settings
-    private float buffDuration = 5f; // ระยะเวลาของบัฟ
+    private float buffDuration = 20f; // ระยะเวลาของบัฟ
     private bool isBuffActive = false; // ตัวแปรสถานะบัฟ
-    private float originalMoveSpeed;
-    public Transform clonespaw;// ความเร็วเริ่มต้นของผู้เล่น
+    private float originalMoveSpeed; // ความเร็วเริ่มต้นของผู้เล่น
+    private Vector3 originalScale; // ขนาดเริ่มต้นของตัวละคร
+    private float originalDashCooldown; // Cooldown เริ่มต้นของ Dash
+    private float originalAirJumpCooldown; // Cooldown เริ่มต้นของ Air Jump
+    private float originalBarrierCooldown; // Cooldown เริ่มต้นของ Barrier
 
     // Clone Buff Settings
     public GameObject playerPrefab; // Prefab ของ Player สำหรับ Clone Buff
@@ -38,8 +41,6 @@ public class ComboSystem : MonoBehaviour
     // ตัวแปรสำหรับตรวจสอบการใช้สกิล
     private bool wasDashing = false; // ตรวจสอบว่า Dash ถูกใช้หรือไม่
     private int lastAirJumpCount = 0; // เก็บค่า airJumpCount ก่อนหน้า
-    private bool wasBarrierActive = false; // ตรวจสอบว่า Barrier ถูกใช้หรือไม่
-    private bool barrierActivatedThisFrame = false; // เพิ่มตัวแปรเพื่อตรวจสอบการเปิด Barrier ในเฟรมนี้
 
     void Start()
     {
@@ -58,7 +59,7 @@ public class ComboSystem : MonoBehaviour
 
         if (buffText == null)
         {
-            Debug.LogError("ComboSystem: Buff Text is not assigned!");
+            Debug.LogError("ComboSystem: Buff Text (TextMeshProUGUI) is not assigned!");
             return;
         }
 
@@ -76,8 +77,14 @@ public class ComboSystem : MonoBehaviour
             return;
         }
 
-        // เก็บความเร็วเริ่มต้นของผู้เล่น
+        // เก็บค่าเริ่มต้น
         originalMoveSpeed = playerMovement.moveSpeed;
+        originalScale = playerMovement.transform.localScale; // เก็บขนาดเริ่มต้นของตัวละคร
+
+        // เก็บ Cooldown เริ่มต้น (สมมติว่ามีตัวแปรเหล่านี้ใน PlayerMovement และ Hp)
+        originalDashCooldown = playerMovement.dashCooldown; // ต้องเพิ่มตัวแปรใน PlayerMovement
+        originalAirJumpCooldown = playerMovement.airJumpCount; // ต้องเพิ่มตัวแปรใน PlayerMovement
+        originalBarrierCooldown = hp.barrierCooldown; // ต้องเพิ่มตัวแปรใน Hp
 
         // เริ่มคอมโบแรก
         GenerateNewCombo();
@@ -95,9 +102,6 @@ public class ComboSystem : MonoBehaviour
                 GenerateNewCombo();
             }
         }
-
-        // รีเซ็ตตัวแปรตรวจสอบ Barrier ในแต่ละเฟรม
-        barrierActivatedThisFrame = false;
 
         // ตรวจสอบการใช้สกิล ถ้ามีคอมโบให้ทำ
         if (currentCombo.Count > 0)
@@ -125,7 +129,7 @@ public class ComboSystem : MonoBehaviour
                 else if (requiredWeapon == "shotgun")
                 {
                     // ตรวจสอบ Air Jump (Space)
-                    if (Input.GetKeyDown(KeyCode.Space) )
+                    if (Input.GetKeyDown(KeyCode.Space))
                     {
                         Debug.Log("ComboSystem: Shotgun Air Jump detected!");
                         CompleteComboStep();
@@ -134,30 +138,12 @@ public class ComboSystem : MonoBehaviour
                 }
                 else if (requiredWeapon == "machineGun")
                 {
-                    // ตรวจสอบ Barrier (Mouse Right Click)
-                    bool isBarrierActive = hp.IsBarrierActive();
-                    if (!wasBarrierActive && isBarrierActive)
+                    // ตรวจสอบการยิง (Mouse Left Click)
+                    if (Input.GetKeyDown(KeyCode.Mouse1))
                     {
-                        Debug.Log("ComboSystem: Machine Gun Barrier detected!");
+                        Debug.Log("ComboSystem: Machine Gun Fire detected!");
                         CompleteComboStep();
-                        barrierActivatedThisFrame = true; // ระบุว่า Barrier ถูกเปิดในเฟรมนี้
                     }
-                    else if (Input.GetKeyDown(KeyCode.Mouse1) && !isBarrierActive && hp.GetBarrierCooldown() <= 0)
-                    {
-                        // ถ้ากด Mouse Right Click และ Barrier พร้อมใช้งาน
-                        Debug.Log("ComboSystem: Attempting to activate Barrier for Machine Gun!");
-                        if (hp.ActivateBarrier())
-                        {
-                            Debug.Log("ComboSystem: Machine Gun Barrier activated successfully!");
-                            CompleteComboStep();
-                            barrierActivatedThisFrame = true;
-                        }
-                        else
-                        {
-                            Debug.LogWarning("ComboSystem: Failed to activate Barrier! Cooldown: " + hp.GetBarrierCooldown());
-                        }
-                    }
-                    wasBarrierActive = isBarrierActive; // อัพเดตสถานะ Barrier
                 }
             }
             else
@@ -256,12 +242,12 @@ public class ComboSystem : MonoBehaviour
         //    return;
         //}
 
-        // สุ่มบัฟ (0-3)
-        int buffIndex = Random.Range(0, 5);
+        // สุ่มบัฟ (0-5) เพิ่มจาก 4 เป็น 6 ตัวเลือก
+        int buffIndex = Random.Range(0, 6);
         switch (buffIndex)
         {
             case 0: // ฟื้นฟู HP
-                int healAmount = 500;
+                int healAmount = 100;
                 hp.TakeDamage(-healAmount); // ใช้ TakeDamage ด้วยค่าลบเพื่อเพิ่ม HP
                 buffText.text = "Buff: Heal +" + healAmount;
                 Debug.Log("ComboSystem: Heal Buff applied! +" + healAmount + " HP");
@@ -274,25 +260,30 @@ public class ComboSystem : MonoBehaviour
                 break;
 
             case 2: // วิ่งเร็ว
-                float speedMultiplier = 2f;
+                float speedMultiplier = 1.5f;
                 playerMovement.moveSpeed *= speedMultiplier;
                 StartCoroutine(SpeedBuff(speedMultiplier));
                 buffText.text = "Buff: Speed x" + speedMultiplier;
                 Debug.Log("ComboSystem: Speed Buff applied! x" + speedMultiplier);
                 break;
 
-            case 3: // ได้โล่
+            case 3: // ได้โล่ (เพิ่ม HP)
                 int healAmountA = 500;
                 hp.TakeDamage(-healAmountA);
-                buffText.text = "Buff: Heal +" + healAmountA;
-                Debug.Log("ComboSystem:heal 500");
+                buffText.text = "Buff: Shield (HP +" + healAmountA + ")";
+                Debug.Log("ComboSystem: Shield Buff applied! HP +" + healAmountA);
                 break;
-            case 4: // ได้โล่
-                float jumpde = 20f;
-                playerMovement.jumpForce = jumpde;
-                StartCoroutine(JumpBuff(jumpde));
-                buffText.text = "Buff: Jump +" + jumpde;
-                Debug.Log("ComboSystem: jumpboot");
+
+            case 4: // ตัวใหญ่ (Super Form)
+                StartCoroutine(SuperFormBuff());
+                buffText.text = "Buff: Super Form";
+                Debug.Log("ComboSystem: Super Form Buff applied!");
+                break;
+
+            case 5: // ตัวเล็ก (Mini Form)
+                StartCoroutine(MiniFormBuff());
+                buffText.text = "Buff: Mini Form";
+                Debug.Log("ComboSystem: Mini Form Buff applied!");
                 break;
         }
     }
@@ -301,11 +292,11 @@ public class ComboSystem : MonoBehaviour
     {
         isBuffActive = true;
         // สร้าง Clone จาก Player Prefab
-        GameObject clone = Instantiate(playerPrefab,playerMovement.transform.position, Quaternion.identity);
+        GameObject clone = Instantiate(playerPrefab, playerMovement.transform.position, Quaternion.identity);
         Debug.Log("ComboSystem: Clone created at position: " + clone.transform.position);
 
         // รอตามระยะเวลา buffDuration แล้วทำลาย Clone
-        yield return new WaitForSeconds(50f);
+        yield return new WaitForSeconds(buffDuration);
 
         Destroy(clone);
         Debug.Log("ComboSystem: Clone destroyed after " + buffDuration + " seconds");
@@ -321,13 +312,78 @@ public class ComboSystem : MonoBehaviour
         isBuffActive = false;
         buffText.text = "";
     }
-    IEnumerator JumpBuff(float speedMultiplier)
+
+    IEnumerator SuperFormBuff()
     {
         isBuffActive = true;
-        yield return new WaitForSeconds(buffDuration);
+
+        // เก็บค่าเดิมก่อนปรับ
+        float speedMultiplier = 2f;
+        
+        int healAmount = 100;
+
+        // ปรับขนาดตัวละคร (ใหญ่ขึ้น)
+        playerMovement.transform.localScale = originalScale * 1.5f;
+
+        // เพิ่ม HP
+        hp.TakeDamage(-healAmount);
+
+        // เพิ่มความเร็ว
+        playerMovement.moveSpeed *= speedMultiplier;
+
+        // ลด Cooldown สกิล
+        playerMovement.dashCooldown = originalDashCooldown;
+        playerMovement.airJumpsAllowed += 11;
+        hp.barrierCooldown = 0.2f;
+
+        // รอตามระยะเวลา
+        yield return new WaitForSeconds(20f);
+
+        // รีเซ็ตทุกอย่างกลับสู่ค่าเริ่มต้น
+        playerMovement.transform.localScale = originalScale;
         playerMovement.moveSpeed = originalMoveSpeed;
+        playerMovement.dashCooldown = originalDashCooldown;
+        playerMovement.airJumpsAllowed = 1;
+        hp.barrierCooldown = originalBarrierCooldown;
+
         isBuffActive = false;
-        playerMovement.jumpForce = 10f;
+        buffText.text = "";
+    }
+
+    IEnumerator MiniFormBuff()
+    {
+        isBuffActive = true;
+
+        // เก็บค่าเดิมก่อนปรับ
+        float speedMultiplier = 2f;
+        float cooldownReduction = 0.7f; // ลด Cooldown 50%
+        int healAmount = 100;
+
+        // ปรับขนาดตัวละคร (เล็กลง)
+        playerMovement.transform.localScale = originalScale * 0.5f;
+
+        // เพิ่ม HP
+        hp.TakeDamage(-healAmount);
+
+        // เพิ่มความเร็ว
+        playerMovement.moveSpeed *= speedMultiplier;
+
+        // ลด Cooldown สกิล
+        playerMovement.dashCooldown *= cooldownReduction;
+        playerMovement.airJumpCount += 3;
+        hp.barrierCooldown *= cooldownReduction;
+
+        // รอตามระยะเวลา
+        yield return new WaitForSeconds(20f);
+
+        // รีเซ็ตทุกอย่างกลับสู่ค่าเริ่มต้น
+        playerMovement.transform.localScale = originalScale;
+        playerMovement.moveSpeed = originalMoveSpeed;
+        playerMovement.dashCooldown = originalDashCooldown;
+        playerMovement.airJumpCount += 3;
+        hp.barrierCooldown = originalBarrierCooldown;
+
+        isBuffActive = false;
         buffText.text = "";
     }
 }
