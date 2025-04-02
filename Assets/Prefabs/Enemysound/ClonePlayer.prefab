@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052227124328766349}
   - component: {fileID: 8664120969834324682}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Shotgun_switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 5363123797110155476}
   - component: {fileID: 4810982830632120280}
   - component: {fileID: 3979820544847384776}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: shootgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7473733629387218249}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -242,7 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6337384724631358348}
   - component: {fileID: 2082401998367309186}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: gunpistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1347282745231870736}
   - component: {fileID: 7858634523734639517}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2528334971290548756}
   - component: {fileID: 7831311310561457843}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: gunpistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 744408178232889629}
   - component: {fileID: 4597125993403461642}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 1970781354679110401}
   - component: {fileID: 8152681593219216485}
   - component: {fileID: 992419228091584061}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: PLAYERGROUND_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 7256963222938697418}
   - component: {fileID: 192516259454586557}
   - component: {fileID: 5905869849276484172}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787777254003086670}
   - component: {fileID: 7261848208107064631}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 11051069917452052}
   - component: {fileID: 6880113222400549496}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: land
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 59567648387108880}
   - component: {fileID: 4909813074445602220}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 656981011122382582}
   - component: {fileID: 3022731795052855007}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6364866739158704097}
   - component: {fileID: 987138818664784670}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Pistol_sound\
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6162002239189233788}
   - component: {fileID: 8274413208409602984}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: gunpistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1393,7 +1393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5753162067387771879}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: Playerpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1425,7 +1425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2156450982725839303}
   - component: {fileID: 6919605373869698682}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1509,7 +1509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068857814047229787}
   - component: {fileID: 596292261865571552}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: walk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1636,7 +1636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8420646275112714404}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1668,7 +1668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2919615824812209291}
   - component: {fileID: 2689102476875771594}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,7 +1753,7 @@ GameObject:
   - component: {fileID: 2019088381378334964}
   - component: {fileID: 4649763913831821732}
   - component: {fileID: 5774071437744672417}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: PLAYERGROUND_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1858,7 +1858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3212256366036617007}
   - component: {fileID: 2527041216706722888}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: shootgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1954,7 +1954,7 @@ GameObject:
   - component: {fileID: 3332058896700961954}
   - component: {fileID: 739448717321829855}
   - component: {fileID: 9191775676126597497}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: ClonePlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2415,9 +2415,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3688392242363459858}
     m_Modifications:
+    - target: {fileID: 98035223010228149, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721424680804445288, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527027213955435243, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 4039132281839055284, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
       propertyPath: m_Name
       value: VfxSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039132281839055284, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065434948506809518, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072230541996361449, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438096440345546868, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440115618806115365, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7319057861800312765, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
       propertyPath: m_LocalScale.x
@@ -2471,6 +2503,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7780967598774394619, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8818172602898600949, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2502,6 +2542,10 @@ PrefabInstance:
     - target: {fileID: 1272762677778709503, guid: f5ecc536570b838409670c9132f866fe, type: 3}
       propertyPath: m_Name
       value: Cursor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272762677778709503, guid: f5ecc536570b838409670c9132f866fe, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4509305238600502028, guid: f5ecc536570b838409670c9132f866fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2561,6 +2605,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3688392242363459858}
     m_Modifications:
+    - target: {fileID: 548853529196973952, guid: 7fe7ab4e451b0a043942993cd83798d4, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 807818153951764769, guid: 7fe7ab4e451b0a043942993cd83798d4, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 1848156994925483568, guid: 7fe7ab4e451b0a043942993cd83798d4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.002
@@ -2601,6 +2653,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2465242430558634147, guid: 7fe7ab4e451b0a043942993cd83798d4, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111215276314104096, guid: 7fe7ab4e451b0a043942993cd83798d4, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 6048434659861800541, guid: 7fe7ab4e451b0a043942993cd83798d4, type: 3}
       propertyPath: shootingSoundSource
       value: 
@@ -2608,6 +2668,14 @@ PrefabInstance:
     - target: {fileID: 7588244178125116992, guid: 7fe7ab4e451b0a043942993cd83798d4, type: 3}
       propertyPath: m_Name
       value: Machinegun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588244178125116992, guid: 7fe7ab4e451b0a043942993cd83798d4, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643452963196788724, guid: 7fe7ab4e451b0a043942993cd83798d4, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

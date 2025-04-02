@@ -22,7 +22,7 @@ public class ComboSystem : MonoBehaviour
     public Sprite machineGunSprite; // Sprite ของปืนกล
 
     // Buff Settings
-    private float buffDuration = 8f; // ระยะเวลาของบัฟ
+    private float buffDuration = 5f; // ระยะเวลาของบัฟ
     private bool isBuffActive = false; // ตัวแปรสถานะบัฟ
     private float originalMoveSpeed;
     public Transform clonespaw;// ความเร็วเริ่มต้นของผู้เล่น
@@ -250,18 +250,18 @@ public class ComboSystem : MonoBehaviour
 
     void ApplyRandomBuff()
     {
-        if (isBuffActive)
-        {
-            Debug.Log("ComboSystem: Buff already active, skipping new buff.");
-            return;
-        }
+        //if (isBuffActive)
+        //{
+        //    Debug.Log("ComboSystem: Buff already active, skipping new buff.");
+        //    return;
+        //}
 
         // สุ่มบัฟ (0-3)
-        int buffIndex = Random.Range(0, 4);
+        int buffIndex = Random.Range(0, 5);
         switch (buffIndex)
         {
             case 0: // ฟื้นฟู HP
-                int healAmount = 100;
+                int healAmount = 500;
                 hp.TakeDamage(-healAmount); // ใช้ TakeDamage ด้วยค่าลบเพื่อเพิ่ม HP
                 buffText.text = "Buff: Heal +" + healAmount;
                 Debug.Log("ComboSystem: Heal Buff applied! +" + healAmount + " HP");
@@ -285,7 +285,14 @@ public class ComboSystem : MonoBehaviour
                 int healAmountA = 500;
                 hp.TakeDamage(-healAmountA);
                 buffText.text = "Buff: Heal +" + healAmountA;
-                Debug.Log("ComboSystem: Shield Buff applied!");
+                Debug.Log("ComboSystem:heal 500");
+                break;
+            case 4: // ได้โล่
+                float jumpde = 20f;
+                playerMovement.jumpForce = jumpde;
+                StartCoroutine(JumpBuff(jumpde));
+                buffText.text = "Buff: Jump +" + jumpde;
+                Debug.Log("ComboSystem: jumpboot");
                 break;
         }
     }
@@ -294,11 +301,11 @@ public class ComboSystem : MonoBehaviour
     {
         isBuffActive = true;
         // สร้าง Clone จาก Player Prefab
-        GameObject clone = Instantiate(playerPrefab,clonespaw.position, Quaternion.identity);
+        GameObject clone = Instantiate(playerPrefab,playerMovement.transform.position, Quaternion.identity);
         Debug.Log("ComboSystem: Clone created at position: " + clone.transform.position);
 
         // รอตามระยะเวลา buffDuration แล้วทำลาย Clone
-        yield return new WaitForSeconds(buffDuration);
+        yield return new WaitForSeconds(50f);
 
         Destroy(clone);
         Debug.Log("ComboSystem: Clone destroyed after " + buffDuration + " seconds");
@@ -312,6 +319,15 @@ public class ComboSystem : MonoBehaviour
         yield return new WaitForSeconds(buffDuration);
         playerMovement.moveSpeed = originalMoveSpeed;
         isBuffActive = false;
+        buffText.text = "";
+    }
+    IEnumerator JumpBuff(float speedMultiplier)
+    {
+        isBuffActive = true;
+        yield return new WaitForSeconds(buffDuration);
+        playerMovement.moveSpeed = originalMoveSpeed;
+        isBuffActive = false;
+        playerMovement.jumpForce = 10f;
         buffText.text = "";
     }
 }
