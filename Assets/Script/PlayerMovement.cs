@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveDirection;
     public Transform shootPoint;
     public WeaponSwitchDop weaponSwitchDop;
-    private int airJumpCount = 0;
+    public int airJumpCount = 0;
     public int airJumpsAllowed = 1;
     public GameObject ghostPrefab;
     public float ghostSpawnRate = 0.1f;
