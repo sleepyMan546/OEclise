@@ -167,7 +167,7 @@ public class ComboSystem : MonoBehaviour
         isComboActive = false;
 
         // สุ่มจำนวนปืนในคอมโบ (2 หรือ 3)
-        int comboLength = Random.Range(2, 4); // Random.Range(2, 4) จะได้ 2 หรือ 3
+        int comboLength = Random.Range(2, 5); 
 
         // สุ่มปืนและเพิ่มในคอมโบ
         for (int i = 0; i < comboLength; i++)
