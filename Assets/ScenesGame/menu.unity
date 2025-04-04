@@ -4141,7 +4141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a5b17c1327834c98370084b88fe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 12
+  sceneIndex: 32
   delay: 2
 --- !u!4 &1061246846
 Transform:
