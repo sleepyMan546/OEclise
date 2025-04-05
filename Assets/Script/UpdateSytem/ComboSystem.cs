@@ -417,6 +417,8 @@ public class ComboSystem : MonoBehaviour
                 StartCoroutine(ShakeCamera());
                 Debug.Log($"ComboSystem: Enemy {enemy.name} defeated by Conqueror's Haki!");
                 Destroy(enemy.gameObject);
+                
+                
             }
         }
 
