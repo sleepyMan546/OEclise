@@ -87,7 +87,7 @@ public class ComboSystem : MonoBehaviour
         // เก็บค่าเริ่มต้น
         originalMoveSpeed = playerMovement.moveSpeed;
         originalScale = playerMovement.transform.localScale; // เก็บขนาดเริ่มต้นของตัวละคร
-
+       
         // เก็บ Cooldown เริ่มต้น (สมมติว่ามีตัวแปรเหล่านี้ใน PlayerMovement และ Hp)
         originalDashCooldown = playerMovement.dashCooldown; // ต้องเพิ่มตัวแปรใน PlayerMovement
         originalAirJumpCooldown = playerMovement.airJumpCount; // ต้องเพิ่มตัวแปรใน PlayerMovement
@@ -414,11 +414,14 @@ public class ComboSystem : MonoBehaviour
         {
             if (enemy.CompareTag("Enemy"))
             {
-                StartCoroutine(ShakeCamera());
-                Debug.Log($"ComboSystem: Enemy {enemy.name} defeated by Conqueror's Haki!");
-                Destroy(enemy.gameObject);
-                
-                
+                EnemyHp enemyHealth = enemy.GetComponent<EnemyHp>();
+                if (enemyHealth != null)
+                {
+                    StartCoroutine(ShakeCamera());
+                    Debug.Log($"ComboSystem: Enemy {enemy.name} defeated by Conqueror's Haki!");
+                    //Destroy(enemy.gameObject);
+                    enemyHealth.TakeDamageEnemy(200);
+                }
             }
         }
 
