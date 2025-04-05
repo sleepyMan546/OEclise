@@ -1,0 +1,476 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2309309543282155411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8615993563724379472}
+  - component: {fileID: 7646956625931813982}
+  - component: {fileID: 6037993799716782338}
+  m_Layer: 0
+  m_Name: DialogueHanlder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8615993563724379472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309309543282155411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 704095577666858768}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7646956625931813982
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309309543282155411}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.121052146, y: -0.052783325}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.742085, y: 0.46105608}
+  m_EdgeRadius: 0
+--- !u!114 &6037993799716782338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309309543282155411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75930f24511252a48ab38b23a390c9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueCanvas: {fileID: 0}
+  speakerText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  portraitImage: {fileID: 0}
+  speaker:
+  - ????
+  - Number 19
+  - ????
+  - Number 19
+  - ????
+  - Number 19
+  - ????
+  dialogueWords:
+  - " \u0E25\u0E38\u0E01\u0E02\u0E36\u0E49\u0E19 \u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02
+    19\u0E40\u0E08\u0E49\u0E32\u0E16\u0E39\u0E01\u0E01\u0E33\u0E2B\u0E19\u0E14\u0E43\u0E2B\u0E49\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E2A\u0E07\u0E2A\u0E27\u0E48\u0E32\u0E07\u0E43\u0E19\u0E04\u0E27\u0E32\u0E21\u0E21\u0E37\u0E14
+    \u0E40\u0E08\u0E49\u0E32\u0E04\u0E37\u0E2D\u0E1C\u0E39\u0E49\u0E17\u0E35\u0E48\u0E08\u0E30\u0E1E\u0E34\u0E0A\u0E34\u0E15\u0E14\u0E27\u0E07\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E2A\u0E35\u0E40\u0E25\u0E37\u0E2D\u0E14
+    \u0E41\u0E25\u0E30\u0E19\u0E33\u0E1E\u0E32\u0E21\u0E19\u0E38\u0E29\u0E22\u0E0A\u0E32\u0E15\u0E34\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\u0E1E\u0E31\u0E19\u0E18\u0E19\u0E32\u0E01\u0E32\u0E23\u0E17\u0E35\u0E48\u0E01\u0E31\u0E01\u0E02\u0E31\u0E07\u0E40\u0E23\u0E32\u0E21\u0E32\u0E19\u0E32\u0E19\u0E19\u0E31\u0E1A\u0E25\u0E49\u0E32\u0E19\u0E1B\u0E35\r\n"
+  - "\u0E1E\u0E34\u0E0A\u0E34\u0E15\u0E17\u0E33\u0E44\u0E21? \u0E14\u0E27\u0E07\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E2A\u0E35\u0E40\u0E25\u0E37\u0E2D\u0E14\u0E04\u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23?
+    \u0E17\u0E33\u0E44\u0E21\u0E19\u0E32\u0E22\u0E16\u0E36\u0E07\u0E21\u0E32\u0E1A\u0E2D\u0E01\u0E43\u0E2B\u0E49\u0E09\u0E31\u0E19\u0E17\u0E33\u0E2D\u0E30\u0E44\u0E23\u0E14\u0E49\u0E27\u0E22?"
+  - "\u0E14\u0E27\u0E07\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E2A\u0E35\u0E40\u0E25\u0E37\u0E2D\u0E14\u0E04\u0E37\u0E2D\u0E2A\u0E34\u0E48\u0E07\u0E17\u0E35\u0E48\u0E04\u0E23\u0E2D\u0E1A\u0E07\u0E33\u0E42\u0E25\u0E01\u0E19\u0E35\u0E49
+    \u0E21\u0E31\u0E19\u0E14\u0E39\u0E14\u0E01\u0E25\u0E37\u0E19\u0E0A\u0E35\u0E27\u0E34\u0E15\u0E02\u0E2D\u0E07\u0E1C\u0E39\u0E49\u0E04\u0E19
+    \u0E23\u0E48\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E1E\u0E27\u0E01\u0E40\u0E02\u0E32\u0E2A\u0E25\u0E32\u0E22\u0E40\u0E1B\u0E47\u0E19\u0E1D\u0E38\u0E48\u0E19\u0E2A\u0E35\u0E41\u0E14\u0E07
+    \u0E25\u0E2D\u0E22\u0E02\u0E36\u0E49\u0E19\u0E2A\u0E39\u0E48\u0E17\u0E49\u0E2D\u0E07\u0E1F\u0E49\u0E32\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E2B\u0E25\u0E48\u0E2D\u0E40\u0E25\u0E35\u0E49\u0E22\u0E07\u0E1E\u0E25\u0E31\u0E07\u0E02\u0E2D\u0E07\u0E21\u0E31\u0E19
+    \u0E42\u0E25\u0E01\u0E19\u0E35\u0E49\u0E04\u0E37\u0E2D\u0E01\u0E23\u0E07\u0E02\u0E31\u0E07\u0E17\u0E35\u0E48\u0E40\u0E23\u0E32\u0E15\u0E49\u0E2D\u0E07\u0E2B\u0E25\u0E38\u0E14\u0E1E\u0E49\u0E19
+    \u0E41\u0E25\u0E30\u0E40\u0E08\u0E49\u0E32\u0E04\u0E37\u0E2D\u0E04\u0E27\u0E32\u0E21\u0E2B\u0E27\u0E31\u0E07\u0E40\u0E14\u0E35\u0E22\u0E27\u0E02\u0E2D\u0E07\u0E40\u0E23\u0E32"
+  - "\u0E17\u0E33\u0E44\u0E21\u0E09\u0E31\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E2A\u0E19\u0E43\u0E08\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E1E\u0E27\u0E01\u0E19\u0E31\u0E49\u0E19?"
+  - "\u0E40\u0E08\u0E49\u0E32\u0E44\u0E21\u0E48\u0E40\u0E02\u0E49\u0E32\u0E43\u0E08\u0E16\u0E36\u0E07\u0E04\u0E27\u0E32\u0E21\u0E42\u0E2B\u0E14\u0E23\u0E49\u0E32\u0E22\u0E02\u0E2D\u0E07\u0E21\u0E31\u0E19!
+    \u0E21\u0E19\u0E38\u0E29\u0E22\u0E0A\u0E32\u0E15\u0E34\u0E01\u0E33\u0E25\u0E31\u0E07\u0E25\u0E48\u0E21\u0E2A\u0E25\u0E32\u0E22
+    \u0E14\u0E27\u0E07\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E2A\u0E35\u0E40\u0E25\u0E37\u0E2D\u0E14\u0E01\u0E25\u0E37\u0E19\u0E01\u0E34\u0E19\u0E1C\u0E39\u0E49\u0E04\u0E19\u0E17\u0E38\u0E01\u0E27\u0E31\u0E19
+    \u0E42\u0E25\u0E01\u0E19\u0E35\u0E49\u0E44\u0E21\u0E48\u0E21\u0E35\u0E2D\u0E19\u0E32\u0E04\u0E15\u0E16\u0E49\u0E32\u0E40\u0E23\u0E32\u0E44\u0E21\u0E48\u0E2B\u0E22\u0E38\u0E14\u0E21\u0E31\u0E19
+    \u0E21\u0E19\u0E38\u0E29\u0E22\u0E0A\u0E32\u0E15\u0E34\u0E2A\u0E21\u0E04\u0E27\u0E23\u0E44\u0E14\u0E49\u0E2A\u0E31\u0E21\u0E1C\u0E31\u0E2A\u0E2D\u0E34\u0E2A\u0E23\u0E20\u0E32\u0E1E\u0E17\u0E35\u0E48\u0E16\u0E39\u0E01\u0E21\u0E31\u0E19\u0E1E\u0E23\u0E32\u0E01\u0E44\u0E1B!"
+  - "\u0E2D\u0E34\u0E2A\u0E23\u0E20\u0E32\u0E1E? \u0E2A\u0E34\u0E48\u0E07\u0E17\u0E35\u0E48\u0E19\u0E32\u0E22\u0E1E\u0E39\u0E14\u0E21\u0E31\u0E19\u0E04\u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23\u0E01\u0E31\u0E19? "
+  - "\u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E40\u0E02\u0E49\u0E32\u0E43\u0E08\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E16\u0E36\u0E07\u0E40\u0E27\u0E25\u0E32!
+    \n \u0E40\u0E08\u0E49\u0E32\u0E04\u0E37\u0E2D\u0E2A\u0E48\u0E27\u0E19\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E43\u0E19
+    Operation Eclipse \u0E17\u0E35\u0E48\u0E08\u0E30\u0E19\u0E33\u0E1E\u0E32\u0E40\u0E23\u0E32\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\u0E01\u0E23\u0E07\u0E19\u0E35\u0E49!\r\n"
+  - "Operation Eclipse? \u0E21\u0E31\u0E19\u0E04\u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23?
+    \u0E17\u0E33\u0E44\u0E21\u0E19\u0E32\u0E22\u0E16\u0E36\u0E07\u0E04\u0E34\u0E14\u0E27\u0E48\u0E32\u0E09\u0E31\u0E19\u0E17\u0E33\u0E44\u0E14\u0E49?"
+  - "\u0E40\u0E08\u0E49\u0E32\u0E44\u0E21\u0E48\u0E08\u0E33\u0E40\u0E1B\u0E47\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E23\u0E39\u0E49\u0E17\u0E38\u0E01\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E43\u0E19\u0E15\u0E2D\u0E19\u0E19\u0E35\u0E49
+    \u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02 19 \u0E40\u0E08\u0E49\u0E32\u0E16\u0E39\u0E01\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E21\u0E32\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E08\u0E38\u0E14\u0E21\u0E38\u0E48\u0E07\u0E2B\u0E21\u0E32\u0E22\u0E19\u0E35\u0E49
+    \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E02\u0E49\u0E32\u0E2A\u0E34\u0E49\u0E19\u0E2A\u0E38\u0E14
+    \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E2A\u0E32\u0E19\u0E15\u0E48\u0E2D\u0E20\u0E32\u0E23\u0E01\u0E34\u0E08\u0E19\u0E35\u0E49"
+  - "\u0E16\u0E39\u0E01\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E21\u0E32? \u0E2B\u0E21\u0E32\u0E22\u0E04\u0E27\u0E32\u0E21\u0E27\u0E48\u0E32\u0E22\u0E31\u0E07\u0E44\u0E07?
+    \u0E43\u0E04\u0E23\u0E17\u0E33\u0E43\u0E2B\u0E49\u0E09\u0E31\u0E19\u0E40\u0E01\u0E34\u0E14\u0E21\u0E32?"
+  - "\u0E04\u0E33\u0E16\u0E32\u0E21\u0E02\u0E2D\u0E07\u0E40\u0E08\u0E49\u0E32\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E16\u0E36\u0E07\u0E40\u0E27\u0E25\u0E32\u0E17\u0E35\u0E48\u0E08\u0E30\u0E44\u0E14\u0E49\u0E04\u0E33\u0E15\u0E2D\u0E1A
+    \u0E08\u0E07\u0E1F\u0E31\u0E07\u0E02\u0E49\u0E32 \u0E42\u0E25\u0E01\u0E19\u0E35\u0E49\u0E01\u0E33\u0E25\u0E31\u0E07\u0E1E\u0E31\u0E07\u0E17\u0E25\u0E32\u0E22
+    \u0E14\u0E27\u0E07\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E2A\u0E35\u0E40\u0E25\u0E37\u0E2D\u0E14\u0E2B\u0E34\u0E27\u0E01\u0E23\u0E30\u0E2B\u0E32\u0E22\u0E21\u0E32\u0E01\u0E02\u0E36\u0E49\u0E19\u0E17\u0E38\u0E01\u0E27\u0E31\u0E19
+    \u0E16\u0E49\u0E32\u0E40\u0E08\u0E49\u0E32\u0E44\u0E21\u0E48\u0E2B\u0E22\u0E38\u0E14\u0E21\u0E31\u0E19
+    \u0E41\u0E2A\u0E07\u0E41\u0E14\u0E07\u0E19\u0E31\u0E49\u0E19\u0E08\u0E30\u0E01\u0E25\u0E37\u0E19\u0E01\u0E34\u0E19\u0E17\u0E38\u0E01\u0E2D\u0E22\u0E48\u0E32\u0E07
+    \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E22\u0E2D\u0E21\u0E43\u0E2B\u0E49\u0E21\u0E31\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E1A\u0E1A\u0E19\u0E31\u0E49\u0E19\u0E2B\u0E23\u0E37\u0E2D?"
+  - "\u0E09\u0E31\u0E19\u0E16\u0E39\u0E01\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E21\u0E32\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E2B\u0E22\u0E38\u0E14\u0E21\u0E31\u0E19\u0E08\u0E23\u0E34\u0E07
+    \u0E46 \u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E2D\u0E37\u0E48\u0E19?"
+  - "\"\u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E2B\u0E22\u0E38\u0E14\u0E21\u0E31\u0E19
+    \u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02 19! \u0E40\u0E08\u0E49\u0E32\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E48\u0E04\u0E19\u0E18\u0E23\u0E23\u0E21\u0E14\u0E32
+    \u0E40\u0E08\u0E49\u0E32\u0E21\u0E35\u0E1A\u0E32\u0E07\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E17\u0E35\u0E48\u0E02\u0E49\u0E32\u0E1D\u0E32\u0E01\u0E44\u0E27\u0E49
+    \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E23\u0E48\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E02\u0E49\u0E32\u0E2A\u0E25\u0E32\u0E22\u0E44\u0E1B
+    \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E49\u0E32\u0E27\u0E15\u0E48\u0E2D\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E21\u0E19\u0E38\u0E29\u0E22\u0E0A\u0E32\u0E15\u0E34
+    \u0E44\u0E21\u0E48\u0E21\u0E35\u0E17\u0E32\u0E07\u0E17\u0E35\u0E48\u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E2B\u0E25\u0E35\u0E01\u0E2B\u0E19\u0E35\u0E08\u0E32\u0E01\u0E2A\u0E34\u0E48\u0E07\u0E19\u0E35\u0E49\u0E44\u0E14\u0E49!\"\r\n"
+  - "\u0E1A\u0E32\u0E07\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E17\u0E35\u0E48\u0E19\u0E32\u0E22\u0E1D\u0E32\u0E01\u0E44\u0E27\u0E49?
+    \u0E21\u0E31\u0E19\u0E04\u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23\u0E01\u0E31\u0E19\u0E41\u0E19\u0E48?
+    \u0E16\u0E49\u0E32\u0E23\u0E48\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E19\u0E32\u0E22\u0E2A\u0E25\u0E32\u0E22
+    \u0E17\u0E33\u0E44\u0E21\u0E09\u0E31\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E23\u0E31\u0E1A\u0E1C\u0E34\u0E14\u0E0A\u0E2D\u0E1A?
+    \u0E17\u0E33\u0E44\u0E21\u0E09\u0E31\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E17\u0E33\u0E2D\u0E30\u0E44\u0E23\u0E43\u0E2B\u0E49\u0E04\u0E19\u0E2D\u0E37\u0E48\u0E19?
+    \u0E09\u0E31\u0E19\u0E2D\u0E22\u0E32\u0E01\u0E23\u0E39\u0E49\u0E41\u0E04\u0E48\u0E27\u0E48\u0E32\u0E09\u0E31\u0E19\u0E40\u0E1B\u0E47\u0E19\u0E2D\u0E30\u0E44\u0E23!\r\n"
+  - "\u0E40\u0E08\u0E15\u0E08\u0E33\u0E19\u0E07\u0E02\u0E2D\u0E07\u0E02\u0E49\u0E32\u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E15\u0E31\u0E27\u0E40\u0E08\u0E49\u0E32
+    \u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02 19 \u0E41\u0E25\u0E30\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E27\u0E31\u0E19\u0E19\u0E31\u0E49\u0E19\u0E21\u0E32\u0E16\u0E36\u0E07
+    \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E23\u0E39\u0E49\u0E27\u0E48\u0E32\u0E17\u0E33\u0E44\u0E21\u0E02\u0E49\u0E32\u0E16\u0E36\u0E07\u0E21\u0E2D\u0E1A\u0E20\u0E32\u0E23\u0E01\u0E34\u0E08\u0E19\u0E35\u0E49\u0E43\u0E2B\u0E49\u0E40\u0E08\u0E49\u0E32
+    \u0E41\u0E15\u0E48\u0E15\u0E2D\u0E19\u0E19\u0E35\u0E49 \u0E08\u0E07\u0E40\u0E15\u0E23\u0E35\u0E22\u0E21\u0E15\u0E31\u0E27\u0E43\u0E2B\u0E49\u0E1E\u0E23\u0E49\u0E2D\u0E21\r\n"
+  - "\u0E40\u0E08\u0E15\u0E08\u0E33\u0E19\u0E07? \u0E21\u0E31\u0E19\u0E08\u0E30\u0E1A\u0E31\u0E07\u0E04\u0E31\u0E1A\u0E09\u0E31\u0E19\u0E44\u0E14\u0E49\u0E22\u0E31\u0E07\u0E44\u0E07?
+    \u0E27\u0E31\u0E19\u0E19\u0E31\u0E49\u0E19\u0E17\u0E35\u0E48\u0E19\u0E32\u0E22\u0E1E\u0E39\u0E14\u0E16\u0E36\u0E07\u0E04\u0E37\u0E2D\u0E2D\u0E30\u0E44\u0E23?
+    \u0E09\u0E31\u0E19\u0E08\u0E30\u0E2B\u0E32\u0E04\u0E33\u0E15\u0E2D\u0E1A\u0E08\u0E32\u0E01\u0E2B\u0E25\u0E38\u0E21\u0E19\u0E35\u0E49\u0E44\u0E14\u0E49\u0E44\u0E2B\u0E21?"
+  - "\u0E2B\u0E22\u0E38\u0E14\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E19\u0E35\u0E49
+    \u0E2B\u0E21\u0E32\u0E22\u0E40\u0E25\u0E02 19! \u0E2D\u0E22\u0E48\u0E32\u0E01\u0E23\u0E30\u0E42\u0E14\u0E14\u0E25\u0E07\u0E44\u0E1B!
+    \u0E40\u0E1D\u0E49\u0E32\u0E23\u0E2D\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07\u0E02\u0E2D\u0E07\u0E02\u0E49\u0E32
+    \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E16\u0E36\u0E07
+    \u0E40\u0E08\u0E49\u0E32\u0E08\u0E30\u0E40\u0E23\u0E34\u0E48\u0E21 Operation
+    Eclipse \u0E08\u0E07\u0E23\u0E2D\u0E08\u0E19\u0E01\u0E27\u0E48\u0E32\u0E02\u0E49\u0E32\u0E08\u0E30\u0E1A\u0E2D\u0E01!"
+  - "\u0E23\u0E2D\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07? \u0E09\u0E31\u0E19\u0E08\u0E30\u0E23\u0E39\u0E49\u0E44\u0E14\u0E49\u0E22\u0E31\u0E07\u0E44\u0E07\u0E27\u0E48\u0E32\u0E19\u0E32\u0E22\u0E1E\u0E39\u0E14\u0E04\u0E27\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07?
+    \u0E09\u0E31\u0E19\u0E40\u0E1A\u0E37\u0E48\u0E2D\u0E17\u0E35\u0E48\u0E08\u0E30\u0E1F\u0E31\u0E07\u0E41\u0E25\u0E49\u0E27
+    \u0E09\u0E31\u0E19\u0E08\u0E30\u0E2B\u0E32\u0E04\u0E33\u0E15\u0E2D\u0E1A\u0E40\u0E2D\u0E07!"
+  portrait:
+  - {fileID: -1865147463, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+  - {fileID: -218512389, guid: d8a2a3618f3784d4f9c31e02b9aa243d, type: 3}
+  - {fileID: -1865147463, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+  - {fileID: -218512389, guid: d8a2a3618f3784d4f9c31e02b9aa243d, type: 3}
+  - {fileID: -1865147463, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+  - {fileID: -218512389, guid: d8a2a3618f3784d4f9c31e02b9aa243d, type: 3}
+  - {fileID: -1865147463, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+--- !u!1 &3025423622280354002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 704095577666858768}
+  - component: {fileID: 4630134688748819493}
+  - component: {fileID: 7739702962390727044}
+  m_Layer: 0
+  m_Name: bossidle_0 copy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &704095577666858768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025423622280354002}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.81, y: -11.643, z: 10}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 8615993563724379472}
+  - {fileID: 822604861052621821}
+  - {fileID: 4827772734568707176}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4630134688748819493
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025423622280354002}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0df0e65714293d94d8263dfe93d0ab6a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1041209031, guid: 8de310c3c2608c94daa0e14a36f8940d, type: 3}
+  m_Color: {r: 0.67, g: 0, b: 0, a: 0.93333334}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &7739702962390727044
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025423622280354002}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 808ebf3febe11464dae284636edc2bbf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &6141757833373419640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 822604861052621821}
+  - component: {fileID: 5727770833500111206}
+  m_Layer: 0
+  m_Name: w (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &822604861052621821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141757833373419640}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23, y: 0.198, z: 0}
+  m_LocalScale: {x: 0.58823526, y: 0.58823526, z: 0.58823526}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 704095577666858768}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5727770833500111206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141757833373419640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.531
+  m_Color: {r: 0.85660374, g: 0, b: 0, a: 0.95686275}
+  m_Intensity: 3.28
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 2.48
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!1001 &6891910457371600418
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 704095577666858768}
+    m_Modifications:
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.6651
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5009
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.4307
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.9176
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910355021839269683, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300882028882401833, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+      propertyPath: m_Name
+      value: CanvasWordspace
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+--- !u!224 &4827772734568707176 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2115369881160880714, guid: 022e650aa4045494c90a7d20e4a4dcc1, type: 3}
+  m_PrefabInstance: {fileID: 6891910457371600418}
+  m_PrefabAsset: {fileID: 0}
