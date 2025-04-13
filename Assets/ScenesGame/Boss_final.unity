@@ -2240,6 +2240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LogoCanvas Ui
       objectReference: {fileID: 0}
+    - target: {fileID: 2639405293242616310, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5876165048713742831, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
       propertyPath: mainCamera
       value: 
@@ -2376,6 +2380,18 @@ PrefabInstance:
     - target: {fileID: 243755841899527485, guid: 8257411f1694d374eba4f6b31ac00826, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -317
+      objectReference: {fileID: 0}
+    - target: {fileID: 768354732942896466, guid: 8257411f1694d374eba4f6b31ac00826, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 768354732942896466, guid: 8257411f1694d374eba4f6b31ac00826, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 768354732942896466, guid: 8257411f1694d374eba4f6b31ac00826, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 3474107401463930984, guid: 8257411f1694d374eba4f6b31ac00826, type: 3}
       propertyPath: m_text
