@@ -1371,7 +1371,7 @@ PrefabInstance:
     - target: {fileID: 3479825489037720445, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
       propertyPath: weaponIconUI
       value: 
-      objectReference: {fileID: 1077519867}
+      objectReference: {fileID: 1316727101}
     - target: {fileID: 3479825489037720445, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
       propertyPath: pistolSwitchSoundSource
       value: 
@@ -2245,9 +2245,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5876165048713742831, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
+      propertyPath: hp
+      value: 
+      objectReference: {fileID: 1631741070}
+    - target: {fileID: 5876165048713742831, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
+      propertyPath: enemyHp
+      value: 
+      objectReference: {fileID: 730909737}
+    - target: {fileID: 5876165048713742831, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 632784140}
+    - target: {fileID: 5876165048713742831, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1631741072}
+    - target: {fileID: 5876165048713742831, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
+      propertyPath: weaponSwitchDop
+      value: 
+      objectReference: {fileID: 1631741067}
     - target: {fileID: 8328811226082802234, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5998,17 +6014,6 @@ PrefabInstance:
       addedObject: {fileID: 116697993}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea223e0a3b9042541932113ab0d82b7a, type: 3}
---- !u!114 &1077519867 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7399579376662058064, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
-  m_PrefabInstance: {fileID: 548393227}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1108600674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6816,6 +6821,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1316727101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1602319272134826208, guid: 9770206db9fbdb04e856dde462d1978a, type: 3}
+  m_PrefabInstance: {fileID: 548393227}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1392431497
 GameObject:
   m_ObjectHideFlags: 0
@@ -7752,6 +7768,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159e68eee726aba48949102b4abc58ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1631741067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3479825489037720445, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
+  m_PrefabInstance: {fileID: 345197812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201630642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b02cdab9311c94478c59f653659163f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1631741070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2845602233395847217, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
+  m_PrefabInstance: {fileID: 345197812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201630642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87932ce6221bead45b45a5deae41f908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1631741072 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4351363740501371152, guid: c95eec7e5a8a51d4388142bd9a8e7f2c, type: 3}
+  m_PrefabInstance: {fileID: 345197812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201630642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b6aad793cf7c041958702771a1123c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1642710170 stripped
