@@ -66,15 +66,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate(){
-           float move = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
-
-    }
+  
     
     void Update()
     {
     
+          float move = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
 
 
         if (facingRight)
